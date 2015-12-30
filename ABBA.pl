@@ -11,7 +11,7 @@ use SQL::Abstract;
 #where are the input files
 #USAGE perl ABBA.pl -f /media/localdata/rackham/WGBSdata/test_dir/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o /home/rackham/Documents/gdrive/workspace/WGBSsim/tmp/ -w 0 -d 0 -z 0 -y 0 -e length
 my %options=();
-getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:", \%options);
+getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:g:", \%options);
 
 if($options{v}){
 	print "-f Analysising the files in $options{f}\n" if defined $options{f};
@@ -31,7 +31,7 @@ if($options{v}){
 	print "-e the type is $options{e}\n" if defined $options{e};
 	print "-i the iniation point is $options{i}\n" if defined $options{i};
 	print "-b the full path to the directory for this script when executed on a node is required if you are going to use the qsub option\n" if defined $options{b};
-
+	print "-g the chromosome if running in qsub\n" if defined $options{g};
 }
 if ($options{h})
 {
@@ -57,7 +57,9 @@ my $type = $options{e} || 'length';
 	unless(defined($project)){
 		$project = 'ABBAtest';
 	}
-
+if($init eq 'qsub_executing'){
+	run_all_files_chr($options{g},$project,$options{n},$options{r});
+}else{
 
 my %files_to_run;
 unless($init eq 'qsub_recover'){
@@ -84,7 +86,8 @@ unless($init eq 'qsub_recover'){
 				if(defined($options{b})){
 				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
 				#system(@command)
-				print("qsub -pe smp 8 $path"."ABBA.pl -i qsub_executing -p $project -n $options{n} -r $options{r}\n");
+				my @command = ("qsub","-pe","smp","8",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}");
+				system(@command);
 				}else{
 					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
 				}
@@ -97,6 +100,7 @@ unless($init eq 'qsub_recover'){
 	}
 }
 
+
 run_fdr_on_combined_files($project);
 my @chrs = keys %files_to_run;
 
@@ -106,6 +110,8 @@ $stage = $stage + 1;
 plot_DMRs($project,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type);
 update_db($project,$stage,"DMRs have been plotted",'progress');
 $stage = $stage + 1;
+}
+
 
 sub update_db {
 	my $project = shift;
@@ -114,6 +120,7 @@ sub update_db {
 	my $table = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	$db_handle -> do("INSERT INTO $table VALUES ('$stage','$value');");
+	update_progress_page($project,$path);
 }
 
 
@@ -144,6 +151,13 @@ sub get_files_to_process {
 	 	push(@files,$temp[0]);
 	 }
 	 return(\@files);
+}
+
+sub update_progress_page {
+	my $project = shift;
+	my $path = shift;
+	my @command = ("perl",$path."progress.pl",$project,$path);
+	system(@command);
 }
 
 
@@ -241,6 +255,8 @@ sub run_inla_on_all_files {
 	foreach my $chr (keys %files_to_run){
 		run_all_files_chr($chr,$project,$n,$r);
 	}
+	update_db($project,$stage,"ABBA has been run",'progress');
+	$stage = $stage + 1;
 }
 
 sub run_all_files_chr {
@@ -252,6 +268,7 @@ sub run_all_files_chr {
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	my $count = 0;
 	my $files_array = get_files_to_process($project,$chr);
+	update_db($project,$chr,($count/scalar(@{$files_array})),'file_ticker');
 	foreach my $file (@{$files_array}){
 		
 		print("$chr\t$file\n");
@@ -274,8 +291,7 @@ sub run_all_files_chr {
 	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$chr.for_inla");
 	load_csv_to_database("data/$chr.for_inla",$db_handle,'raw_data');
 	system("sort -t, -g -k2 data/$chr.bed > data/$chr.bed.sorted");
-	update_db($project,$stage,"$chr has been run, $count files were processed",'progress');
-	$stage = $stage + 1;
+	
 }
 
 sub prepare_in_files {
@@ -480,5 +496,8 @@ sub do_help {
 	print "\t-b\t the full path to run_inla_alone.sh which is required if you are going to use the qsub option\n\n";
   exit
 }
+
+
+
 
 
