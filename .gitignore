@@ -3,3 +3,4 @@ data/
 dbs/
 output/
 *.sqlite
+input/
