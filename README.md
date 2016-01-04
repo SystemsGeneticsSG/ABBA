@@ -40,21 +40,9 @@ sudo apt-get install sqlite3 libsqlite3-dev
 ABBA uses R to perform much of the statisical analysis and plotting. In order to that the following libraries are required:
 ```R
 install.packages("ggplot2")
-
+install.packages("ggthemes")
+install.packages("INLA", repos="http://www.math.ntnu.no/inla/R/stable")
 ```
-
-```sh
-$ git clone [git-repo-url] dillinger
-$ cd dillinger
-$ npm i -d
-$ mkdir -p downloads/files/{md,html,pdf}
-$ gulp build --prod
-$ NODE_ENV=production node app
-```
-
-### Plugins
-
-
 
 ### Development
 
@@ -67,6 +55,7 @@ First off please contains @OwenRackham so you can be setup as a contributer to t
  - Write Tests
  - Javascript DMR viewer
  - GO enrichment pipeline
+ - Project name folder so that overwritting doesnt occur
  
 
 License
