@@ -11,7 +11,7 @@ use SQL::Abstract;
 #where are the input files
 #USAGE perl ABBA.pl -f /media/localdata/rackham/WGBSdata/test_dir/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o /home/rackham/Documents/gdrive/workspace/WGBSsim/tmp/ -w 0 -d 0 -z 0 -y 0 -e length
 my %options=();
-getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:g:setup", \%options);
+getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:g:j:", \%options);
 
 if($options{v}){
 	print "-f Analysising the files in $options{f}\n" if defined $options{f};
