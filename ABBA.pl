@@ -70,7 +70,7 @@ unless($init eq 'qsub_recover'){
 }
 if($init eq 'qsub_recover'){
 	system("cat data/*.for_inla > data/all_for_inla");
-	load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
+	#load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
 }
 
 my $checked = check_directory($dir);
@@ -268,7 +268,7 @@ sub run_inla_on_all_files {
 		run_all_files_chr($chr,$project,$n,$r);
 	}
 	system("cat data/*.for_inla > data/all_for_inla");
-	load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
+	#load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
 
 	update_db($project,$stage,"ABBA has been run",'progress');
 	$stage = $stage + 1;
