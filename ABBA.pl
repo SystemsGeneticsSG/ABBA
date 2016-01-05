@@ -32,6 +32,7 @@ if($options{v}){
 	print "-i the iniation point is $options{i}\n" if defined $options{i};
 	print "-b the full path to the directory for this script when executed on a node is required if you are going to use the qsub option\n" if defined $options{b};
 	print "-g the chromosome if running in qsub\n" if defined $options{g};
+	print "-j the path to Rscript if you don't want to use the system version\n" if defined $options{g};
 }
 if ($options{h})
 {
@@ -40,6 +41,7 @@ if ($options{h})
 my $init = $options{i} || 0;
 our $stage = 1;
 our $path = $options{b} || "";
+our $rpath = $options{j} || "";
 my $min = $options{m} || 2;
 my $size = $options{s} || 3000;
 my $thresh = $options{t} || 1;
@@ -52,6 +54,7 @@ my $window = $options{w} || 1000;
 my $average_diff = $options{d} || 0.33333;
 my $sd = $options{z} || 2;
 my $cpg_density = $options{y} || 0.01;
+
 my $type = $options{e} || 'length';
 
 	unless(defined($project)){
@@ -86,7 +89,7 @@ unless($init eq 'qsub_recover'){
 				if(defined($options{b})){
 				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
 				#system(@command)
-				my @command = ("qsub","-pe","smp","8","-N",$project."_".$chr, "-o","cluster/".$project.".output", "-e","cluster/".$project.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}","-g $chr");
+				my @command = ("qsub","-pe","smp","8","-N",$project."_".$chr, "-o","cluster/".$project.".output", "-e","cluster/".$project.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}","-g $chr","-j $rpath");
 				system(@command);
 				}else{
 					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
@@ -133,10 +136,10 @@ sub plot_DMRs {
 	my $sd = shift;
 	my $cpg_density = shift;
 	my $type = shift;
-	print STDERR ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type");
-	my @command = ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type");
+	#print STDERR ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type",$rpath);
+	my @command = ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type",$rpath);
 	system(@command);
-	@command = ("Rscript","R/plot_fancy_figures.R","$outdir");
+	@command = ($rpath."Rscript","R/plot_fancy_figures.R","$outdir");
 	system(@command);
 }
 
@@ -221,7 +224,7 @@ sub extract_DMRs {
 	my $project = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	foreach my $chr (@{$chrs}){
-		my @command=('Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","data/all.bed_fdr.RData");
+		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","data/all.bed_fdr.RData");
   		system(@command);
   		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sorteddensity.DMRs.bed");
   		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sortedlength.DMRs.bed");
@@ -238,7 +241,7 @@ sub run_fdr_on_combined_files {
 	system("cut -d, -f1,2,5,8,9 data/all.bed > data/all.bed.for_sql");
 	system("sed -i '1s/^/chr,start_loc,diff,a,b\\n/' data/all.bed.for_sql");
 	load_csv_to_database("data/all.bed.for_sql",$db_handle,'inla_smooth');
-	my @command = ("Rscript","R/run_FDR_indep.R","data/all.bed");
+	my @command = ($rpath."Rscript","R/run_FDR_indep.R","data/all.bed");
 	update_db($project,$stage,"FDR has been run",'progress');
 	$stage = $stage + 1;
 	system(@command);
@@ -272,7 +275,7 @@ sub run_all_files_chr {
 	foreach my $file (@{$files_array}){
 		
 		print("$chr\t$file\n");
-		my @command = ("Rscript","R/run_inla_alone.R","$file","$n","$r","binomial","> /dev/null");
+		my @command = ($rpath."Rscript","R/run_inla_alone.R","$file","$n","$r","binomial","> /dev/null");
 		system(@command);
 		if ( $? == -1 ){
   			print "command failed: $!\n";
@@ -492,7 +495,7 @@ sub do_help {
 	print "\t-y\t is the cpgdensity required to be considered a DMR.\n\n";
 	print "\t-e\t is the type of DMR to extract\n\n";
 	print "\t-i\t is the iniation point for the program, this can be used to recover from a crash or to run using qsub, please see online instructions for details\n\n";
- 	print "\t-x\t the full path to RScript which is required if you are going to use the qsub option\n\n";
+ 	print "\t-j\t the full path to RScript which is required if you are going to use the qsub option\n\n";
 	print "\t-b\t the full path to run_inla_alone.sh which is required if you are going to use the qsub option\n\n";
   exit
 }

@@ -28,7 +28,7 @@ mkdir $dir."dbs" unless -d $dir."dbs";
 mkdir $dir."data" unless -d $dir."data";
 mkdir $dir."output" unless -d $dir."output";
 mkdir $dir."tmp" unless -d $dir."tmp";
-
+mkdir $dir."cluster" unless -d $dir."cluster";
 
 
 my @test_inputs = (["https://www.dropbox.com/s/8v2f2yt3w1h6fmy/chr1_both.in?dl=1","ch1_both.in"],["https://www.dropbox.com/s/jwlmd2e8ingp4fh/chr2_both.in?dl=1","chr2_both.in"]);

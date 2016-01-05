@@ -11,6 +11,7 @@
 ## ${11} --> sd of diff 2
 ## ${12} -->cpgdensity 0.01
 ## ${13} --> type length
+## ${14} --> rpath
 start=`expr $2 - $4`
 stop=`expr $3 + $4`
 justchr=`echo $1 | sed "s/chr//g"`
@@ -43,6 +44,6 @@ echo "select * from DMR_data where chr = '$1' and ((start_loc >= $start and stop
 #echo "select * from inla_smooth where chr = '$1' and start_loc >= $start and start_loc <= $stop;" 
 echo "select * from inla_smooth where chr = '$1' and start_loc >= $start and start_loc <= $stop;" | sqlite3 $6 > $8/$1_$2_$3_inla.txt
 
-Rscript R/plot_area_fig_raw_sqlite.R $8/$1_$2_$3.pdf $1 $start $stop $8/$1_$2_$3_dmrs.txt $8/$1_$2_$3_gene.txt $8/$1_$2_$3_repeats.txt $8/$1_$2_$3_tfbs.txt $8/$1_$2_$3_mirna.txt $8/$1_$2_$3_raw.txt $8/$1_$2_$3_tfx.txt $8/$1_$2_$3_cpg.txt $8/$1_$2_$3_inla.txt
+${14}Rscript R/plot_area_fig_raw_sqlite.R $8/$1_$2_$3.pdf $1 $start $stop $8/$1_$2_$3_dmrs.txt $8/$1_$2_$3_gene.txt $8/$1_$2_$3_repeats.txt $8/$1_$2_$3_tfbs.txt $8/$1_$2_$3_mirna.txt $8/$1_$2_$3_raw.txt $8/$1_$2_$3_tfx.txt $8/$1_$2_$3_cpg.txt $8/$1_$2_$3_inla.txt
 
 #echo $8/$1_$2_$3.pdf 
