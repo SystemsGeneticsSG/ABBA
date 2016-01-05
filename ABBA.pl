@@ -290,7 +290,7 @@ sub run_all_files_chr {
   		}
   		$dir = dirname($file);
   		$count = $count + 1;
-		update_db($project,$chr,($count/scalar(@{$files_array})),'file_ticker');	
+		update_db($project,$chr,($count/scalar(@{$files_array})),'file_ticker') if (($count % 10)==0);	
 	}
 	
 	system("cat $dir/*binomial.bed > data/$chr.bed");
