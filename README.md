@@ -37,13 +37,24 @@ ABBA uses SQLite in order to store and process locations. It can be installed as
 sudo apt-get install sqlite3 libsqlite3-dev
 ```
 #### Step 3: Install required R packages
-ABBA uses R to perform much of the statisical analysis and plotting. In order to that the following libraries are required:
+ABBA uses R to perform much of the statisical analysis and plotting.  In order to that the following libraries are required (Remember that if you intend to use a none system version of R when running on a cluster you will also need to ensure that this libraries are installed for that version):
 ```R
 install.packages("ggplot2")
 install.packages("ggthemes")
+install.packages("sp")
 install.packages("INLA", repos="http://www.math.ntnu.no/inla/R/stable")
 ```
-### Running ABBA
+
+#### Step 4: Download the test data and annotation library
+We have provided a script that will fetch all of the required data and create the folders required. This can be executed as follows:
+
+```sh
+perl setup.pl -af
+```
+where -a is the flag to download the annotations database for the test and -f is the flag to download the test data.
+
+
+### Running ABBA serially
 The simplest way to run ABBA is serially on a local machine. This will prepare the required files, execute the analysis and plot the results one after an other. There are a number of flags that need to be set for the script to run as follows:
 
 ```sh
@@ -65,8 +76,40 @@ perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o t
 - -y is the CpG density required within a CpG to be considered.
 - -e is the type of DMR to consider (density/length)
 
+At any stage you can open output/progress.html to view how the algorithm is proceeding.
 
+### Running ABBA on a cluster
+Running ABBA serially may take some time if you have a large dataset or you don't apply strict filtering criteria. In order to help with this ABBA has been implemented with the Sun Grid Engine queing system in mind. In order for this to work the executing is split into two stages; firstly the setup and parallel processing and secondly the post processing and plotting. We refer to these two sections as he qsub_setup and qsub_recover. The first can be executed as follows (with assumption that the version of R that will be used is stored in $HOME/R/3.2.2/bin/):
+```sh
+qsub -pe smp 2 -N test_suite -o cluster/ABBAtest_submit.output -e cluster/ABBAtest_submit.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_setup -b ./ -j $HOME/R/3.2.2/bin/
+```
+This will start a single job that will prepare the data and then spawn extra jobs for each chromosome. You monitor the progress of this stage in two ways. Firstly using qstat in the normal way:
 
+```sh
+qstat
+```
+You can also extract the progress from the sqlite database that ABBA generates as it is processing as follows:
+
+```sh
+echo "select stage,max(counter)*100 from file_ticker group by stage;" | sqlite3 dbs/YOURPROJECTNAME.sqlite
+```
+This will display the percentage of each chromosome that has been analysed.
+
+### Troubleshooting
+Sometimes when running in parrell R can have problems with shared libraries (eg  error while loading shared libraries: libicuuc.so.52: cannot open shared object file: No such file or directory). If this happens one workaround is to locally install a version of R into your home directory as follows:
+```sh
+$ wget http://cran.rstudio.com/src/base/R-3/R-3.2.2.tar.gz
+$ tar xvf R-3.2.2.tar.gz
+$ cd R-3.2.2
+$ ./configure --prefix=$HOME/R/3.2.2/
+$ make && make install
+```
+You will then need to run ABBA using the -j option to specify where the R installation is and to install the required packages into this version of R.
+
+During our own testing we sometimes found that certain CRAN mirrors would not contain the required packages. This results in ar error say that package X is not available for R v3.x.x. We found that one way to avoid this is to specifiy the repo using the following:
+```R
+install.packages("ggplot2", repos="http://cran.cnr.berkeley.edu")
+```
 
 ### Development
 
