@@ -19,30 +19,153 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="welcome-to-the-approximate-bayes-for-bisulfite-sequencing-analysis-homepage" class="anchor" href="#welcome-to-the-approximate-bayes-for-bisulfite-sequencing-analysis-homepage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the Approximate Bayes for Bisulfite sequencing Analysis Homepage.</h3>
+      <h1>
+<a id="abba" class="anchor" href="#abba" aria-hidden="true"><span class="octicon octicon-link"></span></a>ABBA</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
-<h3>
-<a id="software-description" class="anchor" href="#software-description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software description</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>Aproximate Bayes for Bisulphite sequecing Analysis is perl program for analysis WGBS data. The program can be run locally or spread over a cluster using the qsub system. </p>
 
 <h3>
-<a id="example-output" class="anchor" href="#example-output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example output</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>To use ABBA you will are required to have Perl installed and the ability to install packages using CPAN or CPANM. In the situation where you do not have sudo access we recommend that you install PerlBrew and use CPANM to manage your perl libraries, for details see <a href="http://perlbrew.pl">http://perlbrew.pl</a> or follow the following instructions. Please be aware that this may not be suitable for all situations, it is best to try with the system perl first and use this as a fall back.</p>
+
+<h4>
+<a id="step-1-install-perlbrew-optional-only-if-your-system-perl-is-not-usable" class="anchor" href="#step-1-install-perlbrew-optional-only-if-your-system-perl-is-not-usable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Install PerlBrew (Optional, only if your system perl is not usable)</h4>
+
+<p>First of all download the perlbrew files and execute them:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-cce">\c</span>url -L http://install.perlbrew.pl <span class="pl-k">|</span> bash</pre></div>
+
+<p>Once it is installed follow the instructions to edit your .bash_profile and then install Perl using Perlbrew:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ perlbrew install perl-5.16.0</pre></div>
+
+<p>This step will take some time to complete. Once it has you then need to install cpanm using perlbrew:</p>
+
+<div class="highlight highlight-source-shell"><pre>perlbrew install-cpanm
+cpanm --local-lib=<span class="pl-k">~</span>/perl5 <span class="pl-k">local</span>::lib <span class="pl-k">&amp;&amp;</span> <span class="pl-c1">eval</span> <span class="pl-s"><span class="pl-pds">$(</span>perl -I <span class="pl-k">~</span>/perl5/lib/perl5/ -Mlocal::lib<span class="pl-pds">)</span></span></pre></div>
+
+<h4>
+<a id="step-2-install-required-perl-packages" class="anchor" href="#step-2-install-required-perl-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Install Required Perl Packages</h4>
+
+<p>There are number of perl libraries that are required, please install these from the command line as follows (alternatively you can use sudo cpan if your installation requires this):</p>
+
+<div class="highlight highlight-source-shell"><pre>$ cpanm Text::xSV
+$ cpanm SQL::Abstract
+$ cpanm DBI
+$ cpanm Data::Dumper
+$ cpanm File::Path
+$ cpanm File::Basename
+$ cpanm Getopt::Std</pre></div>
+
+<h4>
+<a id="step-3-install-sqllite3" class="anchor" href="#step-3-install-sqllite3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Install SQLlite3</h4>
+
+<p>ABBA uses SQLite in order to store and process locations. It can be installed as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>sudo apt-get install sqlite3 libsqlite3-dev</pre></div>
+
+<h4>
+<a id="step-3-install-required-r-packages" class="anchor" href="#step-3-install-required-r-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Install required R packages</h4>
+
+<p>ABBA uses R to perform much of the statisical analysis and plotting.  In order to that the following libraries are required (Remember that if you intend to use a none system version of R when running on a cluster you will also need to ensure that this libraries are installed for that version):</p>
+
+<div class="highlight highlight-source-r"><pre>install.packages(<span class="pl-s"><span class="pl-pds">"</span>ggplot2<span class="pl-pds">"</span></span>)
+install.packages(<span class="pl-s"><span class="pl-pds">"</span>ggthemes<span class="pl-pds">"</span></span>)
+install.packages(<span class="pl-s"><span class="pl-pds">"</span>sp<span class="pl-pds">"</span></span>)
+install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class="pl-pds">"</span></span>, <span class="pl-v">repos</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>http://www.math.ntnu.no/inla/R/stable<span class="pl-pds">"</span></span>)</pre></div>
+
+<h4>
+<a id="step-4-download-the-test-data-and-annotation-library" class="anchor" href="#step-4-download-the-test-data-and-annotation-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Download the test data and annotation library</h4>
+
+<p>We have provided a script that will fetch all of the required data and create the folders required. This can be executed as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>perl setup.pl -af</pre></div>
+
+<p>where -a is the flag to download the annotations database for the test and -f is the flag to download the test data.</p>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running ABBA serially</h3>
 
-<p>This software was developed by <a href="https://github.com/OwenRackham" class="user-mention">@OwenRackham</a> a member of the Systems Genetics Group at Duke-NUS medical school.</p>
+<p>The simplest way to run ABBA is serially on a local machine. This will prepare the required files, execute the analysis and plot the results one after an other. There are a number of flags that need to be set for the script to run as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp -w 0 -d 0 -z 0 -y 0 -e length</pre></div>
+
+<ul>
+<li>-f is the directory with the data to process in</li>
+<li>-s is the window size between chunks that will be used to split the genome, ie here chunks will always be at 3000bp apart.</li>
+<li>-m this the minimum number of CpGs that have to be in each chunk. If this is not reached when a gap of 3000bp occurs then the file will not be split.</li>
+<li>-n this is the number of samples what are being analysed, this should always be 2</li>
+<li>-r this is the number of replicates for each sample.</li>
+<li>-t this is the number of reads to be accepted as a valid CpG site.</li>
+<li>-c the is the number of reliable CpG sites required at a certain locus to used in the analysis.</li>
+<li>-p is the name you are giving to the project</li>
+<li>a is the species that the annotation will come from</li>
+<li>-o is the directory to use as a tmp</li>
+<li>-w is the window size to place around each DMR when plotting</li>
+<li>-d is the average difference between the two samples for a DMR to considered.</li>
+<li>-z is the number of standard deviations from the mean that the difference has to be for a DMR to be considered.</li>
+<li>-y is the CpG density required within a CpG to be considered.</li>
+<li>-e is the type of DMR to consider (density/length)</li>
+</ul>
+
+<p>At any stage you can open output/progress.html to view how the algorithm is proceeding.</p>
 
 <h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a id="running-abba-on-a-cluster" class="anchor" href="#running-abba-on-a-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running ABBA on a cluster</h3>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<p>Running ABBA serially may take some time if you have a large dataset or you don't apply strict filtering criteria. In order to help with this ABBA has been implemented with the Sun Grid Engine queing system in mind. In order for this to work the executing is split into two stages; firstly the setup and parallel processing and secondly the post processing and plotting. We refer to these two sections as he qsub_setup and qsub_recover. The first can be executed as follows (with assumption that the version of R that will be used is stored in $HOME/R/3.2.2/bin/):</p>
+
+<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_suite -o cluster/ABBAtest_submit.output -e cluster/ABBAtest_submit.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_setup -b ./ -j <span class="pl-smi">$HOME</span>/R/3.2.2/bin/</pre></div>
+
+<p>This will start a single job that will prepare the data and then spawn extra jobs for each chromosome. You monitor the progress of this stage in two ways. Firstly using qstat in the normal way:</p>
+
+<div class="highlight highlight-source-shell"><pre>qstat</pre></div>
+
+<p>You can also extract the progress from the sqlite database that ABBA generates as it is processing as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>select stage,max(counter)*100 from file_ticker group by stage;<span class="pl-pds">"</span></span> <span class="pl-k">|</span> sqlite3 dbs/YOURPROJECTNAME.sqlite</pre></div>
+
+<p>This will display the percentage of each chromosome that has been analysed.</p>
+
+<h3>
+<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h3>
+
+<p>Sometimes when running in parrell R can have problems with shared libraries (eg  error while loading shared libraries: libicuuc.so.52: cannot open shared object file: No such file or directory). If this happens one workaround is to locally install a version of R into your home directory as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ wget http://cran.rstudio.com/src/base/R-3/R-3.2.2.tar.gz
+$ tar xvf R-3.2.2.tar.gz
+$ <span class="pl-c1">cd</span> R-3.2.2
+$ ./configure --prefix=<span class="pl-smi">$HOME</span>/R/3.2.2/
+$ make <span class="pl-k">&amp;&amp;</span> make install</pre></div>
+
+<p>You will then need to run ABBA using the -j option to specify where the R installation is and to install the required packages into this version of R.</p>
+
+<p>During our own testing we sometimes found that certain CRAN mirrors would not contain the required packages. This results in ar error say that package X is not available for R v3.x.x. We found that one way to avoid this is to specifiy the repo using the following:</p>
+
+<div class="highlight highlight-source-r"><pre>install.packages(<span class="pl-s"><span class="pl-pds">"</span>ggplot2<span class="pl-pds">"</span></span>, <span class="pl-v">repos</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>http://cran.cnr.berkeley.edu<span class="pl-pds">"</span></span>)</pre></div>
+
+<h3>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h3>
+
+<p>Want to contribute? Great!</p>
+
+<p>First off please contains <a href="https://github.com/OwenRackham" class="user-mention">@OwenRackham</a> so you can be setup as a contributer to the package.</p>
+
+<h3>
+<a id="todos" class="anchor" href="#todos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Todos</h3>
+
+<ul>
+<li>Write Tests</li>
+<li>Javascript DMR viewer</li>
+<li>GO enrichment pipeline</li>
+<li>Project name folder so that overwritting doesnt occur</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/SystemsGeneticsSG/ABBA">ABBA</a> is maintained by <a href="https://github.com/SystemsGeneticsSG">SystemsGeneticsSG</a>.</span>
