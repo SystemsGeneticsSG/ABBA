@@ -234,12 +234,16 @@ sub extract_DMRs {
 	my $project = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	foreach my $chr (@{$chrs}){
-		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","data/all.bed_fdr.RData");
+		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","dqata/all.bed_fdr.RData");
   		system(@command);
+  		if (-e "data/$chr".".bed.sorteddensity.DMRs.bed"){
   		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sorteddensity.DMRs.bed");
-  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sortedlength.DMRs.bed");
   		load_csv_to_database("data/$chr".".bed.sorteddensity.DMRs.bed",$db_handle,'DMR_data');
+  		}
+  		if (-e "data/$chr".".bed.sortedlength.DMRs.bed"){
+  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sortedlength.DMRs.bed");
   		load_csv_to_database("data/$chr".".bed.sortedlength.DMRs.bed",$db_handle,'DMR_data');
+  		}
 	}  
 	$db_handle->disconnect();
 }
