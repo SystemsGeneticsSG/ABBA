@@ -4,3 +4,4 @@ dbs/
 output/
 *.sqlite
 input/
+cluster/
