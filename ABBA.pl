@@ -69,9 +69,11 @@ unless($init eq 'qsub_recover'){
 	create_database($project);
 }
 if($init eq 'qsub_recover'){
+	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	system("cat data/*.for_inla > data/all.for_inla");
 	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
 	load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
+	$db_handle->disconnect();
 }
 
 my $checked = check_directory($dir);
@@ -268,10 +270,11 @@ sub run_inla_on_all_files {
 	foreach my $chr (keys %files_to_run){
 		run_all_files_chr($chr,$project,$n,$r);
 	}
+	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	system("cat data/*.for_inla > data/all.for_inla");
 	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
 	load_csv_to_database("data/all.for_inla",$db_handle,'raw_data');
-
+	$db_handle->disconnect();
 	update_db($project,$stage,"ABBA has been run",'progress');
 	$stage = $stage + 1;
 }
