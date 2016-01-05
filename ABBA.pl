@@ -69,8 +69,9 @@ unless($init eq 'qsub_recover'){
 	create_database($project);
 }
 if($init eq 'qsub_recover'){
-	system("cat data/*.for_inla > data/all_for_inla");
-	#load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
+	system("cat data/*.for_inla > data/all.for_inla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
+	load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
 }
 
 my $checked = check_directory($dir);
@@ -267,8 +268,9 @@ sub run_inla_on_all_files {
 	foreach my $chr (keys %files_to_run){
 		run_all_files_chr($chr,$project,$n,$r);
 	}
-	system("cat data/*.for_inla > data/all_for_inla");
-	#load_csv_to_database("data/all_for_inla",$db_handle,'raw_data');
+	system("cat data/*.for_inla > data/all.for_inla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
+	load_csv_to_database("data/all.for_inla",$db_handle,'raw_data');
 
 	update_db($project,$stage,"ABBA has been run",'progress');
 	$stage = $stage + 1;
@@ -303,7 +305,6 @@ sub run_all_files_chr {
 	system("cat $dir/*binomial.bed > data/$chr.bed");
 	system("cat $dir/*for_inla.txt > data/$chr.for_inla");
 	system("sed -i 's/^/$chr,/g' data/$chr.for_inla");
-	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$chr.for_inla");
 	system("sort -t, -g -k2 data/$chr.bed > data/$chr.bed.sorted");
 	$db_handle->disconnect();
 }
