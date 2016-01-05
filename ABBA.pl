@@ -70,9 +70,9 @@ unless($init eq 'qsub_recover'){
 }
 if($init eq 'qsub_recover'){
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/*.for_inla > data/all.for_inla");
-	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
-	load_csv_to_database("data/all.for_inla",$db_handle,'raw_data');
+	system("cat data/*.for_inla > data/all.forinla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.forinla");
+	load_csv_to_database("data/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 }
 
@@ -271,9 +271,9 @@ sub run_inla_on_all_files {
 		run_all_files_chr($chr,$project,$n,$r);
 	}
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/*.for_inla > data/all.for_inla");
-	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.for_inla");
-	load_csv_to_database("data/all.for_inla",$db_handle,'raw_data');
+	system("cat data/*.for_inla > data/all.forinla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.forinla");
+	load_csv_to_database("data/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 	update_db($project,$stage,"ABBA has been run",'progress');
 	$stage = $stage + 1;
