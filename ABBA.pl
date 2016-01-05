@@ -89,7 +89,7 @@ unless($init eq 'qsub_recover'){
 				if(defined($options{b})){
 				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
 				#system(@command)
-				my @command = ("qsub","-pe","smp","8","-N",$project."_".$chr, "-o","cluster/".$project.".output", "-e","cluster/".$project.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}","-g $chr","-j $rpath");
+				my @command = ("qsub","-pe","smp","8","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}","-g $chr","-j $rpath");
 				system(@command);
 				}else{
 					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
