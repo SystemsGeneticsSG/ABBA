@@ -123,6 +123,7 @@ sub update_db {
 	my $table = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	$db_handle -> do("INSERT INTO $table VALUES ('$stage','$value');");
+	$db_handle->disconnect();
 	update_progress_page($project,$path);
 }
 
@@ -153,6 +154,7 @@ sub get_files_to_process {
 	 while (my @temp = $sth->fetchrow_array ) {
 	 	push(@files,$temp[0]);
 	 }
+	 $db_handle->disconnect();
 	 return(\@files);
 }
 
@@ -217,6 +219,7 @@ sub create_database {
 	$db_handle -> do("CREATE TABLE file_ticker (stage TINYTEXT, counter INT);");
 	$db_handle -> do("DROP TABLE IF EXISTS files_to_process");
 	$db_handle -> do("CREATE TABLE files_to_process (chr TINYTEXT, file INT);");
+	$db_handle->disconnect();
 }
 
 sub extract_DMRs {
@@ -231,6 +234,7 @@ sub extract_DMRs {
   		load_csv_to_database("data/$chr".".bed.sorteddensity.DMRs.bed",$db_handle,'DMR_data');
   		load_csv_to_database("data/$chr".".bed.sortedlength.DMRs.bed",$db_handle,'DMR_data');
 	}  
+	$db_handle->disconnect();
 }
 
 sub run_fdr_on_combined_files {
@@ -245,6 +249,7 @@ sub run_fdr_on_combined_files {
 	update_db($project,$stage,"FDR has been run",'progress');
 	$stage = $stage + 1;
 	system(@command);
+	$db_handle->disconnect();
 }
 
 sub run_inla_on_all_files {
@@ -294,7 +299,7 @@ sub run_all_files_chr {
 	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$chr.for_inla");
 	load_csv_to_database("data/$chr.for_inla",$db_handle,'raw_data');
 	system("sort -t, -g -k2 data/$chr.bed > data/$chr.bed.sorted");
-	
+	$db_handle->disconnect();
 }
 
 sub prepare_in_files {
