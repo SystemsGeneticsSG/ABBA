@@ -7,10 +7,10 @@
 ## $7 --> table
 ## $8  --> directory
 ## $9 --> annotation_DB
-## $10 --> abs(avg_diff) 0.333333
-## $11 --> sd of diff 2
-## $12 -->cpgdensity 0.01
-## $13 --> type length
+## ${10} --> abs(avg_diff) 0.333333
+## ${11} --> sd of diff 2
+## ${12} -->cpgdensity 0.01
+## ${13} --> type length
 start=`expr $2 - $4`
 stop=`expr $3 + $4`
 justchr=`echo $1 | sed "s/chr//g"`
@@ -37,8 +37,8 @@ echo "select * from $7 where chr = '$justchr' and ((start_loc >= $start and stop
 #echo "select chr,start_loc,start_loc+1,group_id,meth/total from raw_data where chr = '$1' and start_loc >= $start and start_loc <=$stop;"
 echo "select chr,start_loc,start_loc+1,group_id,meth/total from raw_data where chr = '$1' and start_loc >= $start and start_loc <=$stop;"| sqlite3 $6 > $8/$1_$2_$3_raw.txt
 
-#echo "select * from DMR_data where chr = '$1' and ((start_loc >= $start and stop_loc <= $stop)OR(($start<stop_loc)AND($start>start_loc))OR(($stop<stop_loc)AND($stop>start_loc))OR(($start<start_loc)AND($stop>stop_loc))) and abs(avg_diff) > $10 and abs(avg_diff) > $11*sd and type = '$13' and DMRCpGDensity > $12;" 
-echo "select * from DMR_data where chr = '$1' and ((start_loc >= $start and stop_loc <= $stop)OR(($start<stop_loc)AND($start>start_loc))OR(($stop<stop_loc)AND($stop>start_loc))OR(($start<start_loc)AND($stop>stop_loc))) and abs(avg_diff) > $10 and abs(avg_diff) > $11*sd and type = '$13' and DMRCpGDensity > $12;" | sqlite3 $6 > $8/$1_$2_$3_dmrs.txt
+#echo "select * from DMR_data where chr = '$1' and ((start_loc >= $start and stop_loc <= $stop)OR(($start<stop_loc)AND($start>start_loc))OR(($stop<stop_loc)AND($stop>start_loc))OR(($start<start_loc)AND($stop>stop_loc))) and abs(avg_diff) > ${10} and abs(avg_diff) > ${11}*sd and type = '${13}' and DMRCpGDensity > ${12};" 
+echo "select * from DMR_data where chr = '$1' and ((start_loc >= $start and stop_loc <= $stop)OR(($start<stop_loc)AND($start>start_loc))OR(($stop<stop_loc)AND($stop>start_loc))OR(($start<start_loc)AND($stop>stop_loc))) and abs(avg_diff) > ${10} and abs(avg_diff) > ${11}*sd and type = '${13}' and DMRCpGDensity > ${12};" | sqlite3 $6 > $8/$1_$2_$3_dmrs.txt
 
 #echo "select * from inla_smooth where chr = '$1' and start_loc >= $start and start_loc <= $stop;" 
 echo "select * from inla_smooth where chr = '$1' and start_loc >= $start and start_loc <= $stop;" | sqlite3 $6 > $8/$1_$2_$3_inla.txt

@@ -133,7 +133,7 @@ sub plot_DMRs {
 	my $sd = shift;
 	my $cpg_density = shift;
 	my $type = shift;
-
+	print STDERR ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type");
 	my @command = ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type");
 	system(@command);
 	@command = ("Rscript","R/plot_fancy_figures.R","$outdir");
