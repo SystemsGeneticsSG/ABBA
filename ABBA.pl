@@ -117,6 +117,7 @@ run_fdr_on_combined_files($project);
 my @chrs = @{get_chrs($project)};
 
 extract_DMRs(\@chrs,$project);
+print("extracted");
 update_db($project,$stage,"DMRs has been extracted",'progress');
 $stage = $stage + 1;
 plot_DMRs($project,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type);
