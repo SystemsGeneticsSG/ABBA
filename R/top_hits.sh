@@ -9,8 +9,6 @@
 ## $9 -->cpgdensity 0.01
 ## $10 --> type length
 ## $11 --> rpath
-echo "select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $7 and abs(avg_diff) > $8*sd and type = '${10}' and DMRCpGDensity > $9;"
-echo "$4/top_hits.txt"
 echo "select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $7 and abs(avg_diff) > $8*sd and type = '${10}' and DMRCpGDensity > $9;" | sqlite3 $1 > $4/top_hits.txt
 #
 #sed -i "s/^chr//g" $4/top_hits.txt
