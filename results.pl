@@ -1,7 +1,13 @@
 #!/usr/bin/perl
 my $project = $ARGV[0];
 my $path = $ARGV[1];
-my $filename = 'output/results.html';
+#,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type
+my $species = $ARGV[2];
+my $average_diff = $ARGV[3];
+my $sd = $ARGV[4];
+my $cpg_density = $ARGV[5];
+my $type = $ARGV[6];
+my $filename = 'output/$project"."_results.html';
 open FILE,">$path"."$filename";
 use DBI;
 
@@ -13,7 +19,7 @@ sub get_dmrs {
 	my $path = shift;
 	my %dmrs;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	my $sth = $db_handle->prepare("select * from DMR_data;");
+	my $sth = $db_handle->prepare("select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $average_diff and abs(avg_diff) > $sd*sd and type = '$type' and DMRCpGDensity > $cpg_density;)";
 	$sth->execute();
 	 while (my @temp = $sth->fetchrow_array ) {
 	 	$dmrs{$temp[0]."_".$temp[1]."_".$temp[2]}=\@temp;
@@ -153,7 +159,7 @@ print FILE <<EOF;
                 <td>$dmrs{$dmr}->[7]</td>
                 <td>$dmrs{$dmr}->[8]</td>
                 <td>$dmrs{$dmr}->[9]</td>
-                <td><a href="../tmp/$dmr.pdf.RDatafancy.png.jpg" data-lightbox="dmrs">Image #2</a></td>
+                <td><a href="$project/$dmr.pdf.RDatafancy.png.jpg" data-lightbox="dmrs">Image #2</a></td>
             </tr>
 EOF
 }
