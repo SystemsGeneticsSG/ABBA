@@ -1,4 +1,4 @@
-# ABBA
+ ABBA
 Aproximate Bayes for Bisulphite sequecing Analysis is perl program for analysis WGBS data. The program can be run locally or spread over a cluster using the qsub system. 
 
 ### Installation
@@ -45,7 +45,12 @@ install.packages("sp")
 install.packages("INLA", repos="http://www.math.ntnu.no/inla/R/stable")
 ```
 
-#### Step 4: Download the test data and annotation library
+#### Step 4: Download software and the test data and annotation library
+First of all to download the software clone it from our github account as follows:
+```sh
+git clone https://github.com/SystemsGeneticsSG/ABBA.git
+cd ABBA
+```
 We have provided a script that will fetch all of the required data and create the folders required. This can be executed as follows:
 
 ```sh
@@ -93,7 +98,13 @@ You can also extract the progress from the sqlite database that ABBA generates a
 ```sh
 echo "select stage,max(counter)*100 from file_ticker group by stage;" | sqlite3 dbs/YOURPROJECTNAME.sqlite
 ```
-This will display the percentage of each chromosome that has been analysed.
+This will display the percentage of each chromosome that has been analysed. It is best not to do this too often as it can create lock errors on the sqlite database.
+
+Once this has run and all of the individual chromosome jobs has completed then you can run the second stage as follows:
+
+```sh
+qsub -pe smp 2 -N test_run -o cluster/ABBAtest_recover.output -e cluster/ABBAtest_recover.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_recover -b ./ -j /home/gmsojlr/R/3.2.2/bin/
+```
 
 ### Troubleshooting
 Sometimes when running in parrell R can have problems with shared libraries (eg  error while loading shared libraries: libicuuc.so.52: cannot open shared object file: No such file or directory). If this happens one workaround is to locally install a version of R into your home directory as follows:
@@ -123,6 +134,10 @@ First off please contains @OwenRackham so you can be setup as a contributer to t
  - Javascript DMR viewer
  - GO enrichment pipeline
  - Project name folder so that overwritting doesnt occur
+ - qsub_recover reteives the settings from the database rather than relying on the settings being the same, this requires a new table with each of the paramaters in it. This would be pretty useful anyway! this should also include the FDR cutoff
+ - change folder structure so that it is easy to download all of the results from one project independently
+ - recover files that have been processed properly so that failed ones can be rerun on larger nodes.
+ - 
  
 
 License
