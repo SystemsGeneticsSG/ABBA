@@ -19,7 +19,7 @@ sub get_dmrs {
 	my $path = shift;
 	my %dmrs;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	my $sth = $db_handle->prepare("select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $average_diff and abs(avg_diff) > $sd*sd and type = '$type' and DMRCpGDensity > $cpg_density;)";
+	my $sth = $db_handle->prepare("select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $average_diff and abs(avg_diff) > $sd*sd and type = '$type' and DMRCpGDensity > $cpg_density;");
 	$sth->execute();
 	 while (my @temp = $sth->fetchrow_array ) {
 	 	$dmrs{$temp[0]."_".$temp[1]."_".$temp[2]}=\@temp;

@@ -49,7 +49,7 @@ my $min_count = $options{c} || 10;
 my $dir = $options{f};
 my $project = $options{p} ;
 my $species = $options{a} || 'rn4';
-my $outdir = $options{o} || "/output/$project";
+my $outdir = $options{o} || "output/$project/";
 my $window = $options{w} || 1000;
 my $average_diff = $options{d} || 0.33333;
 my $sd = $options{z} || 2;
@@ -112,8 +112,8 @@ unless($init eq 'qsub_recover'){
 
 
 run_fdr_on_combined_files($project);
-#my @chrs = keys %files_to_run;
 }
+#my @chrs = keys %files_to_run;
 my @chrs = @{get_chrs($project)};
 
 extract_DMRs(\@chrs,$project);
@@ -124,8 +124,8 @@ update_db($project,$stage,"DMRs have been plotted",'progress');
 $stage = $stage + 1;
 my @command = ('perl','results.pl',"$project","$path","$species","$average_diff","$sd","$cpg_density","$type");
 system(@command);
-}
 
+}
 
 sub update_db {
 	my $project = shift;
