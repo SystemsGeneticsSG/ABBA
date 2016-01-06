@@ -63,7 +63,7 @@ my $type = $options{e} || 'length';
 if($init eq 'qsub_executing'){
 	run_all_files_chr($options{g},$project,$options{n},$options{r});
 }else{
-
+unless($init eq 'replot_dmrs'){
 my %files_to_run;
 unless($init eq 'qsub_recover'){
 	create_database($project);
@@ -112,7 +112,9 @@ unless($init eq 'qsub_recover'){
 
 
 run_fdr_on_combined_files($project);
-my @chrs = keys %files_to_run;
+#my @chrs = keys %files_to_run;
+}
+my @chrs = @{get_chrs($project)};
 
 extract_DMRs(\@chrs,$project);
 update_db($project,$stage,"DMRs has been extracted",'progress');
@@ -134,6 +136,19 @@ sub update_db {
 	$db_handle -> do("INSERT INTO $table VALUES ('$stage','$value');");
 	$db_handle->disconnect();
 	update_progress_page($project,$path);
+}
+
+sub get_chrs {
+	my $project = shift;
+	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
+	my $sth = $db_handle->prepare("select distinct(stage) from file_ticker;");
+	my @chrs;
+	$sth->execute();
+	 while (my @temp = $sth->fetchrow_array ) {
+	 	push(@chrs,$temp[0]);
+	 }
+	 $db_handle->disconnect();
+	 return(\@chrs);
 }
 
 
@@ -236,7 +251,7 @@ sub extract_DMRs {
 	my $project = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	foreach my $chr (@{$chrs}){
-		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","dqata/all.bed_fdr.RData");
+		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","data/all.bed_fdr.RData");
   		system(@command);
   		if (-e "data/$chr".".bed.sorteddensity.DMRs.bed"){
   		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sorteddensity.DMRs.bed");
