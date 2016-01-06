@@ -7,7 +7,7 @@ my $average_diff = $ARGV[3];
 my $sd = $ARGV[4];
 my $cpg_density = $ARGV[5];
 my $type = $ARGV[6];
-my $filename = 'output/$project"."_results.html';
+my $filename = "output/$project"."_results.html";
 open FILE,">$path"."$filename";
 use DBI;
 
