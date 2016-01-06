@@ -17,7 +17,7 @@ draw_block <- function(p,x1,x2,y1,y2,max,min,colour,label_text){
   return(p)
 }
 
-plot_fancy_fig <- function(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx){
+plot_fancy_fig <- function(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx,png_outfile){
 scatter <- as.data.frame(raw)
 colnames(scatter)<-c("chr","loc1","loc2","state","perc")
 scatter$shape <- scatter$state + 2
@@ -63,6 +63,7 @@ y_bottom_level <- y_bottom_level - 0.07
 } 
 }
 ggsave(file=outfile,width=10,height=5)
+ggsave(file=png_outfile,width=10,height=5)
 return(p)
 }
 
@@ -77,9 +78,10 @@ tryCatch({load(paste0(path,file.names[i]))
 
 #print(paste(i,"from",length(file.names)))
 outfile<-paste0(path,file.names[i],"fancy.pdf")
+png_outfile<-paste0(path,file.names[i],"fancy.png")
 #print(paste("processing",file.names[i],"output to",outfile))
 #print(outfile)
-fig<-plot_fancy_fig(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx)
+fig<-plot_fancy_fig(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx,png_outfile)
 
 })
 }
