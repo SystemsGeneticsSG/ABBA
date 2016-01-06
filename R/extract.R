@@ -84,11 +84,15 @@ for(i in 1:ds[1]){
     }
   }
 }
+if(length(density_results) > 0){
+  dens4file <- matrix(unlist(density_results), ncol = 10, byrow = TRUE)
+  write.table(dens4file, file = paste0(filename,"density.DMRs.bed"),row.names=FALSE, na="",col.names=FALSE, sep=",",quote=F)
 
-dens4file <- matrix(unlist(density_results), ncol = 10, byrow = TRUE)
-lens4file <- matrix(unlist(consecutive_results), ncol = 10, byrow = TRUE)
-write.table(dens4file, file = paste0(filename,"density.DMRs.bed"),row.names=FALSE, na="",col.names=FALSE, sep=",",quote=F)
-write.table(lens4file, file = paste0(filename,"length.DMRs.bed"),row.names=FALSE, na="",col.names=FALSE, sep=",",quote=F)
+}
+if(length(consecutive_results) > 0){
+  lens4file <- matrix(unlist(consecutive_results), ncol = 10, byrow = TRUE)
+  write.table(lens4file, file = paste0(filename,"length.DMRs.bed"),row.names=FALSE, na="",col.names=FALSE, sep=",",quote=F)
+}
 }
 
 
