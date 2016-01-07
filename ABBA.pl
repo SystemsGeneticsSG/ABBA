@@ -49,6 +49,7 @@ my $min_count = $options{c} || 10;
 my $dir = $options{f};
 my $project = $options{p} ||  int(rand(1000));
 mkdir $dir."output/$project" unless -d $dir."output/$project";
+mkdir $dir."data/$project" unless -d $dir."data/$project";
 my $species = $options{a} || 'rn4';
 my $outdir = $options{o} || "output/$project/";
 my $window = $options{w} || 1000;
@@ -76,9 +77,9 @@ unless($init eq 'qsub_recover'){
 }
 if($init eq 'qsub_recover'){
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/*.for_inla > data/all.forinla");
-	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.forinla");
-	load_csv_to_database("data/all.forinla",$db_handle,'raw_data');
+	system("cat data/$project/*.for_inla > data/$project/all.forinla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$project/all.forinla");
+	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 }
 
@@ -256,15 +257,15 @@ sub extract_DMRs {
 	my $project = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	foreach my $chr (@{$chrs}){
-		my @command=($rpath.'Rscript','R/extract.R',"data/$chr.bed.sorted","$chr","data/all.bed_fdr.RData");
+		my @command=($rpath.'Rscript','R/extract.R',"data/$project/$chr.bed.sorted","$chr","data/$project/all.bed_fdr.RData");
   		system(@command);
-  		if (-e "data/$chr".".bed.sorteddensity.DMRs.bed"){
-  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sorteddensity.DMRs.bed");
-  		load_csv_to_database("data/$chr".".bed.sorteddensity.DMRs.bed",$db_handle,'DMR_data');
+  		if (-e "data/$project/$chr".".bed.sorteddensity.DMRs.bed"){
+  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sorteddensity.DMRs.bed");
+  		load_csv_to_database("data/$project/$chr".".bed.sorteddensity.DMRs.bed",$db_handle,'DMR_data');
   		}
-  		if (-e "data/$chr".".bed.sortedlength.DMRs.bed"){
-  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$chr".".bed.sortedlength.DMRs.bed");
-  		load_csv_to_database("data/$chr".".bed.sortedlength.DMRs.bed",$db_handle,'DMR_data');
+  		if (-e "data/$project/$chr".".bed.sortedlength.DMRs.bed"){
+  		system("sed -i '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sortedlength.DMRs.bed");
+  		load_csv_to_database("data/$project/$chr".".bed.sortedlength.DMRs.bed",$db_handle,'DMR_data');
   		}
 	}  
 	$db_handle->disconnect();
@@ -273,12 +274,12 @@ sub extract_DMRs {
 sub run_fdr_on_combined_files {
 	my $project = shift;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/*.sorted > data/all.bed");
-	system("cat data/*.for_inla > data/all.for_sql");
-	system("cut -d, -f1,2,5,8,9 data/all.bed > data/all.bed.for_sql");
-	system("sed -i '1s/^/chr,start_loc,diff,a,b\\n/' data/all.bed.for_sql");
-	load_csv_to_database("data/all.bed.for_sql",$db_handle,'inla_smooth');
-	my @command = ($rpath."Rscript","R/run_FDR_indep.R","data/all.bed");
+	system("cat data/$project/*.sorted > data/$project/all.bed");
+	system("cat data/$project/*.for_inla > data/$project/all.for_sql");
+	system("cut -d, -f1,2,5,8,9 data/$project/all.bed > data/$project/all.bed.for_sql");
+	system("sed -i '1s/^/chr,start_loc,diff,a,b\\n/' data/$project/all.bed.for_sql");
+	load_csv_to_database("data/$project/all.bed.for_sql",$db_handle,'inla_smooth');
+	my @command = ($rpath."Rscript","R/run_FDR_indep.R","data/$project/all.bed");
 	update_db($project,$stage,"FDR has been run",'progress');
 	$stage = $stage + 1;
 	system(@command);
@@ -297,9 +298,9 @@ sub run_inla_on_all_files {
 		run_all_files_chr($chr,$project,$n,$r);
 	}
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/*.for_inla > data/all.forinla");
-	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/all.forinla");
-	load_csv_to_database("data/all.forinla",$db_handle,'raw_data');
+	system("cat data/$project/*.for_inla > data/$project/all.forinla");
+	system("sed -i '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$project/all.forinla");
+	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 	update_db($project,$stage,"ABBA has been run",'progress');
 	$stage = $stage + 1;
@@ -331,10 +332,10 @@ sub run_all_files_chr {
 		update_db($project,$chr,($count/scalar(@{$files_array})),'file_ticker') if (($count % 10)==0);	
 	}
 	
-	system("cat $dir/*binomial.bed > data/$chr.bed");
-	system("cat $dir/*for_inla.txt > data/$chr.for_inla");
-	system("sed -i 's/^/$chr,/g' data/$chr.for_inla");
-	system("sort -t, -g -k2 data/$chr.bed > data/$chr.bed.sorted");
+	system("cat $dir/*binomial.bed > data/$project/$chr.bed");
+	system("cat $dir/*for_inla.txt > data/$project/$chr.for_inla");
+	system("sed -i 's/^/$chr,/g' data/$project/$chr.for_inla");
+	system("sort -t, -g -k2 data/$project/$chr.bed > data/$project/$chr.bed.sorted");
 	$db_handle->disconnect();
 }
 
