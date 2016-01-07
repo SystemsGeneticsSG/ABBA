@@ -1,4 +1,4 @@
- ABBA
+# ABBA
 Aproximate Bayes for Bisulphite sequecing Analysis is perl program for analysis WGBS data. The program can be run locally or spread over a cluster using the qsub system. 
 
 ### Installation
@@ -63,7 +63,7 @@ where -a is the flag to download the annotations database for the test and -f is
 The simplest way to run ABBA is serially on a local machine. This will prepare the required files, execute the analysis and plot the results one after an other. There are a number of flags that need to be set for the script to run as follows:
 
 ```sh
-perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp -w 0 -d 0 -z 0 -y 0 -e length
+perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4
 ```
 - -f is the directory with the data to process in
 - -s is the window size between chunks that will be used to split the genome, ie here chunks will always be at 3000bp apart.
@@ -86,7 +86,7 @@ At any stage you can open output/progress.html to view how the algorithm is proc
 ### Running ABBA on a cluster
 Running ABBA serially may take some time if you have a large dataset or you don't apply strict filtering criteria. In order to help with this ABBA has been implemented with the Sun Grid Engine queing system in mind. In order for this to work the executing is split into two stages; firstly the setup and parallel processing and secondly the post processing and plotting. We refer to these two sections as he qsub_setup and qsub_recover. The first can be executed as follows (with assumption that the version of R that will be used is stored in $HOME/R/3.2.2/bin/):
 ```sh
-qsub -pe smp 2 -N test_suite -o cluster/ABBAtest_submit.output -e cluster/ABBAtest_submit.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_setup -b ./ -j $HOME/R/3.2.2/bin/
+qsub -pe smp 2 -N test_setup -o cluster/ABBAtest_setup.output -e cluster/ABBAtest_setup.error perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4 -i qsub_setup -j /home/gmsojlr/R/3.2.2/bin/
 ```
 This will start a single job that will prepare the data and then spawn extra jobs for each chromosome. You monitor the progress of this stage in two ways. Firstly using qstat in the normal way:
 
@@ -144,3 +144,4 @@ License
 ----
 
 MIT
+
