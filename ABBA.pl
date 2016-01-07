@@ -11,7 +11,7 @@ use SQL::Abstract;
 #where are the input files
 #USAGE perl ABBA.pl -f /media/localdata/rackham/WGBSdata/test_dir/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o /home/rackham/Documents/gdrive/workspace/WGBSsim/tmp/ -w 0 -d 0 -z 0 -y 0 -e length
 my %options=();
-getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:g:j:", \%options);
+getopts("hf:vs:m:n:r:t:c:p:a:o:w:d:z:y:e:i:x:b:g:j:k:", \%options);
 
 if($options{v}){
 	print "-f Analysising the files in $options{f}\n" if defined $options{f};
@@ -33,6 +33,7 @@ if($options{v}){
 	print "-b the full path to the directory for this script when executed on a node is required if you are going to use the qsub option\n" if defined $options{b};
 	print "-g the chromosome if running in qsub\n" if defined $options{g};
 	print "-j the path to Rscript if you don't want to use the system version\n" if defined $options{g};
+	print "-k the size of instance to request \n" if defined $options{k};
 }
 if ($options{h})
 {
@@ -42,6 +43,7 @@ my $init = $options{i} || 0;
 our $stage = 1;
 our $path = $options{b} || "./";
 our $rpath = $options{j} || "";
+our $nodes = $options{k} || 8;
 my $min = $options{m} || 50;
 my $size = $options{s} || 3000;
 my $thresh = $options{t} || 1;
@@ -103,7 +105,7 @@ unless($init eq 'qsub_recover'){
 				if(defined($path)){
 				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
 				#system(@command)
-				my @command = ("qsub","-pe","smp","8","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $n","-r $r","-g $chr","-j $rpath");
+				my @command = ("qsub","-pe","smp","$nodes","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $n","-r $r","-g $chr","-j $rpath");
 				system(@command);
 				}else{
 					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";

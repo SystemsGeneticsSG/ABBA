@@ -47,9 +47,10 @@ if($options{p}){
 
 if($options{f}){
 	mkdir $dir."input" unless -d $dir."input";
+	mkdir $dir."input/test_set" unless -d $dir."input/test_set";
 	foreach my $file (@test_inputs){
 		my @file = @{$file};
-		my @command = ("wget","--output-document=".$dir."input/$file[1]",$file[0]);
+		my @command = ("wget","--output-document=".$dir."input/test_set/$file[1]",$file[0]);
 		system(@command);
 	}
 }
