@@ -76,32 +76,9 @@ print FILE <<EOF;
         <div class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a class="navbar-brand" href="index.html">
-                    	<h1>$project IS COMPLETE...</h1>
+                    <a class="navbar-brand" href="">
+                    	<h1>$project is complete.</h1>
                     </a>
-                    
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="README.html ">Installation</a></li>
-                        <li><a href="README.html ">Running ABBA</a></li>
-                        <li class="dropdown"><a href="#">Further Details <i class="fa fa-angle-down"></i></a>
-                            <ul role="menu" class="sub-menu">
-                                <li><a href="http://systemsgeneticssg.github.io/ABBA/">GitHub</a></li>
-                                <li><a href="https://github.com/SystemsGeneticsSG/ABBA">Source Code</a></li>
-                                <li><a href="http://systems-genetics.net/">Systems Genetics SG</a></li>
-                            </ul>
-                        </li>                                             
-                                           
-                    </ul>
                 </div>
             </div>
         </div>

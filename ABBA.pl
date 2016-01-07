@@ -54,6 +54,11 @@ my $window = $options{w} || 1000;
 my $average_diff = $options{d} || 0.33333;
 my $sd = $options{z} || 2;
 my $cpg_density = $options{y} || 0.01;
+my $n = $options{n} || 2;
+my $r = $options{r};
+unless(defined($r)){
+	die "Error: You must provide -r the number of repliacates in each sample\n";
+}
 
 my $type = $options{e} || 'length';
 
@@ -93,10 +98,10 @@ unless($init eq 'qsub_recover'){
 	if($init eq 'qsub_setup'){
 		#setup the qsub file
 		foreach my $chr (keys %files_to_run){
-				if(defined($options{b})){
+				if(defined($path)){
 				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
 				#system(@command)
-				my @command = ("qsub","-pe","smp","8","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $options{n}","-r $options{r}","-g $chr","-j $rpath");
+				my @command = ("qsub","-pe","smp","8","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $n","-r $r","-g $chr","-j $rpath");
 				system(@command);
 				}else{
 					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
@@ -106,7 +111,7 @@ unless($init eq 'qsub_recover'){
 		#print/run the qsub command to run and then exit
 		exit;
 	}else{
-		run_inla_on_all_files(\%files_to_run,$options{n},$options{r},$project);
+		run_inla_on_all_files(\%files_to_run,$n,r,$project);
 	}
 }
 
@@ -346,7 +351,6 @@ sub prepare_in_files {
 		my ($chr,$strand) = extract_file_details($filename);
 		
 		my $directory = $dir.$chr."/".$size."/".$strand;
-		print "will make a new directory: ".$directory."\n" if $options{v};
 		make_path($directory);
 		my $files = split_data_for_INLA($file,$size,$directory,$chr,$min,$strand,$threshold,$min_count);
 		$files_to_run->{$chr} = $files;
