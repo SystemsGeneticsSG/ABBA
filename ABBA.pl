@@ -111,7 +111,7 @@ unless($init eq 'qsub_recover'){
 		#print/run the qsub command to run and then exit
 		exit;
 	}else{
-		run_inla_on_all_files(\%files_to_run,$n,r,$project);
+		run_inla_on_all_files(\%files_to_run,$n,$r,$project);
 	}
 }
 
