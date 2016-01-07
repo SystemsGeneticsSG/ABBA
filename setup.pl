@@ -27,7 +27,6 @@ mkdir $dir."images" unless -d $dir."images";
 mkdir $dir."dbs" unless -d $dir."dbs";
 mkdir $dir."data" unless -d $dir."data";
 mkdir $dir."output" unless -d $dir."output";
-mkdir $dir."output/$project" unless -d $dir."output/$project";
 mkdir $dir."tmp" unless -d $dir."tmp";
 mkdir $dir."cluster" unless -d $dir."cluster";
 mkdir $dir."input" unless -d $dir."input";
