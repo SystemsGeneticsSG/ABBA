@@ -90,6 +90,15 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 <p>where -a is the flag to download the annotations database for the test and -f is the flag to download the test data.</p>
 
 <h3>
+
+<a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input Data Format</h3>
+<p>The input data for ABBA is very simple but requires that you follow some strict formatting conditions. For each chromosome you will need a file containing the data. Each file will need to following the following naming convention chr1_both.in. This format gives the chromosome name (eg chr1) and the strand setup (both). The file needs to be tab delimied. Within the file the first four columns describe the locus eg. chr1 702 703 -. The following columns describe the number methylated reads and total reads in each replicate, For example if you have a 2 replicates in each sample then a line in the file might look like this:</p>
+
+<div class="highlight highlight-source-shell"><pre>chr1 3417  3418  - 9 10 8 10 0 10 0 10</pre></div>
+
+<p> You can see full examples by downloading the test data and paper examples using setup.pl as described <a href="#step-4-download-software-and-the-test-data-and-annotation-library">above</a>.
+
+
 <a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running ABBA serially</h3>
 
 <p>The simplest way to run ABBA is serially on a local machine. This will prepare the required files, execute the analysis and plot the results one after an other. There are a number of flags that need to be set for the script to run as follows:</p>
