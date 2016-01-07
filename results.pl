@@ -159,7 +159,7 @@ print FILE <<EOF;
                 <td>$dmrs{$dmr}->[7]</td>
                 <td>$dmrs{$dmr}->[8]</td>
                 <td>$dmrs{$dmr}->[9]</td>
-                <td><a href="$project/$dmr.pdf.RDatafancy.png.jpg" data-lightbox="dmrs">Image #2</a></td>
+                <td><a href="$project/$dmr.pdf.RDatafancy.png" data-lightbox="dmrs">View Image</a></td>
             </tr>
 EOF
 }
