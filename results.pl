@@ -1,12 +1,12 @@
 #!/usr/bin/perl
-my $project = $ARGV[0];
-my $path = $ARGV[1];
+my $project = $ARGV[0] || 'ABBAtest';
+my $path = $ARGV[1] || '';
 #,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type
-my $species = $ARGV[2];
-my $average_diff = $ARGV[3];
-my $sd = $ARGV[4];
-my $cpg_density = $ARGV[5];
-my $type = $ARGV[6];
+my $species = $ARGV[2] || 'rn4';
+my $average_diff = $ARGV[3] || 0.3333;
+my $sd = $ARGV[4] || 2;
+my $cpg_density = $ARGV[5] || 0.01;
+my $type = $ARGV[6] || 'length';
 my $filename = "output/$project"."_results.html";
 open FILE,">$path"."$filename";
 use DBI;
@@ -19,7 +19,7 @@ sub get_dmrs {
 	my $path = shift;
 	my %dmrs;
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	my $sth = $db_handle->prepare("select chr,start_loc,stop_loc from DMR_data where abs(avg_diff) > $average_diff and abs(avg_diff) > $sd*sd and type = '$type' and DMRCpGDensity > $cpg_density;");
+	my $sth = $db_handle->prepare("select * from DMR_data where abs(avg_diff) > $average_diff and abs(avg_diff) > $sd*sd and type = '$type' and DMRCpGDensity > $cpg_density;");
 	$sth->execute();
 	 while (my @temp = $sth->fetchrow_array ) {
 	 	$dmrs{$temp[0]."_".$temp[1]."_".$temp[2]}=\@temp;
