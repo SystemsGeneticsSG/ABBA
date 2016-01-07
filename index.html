@@ -76,7 +76,12 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>sp<span class="
 install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class="pl-pds">"</span></span>, <span class="pl-v">repos</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">"</span>http://www.math.ntnu.no/inla/R/stable<span class="pl-pds">"</span></span>)</pre></div>
 
 <h4>
-<a id="step-4-download-the-test-data-and-annotation-library" class="anchor" href="#step-4-download-the-test-data-and-annotation-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Download the test data and annotation library</h4>
+<a id="step-4-download-software-and-the-test-data-and-annotation-library" class="anchor" href="#step-4-download-software-and-the-test-data-and-annotation-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Download software and the test data and annotation library</h4>
+
+<p>First of all to download the software clone it from our github account as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/SystemsGeneticsSG/ABBA.git
+<span class="pl-c1">cd</span> ABBA</pre></div>
 
 <p>We have provided a script that will fetch all of the required data and create the folders required. This can be executed as follows:</p>
 
@@ -89,7 +94,7 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <p>The simplest way to run ABBA is serially on a local machine. This will prepare the required files, execute the analysis and plot the results one after an other. There are a number of flags that need to be set for the script to run as follows:</p>
 
-<div class="highlight highlight-source-shell"><pre>perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp -w 0 -d 0 -z 0 -y 0 -e length</pre></div>
+<div class="highlight highlight-source-shell"><pre>perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4</pre></div>
 
 <ul>
 <li>-f is the directory with the data to process in</li>
@@ -116,7 +121,7 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <p>Running ABBA serially may take some time if you have a large dataset or you don't apply strict filtering criteria. In order to help with this ABBA has been implemented with the Sun Grid Engine queing system in mind. In order for this to work the executing is split into two stages; firstly the setup and parallel processing and secondly the post processing and plotting. We refer to these two sections as he qsub_setup and qsub_recover. The first can be executed as follows (with assumption that the version of R that will be used is stored in $HOME/R/3.2.2/bin/):</p>
 
-<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_suite -o cluster/ABBAtest_submit.output -e cluster/ABBAtest_submit.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_setup -b ./ -j <span class="pl-smi">$HOME</span>/R/3.2.2/bin/</pre></div>
+<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_setup -o cluster/ABBAtest_setup.output -e cluster/ABBAtest_setup.error perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4 -i qsub_setup -j /home/gmsojlr/R/3.2.2/bin/</pre></div>
 
 <p>This will start a single job that will prepare the data and then spawn extra jobs for each chromosome. You monitor the progress of this stage in two ways. Firstly using qstat in the normal way:</p>
 
@@ -126,7 +131,11 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <div class="highlight highlight-source-shell"><pre><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span>select stage,max(counter)*100 from file_ticker group by stage;<span class="pl-pds">"</span></span> <span class="pl-k">|</span> sqlite3 dbs/YOURPROJECTNAME.sqlite</pre></div>
 
-<p>This will display the percentage of each chromosome that has been analysed.</p>
+<p>This will display the percentage of each chromosome that has been analysed. It is best not to do this too often as it can create lock errors on the sqlite database.</p>
+
+<p>Once this has run and all of the individual chromosome jobs has completed then you can run the second stage as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_run -o cluster/ABBAtest_recover.output -e cluster/ABBAtest_recover.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_recover -b ./ -j /home/gmsojlr/R/3.2.2/bin/</pre></div>
 
 <h3>
 <a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h3>
@@ -160,6 +169,10 @@ $ make <span class="pl-k">&amp;&amp;</span> make install</pre></div>
 <li>Javascript DMR viewer</li>
 <li>GO enrichment pipeline</li>
 <li>Project name folder so that overwritting doesnt occur</li>
+<li>qsub_recover reteives the settings from the database rather than relying on the settings being the same, this requires a new table with each of the paramaters in it. This would be pretty useful anyway! this should also include the FDR cutoff</li>
+<li>change folder structure so that it is easy to download all of the results from one project independently</li>
+<li>recover files that have been processed properly so that failed ones can be rerun on larger nodes.</li>
+<li>
 </ul>
 
 <h2>
