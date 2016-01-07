@@ -40,12 +40,12 @@ if ($options{h})
 }
 my $init = $options{i} || 0;
 our $stage = 1;
-our $path = $options{b} || "";
+our $path = $options{b} || "./";
 our $rpath = $options{j} || "";
-my $min = $options{m} || 2;
+my $min = $options{m} || 50;
 my $size = $options{s} || 3000;
 my $thresh = $options{t} || 1;
-my $min_count = $options{c} || 10;
+my $min_count = $options{c} || 4;
 my $dir = $options{f};
 my $project = $options{p} ||  int(rand(1000));
 mkdir $dir."output/$project" unless -d $dir."output/$project";
