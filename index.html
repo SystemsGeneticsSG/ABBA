@@ -156,6 +156,16 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_setup -o cluster/ABBAtest_setup.output -e cluster/ABBAtest_setup.error perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4 -i qsub_recover</pre></div>
 
+<a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the results</h3>
+
+<p>Once ABBA is complete the results are automatically written to a html page that you can view as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>xdg-open output/PROJECTNAME/PROJECTNAME_results.html</pre></div>
+
+<p>If you have run the analysis on a cluster you can either scp the output folder to a convienient location or if you ssh -X username@yourserver.com you should also be able to view the webpage in a X-forwarded web browser using the same xdg-open command.</p>
+
+<p>If you wish to use the dmrs elsewhere then a bed file is also created and located in output/PROJECTNAME/dmrs.bed.</p>
+
 <h3>
 <a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h3>
 
