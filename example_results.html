@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Results | ABBA</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">    
+    <link href="stylesheets/animate.min.css" rel="stylesheet"> 
+    <link href="stylesheets/lightbox.css" rel="stylesheet"> 
+	<link href="stylesheets/responsive.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <script src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="javascripts/lightbox.js"></script>    
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    </head><!--/head-->
+    <script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    });
+    </script>
+<body>
+    <section class="page-header">
+      <h1 class="project-name">ABBA</h1>
+      <h2 class="project-tagline">Approximate Bayes for Bisulfite sequencing Analysis</h2>
+      <a href="https://github.com/SystemsGeneticsSG/ABBA" class="btn">View on GitHub</a>
+      <a href="https://github.com/SystemsGeneticsSG/ABBA/zipball/master" class="btn">Download .zip</a>
+      <a href="index.html" class="btn">View Instructions</a>
+    </section>
+    <section class="main-content">
+    	<header id="header">      
+            <div class="navbar navbar-inverse" role="banner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <h1>Using ABBA to find differential methylation between WKY and LWS rats.</h1>
+                        <p>As part of <a href="">our recent paper</a> we used ABBA to analyse WGBS data from two rat strains. This was both a demonstration of the usefulness of ABBA but also revealed some novel biological processes that may under glomerulonephritis. Below is the output from running ABBA on the rat WGBS data as an example of what to expect from using the system on your own data. 
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--/#header-->
+
+        
+       <section id="services">
+            <div class="container">
+                <div class="row">
+                <h3>DMRs identified by ABBA:</h3>
+                <table id="example" class="display" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Chr</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>#CpGs</th>
+                    <th>Average Diff.</th>
+                    <th>CpG Density</th>
+                    <th>sd</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Chr</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>#CpGs</th>
+                    <th>Average Diff.</th>
+                    <th>CpG Density</th>
+                    <th>sd</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                
+
+        <tr><td>chr10</td><td>68789190</td><td>68789566</td><td>8</td><td>0.388</td><td>376</td><td>0.021</td><td><a href="images/rackham_et_al/10_68789190_68789566.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>65578002</td><td>65578018</td><td>9</td><td>0.376</td><td>16</td><td>0.563</td><td><a href="images/rackham_et_al/9_65578002_65578018.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>7471342</td><td>7471507</td><td>6</td><td>-0.411</td><td>165</td><td>0.036</td><td><a href="images/rackham_et_al/20_7471342_7471507.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201199522</td><td>201200184</td><td>19</td><td>-0.393</td><td>662</td><td>0.029</td><td><a href="images/rackham_et_al/1_201199522_201200184.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135484912</td><td>135485255</td><td>43</td><td>-0.354</td><td>343</td><td>0.125</td><td><a href="images/rackham_et_al/1_135484912_135485255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>244382223</td><td>244382456</td><td>6</td><td>-0.488</td><td>233</td><td>0.026</td><td><a href="images/rackham_et_al/2_244382223_244382456.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>8052044</td><td>8052235</td><td>8</td><td>-0.369</td><td>191</td><td>0.042</td><td><a href="images/rackham_et_al/9_8052044_8052235.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>159315263</td><td>159315432</td><td>7</td><td>-0.397</td><td>169</td><td>0.041</td><td><a href="images/rackham_et_al/1_159315263_159315432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>91103844</td><td>91104178</td><td>9</td><td>-0.429</td><td>334</td><td>0.027</td><td><a href="images/rackham_et_al/10_91103844_91104178.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>213078596</td><td>213079072</td><td>5</td><td>-0.372</td><td>476</td><td>0.011</td><td><a href="images/rackham_et_al/1_213078596_213079072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>76087419</td><td>76088118</td><td>19</td><td>-0.449</td><td>699</td><td>0.027</td><td><a href="images/rackham_et_al/5_76087419_76088118.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>76087419</td><td>76088118</td><td>19</td><td>-0.449</td><td>699</td><td>0.027</td><td><a href="images/rackham_et_al/5_76087419_76088118.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>249470979</td><td>249471171</td><td>7</td><td>0.356</td><td>192</td><td>0.036</td><td><a href="images/rackham_et_al/1_249470979_249471171.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>47244465</td><td>47244525</td><td>5</td><td>0.402</td><td>60</td><td>0.083</td><td><a href="images/rackham_et_al/1_47244465_47244525.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>68549388</td><td>68549672</td><td>7</td><td>-0.379</td><td>284</td><td>0.025</td><td><a href="images/rackham_et_al/10_68549388_68549672.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>68789190</td><td>68789566</td><td>8</td><td>0.388</td><td>376</td><td>0.021</td><td><a href="images/rackham_et_al/10_68789190_68789566.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>244286406</td><td>244286792</td><td>8</td><td>0.395</td><td>386</td><td>0.021</td><td><a href="images/rackham_et_al/2_244286406_244286792.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>244285393</td><td>244285537</td><td>6</td><td>-0.351</td><td>144</td><td>0.042</td><td><a href="images/rackham_et_al/2_244285393_244285537.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>246217613</td><td>246217908</td><td>6</td><td>-0.422</td><td>295</td><td>0.02</td><td><a href="images/rackham_et_al/1_246217613_246217908.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>246217613</td><td>246217908</td><td>6</td><td>-0.422</td><td>295</td><td>0.02</td><td><a href="images/rackham_et_al/1_246217613_246217908.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>117335736</td><td>117336128</td><td>6</td><td>0.346</td><td>392</td><td>0.015</td><td><a href="images/rackham_et_al/7_117335736_117336128.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>7949640</td><td>7949973</td><td>6</td><td>0.429</td><td>333</td><td>0.018</td><td><a href="images/rackham_et_al/6_7949640_7949973.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>135296975</td><td>135297088</td><td>5</td><td>-0.419</td><td>113</td><td>0.044</td><td><a href="images/rackham_et_al/7_135296975_135297088.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>135296975</td><td>135297088</td><td>5</td><td>-0.419</td><td>113</td><td>0.044</td><td><a href="images/rackham_et_al/7_135296975_135297088.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>84172871</td><td>84173390</td><td>16</td><td>0.493</td><td>519</td><td>0.031</td><td><a href="images/rackham_et_al/14_84172871_84173390.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>92374023</td><td>92374031</td><td>5</td><td>0.373</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/14_92374023_92374031.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>71444981</td><td>71445138</td><td>7</td><td>-0.438</td><td>157</td><td>0.045</td><td><a href="images/rackham_et_al/18_71444981_71445138.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>71444981</td><td>71445138</td><td>7</td><td>-0.438</td><td>157</td><td>0.045</td><td><a href="images/rackham_et_al/18_71444981_71445138.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>71444981</td><td>71445138</td><td>7</td><td>-0.438</td><td>157</td><td>0.045</td><td><a href="images/rackham_et_al/18_71444981_71445138.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>155578344</td><td>155578692</td><td>7</td><td>0.398</td><td>348</td><td>0.02</td><td><a href="images/rackham_et_al/5_155578344_155578692.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>155446650</td><td>155447336</td><td>9</td><td>0.346</td><td>686</td><td>0.013</td><td><a href="images/rackham_et_al/5_155446650_155447336.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>155447682</td><td>155447726</td><td>5</td><td>0.357</td><td>44</td><td>0.114</td><td><a href="images/rackham_et_al/5_155447682_155447726.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>117447942</td><td>117448201</td><td>6</td><td>0.431</td><td>259</td><td>0.023</td><td><a href="images/rackham_et_al/4_117447942_117448201.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>117447942</td><td>117448201</td><td>6</td><td>0.431</td><td>259</td><td>0.023</td><td><a href="images/rackham_et_al/4_117447942_117448201.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>48334740</td><td>48334986</td><td>6</td><td>0.377</td><td>246</td><td>0.024</td><td><a href="images/rackham_et_al/4_48334740_48334986.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>48334740</td><td>48334986</td><td>6</td><td>0.377</td><td>246</td><td>0.024</td><td><a href="images/rackham_et_al/4_48334740_48334986.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>48334740</td><td>48334986</td><td>6</td><td>0.377</td><td>246</td><td>0.024</td><td><a href="images/rackham_et_al/4_48334740_48334986.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>11391719</td><td>11392350</td><td>9</td><td>-0.398</td><td>631</td><td>0.014</td><td><a href="images/rackham_et_al/8_11391719_11392350.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>11391719</td><td>11392350</td><td>9</td><td>-0.398</td><td>631</td><td>0.014</td><td><a href="images/rackham_et_al/8_11391719_11392350.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>244382223</td><td>244382456</td><td>6</td><td>-0.488</td><td>233</td><td>0.026</td><td><a href="images/rackham_et_al/2_244382223_244382456.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>8052044</td><td>8052235</td><td>8</td><td>-0.369</td><td>191</td><td>0.042</td><td><a href="images/rackham_et_al/9_8052044_8052235.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>190990317</td><td>190990437</td><td>7</td><td>-0.648</td><td>120</td><td>0.058</td><td><a href="images/rackham_et_al/1_190990317_190990437.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44601546</td><td>44601743</td><td>6</td><td>-0.337</td><td>197</td><td>0.03</td><td><a href="images/rackham_et_al/13_44601546_44601743.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44601546</td><td>44601743</td><td>6</td><td>-0.337</td><td>197</td><td>0.03</td><td><a href="images/rackham_et_al/13_44601546_44601743.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>153336351</td><td>153336935</td><td>15</td><td>-0.432</td><td>584</td><td>0.026</td><td><a href="images/rackham_et_al/5_153336351_153336935.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>153345531</td><td>153346146</td><td>13</td><td>-0.461</td><td>615</td><td>0.021</td><td><a href="images/rackham_et_al/5_153345531_153346146.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>153345531</td><td>153346146</td><td>13</td><td>-0.461</td><td>615</td><td>0.021</td><td><a href="images/rackham_et_al/5_153345531_153346146.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>153336351</td><td>153336935</td><td>15</td><td>-0.432</td><td>584</td><td>0.026</td><td><a href="images/rackham_et_al/5_153336351_153336935.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>75999078</td><td>75999242</td><td>8</td><td>0.481</td><td>164</td><td>0.049</td><td><a href="images/rackham_et_al/8_75999078_75999242.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>75999078</td><td>75999242</td><td>8</td><td>0.481</td><td>164</td><td>0.049</td><td><a href="images/rackham_et_al/8_75999078_75999242.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>250085410</td><td>250085533</td><td>5</td><td>0.347</td><td>123</td><td>0.041</td><td><a href="images/rackham_et_al/1_250085410_250085533.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>65578002</td><td>65578018</td><td>9</td><td>0.376</td><td>16</td><td>0.563</td><td><a href="images/rackham_et_al/9_65578002_65578018.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>65578002</td><td>65578018</td><td>9</td><td>0.376</td><td>16</td><td>0.563</td><td><a href="images/rackham_et_al/9_65578002_65578018.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>65578002</td><td>65578018</td><td>9</td><td>0.376</td><td>16</td><td>0.563</td><td><a href="images/rackham_et_al/9_65578002_65578018.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>91103844</td><td>91104178</td><td>9</td><td>-0.429</td><td>334</td><td>0.027</td><td><a href="images/rackham_et_al/10_91103844_91104178.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>182060749</td><td>182061173</td><td>11</td><td>-0.406</td><td>424</td><td>0.026</td><td><a href="images/rackham_et_al/2_182060749_182061173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>182060749</td><td>182061173</td><td>11</td><td>-0.406</td><td>424</td><td>0.026</td><td><a href="images/rackham_et_al/2_182060749_182061173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>115280790</td><td>115281128</td><td>9</td><td>-0.383</td><td>338</td><td>0.027</td><td><a href="images/rackham_et_al/6_115280790_115281128.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>70555077</td><td>70555215</td><td>6</td><td>-0.550</td><td>138</td><td>0.043</td><td><a href="images/rackham_et_al/5_70555077_70555215.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>70555077</td><td>70555215</td><td>6</td><td>-0.550</td><td>138</td><td>0.043</td><td><a href="images/rackham_et_al/5_70555077_70555215.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>76087419</td><td>76088118</td><td>19</td><td>-0.449</td><td>699</td><td>0.027</td><td><a href="images/rackham_et_al/5_76087419_76088118.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>249470979</td><td>249471171</td><td>7</td><td>0.356</td><td>192</td><td>0.036</td><td><a href="images/rackham_et_al/1_249470979_249471171.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>249470979</td><td>249471171</td><td>7</td><td>0.356</td><td>192</td><td>0.036</td><td><a href="images/rackham_et_al/1_249470979_249471171.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>249470979</td><td>249471171</td><td>7</td><td>0.356</td><td>192</td><td>0.036</td><td><a href="images/rackham_et_al/1_249470979_249471171.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>134342611</td><td>134342621</td><td>6</td><td>0.426</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/3_134342611_134342621.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>134416266</td><td>134416684</td><td>9</td><td>0.400</td><td>418</td><td>0.022</td><td><a href="images/rackham_et_al/3_134416266_134416684.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>157369967</td><td>157369979</td><td>7</td><td>0.382</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/4_157369967_157369979.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>154761710</td><td>154762122</td><td>14</td><td>0.363</td><td>412</td><td>0.034</td><td><a href="images/rackham_et_al/5_154761710_154762122.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>9324042</td><td>9324638</td><td>8</td><td>-0.392</td><td>596</td><td>0.013</td><td><a href="images/rackham_et_al/15_9324042_9324638.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>9324042</td><td>9324638</td><td>8</td><td>-0.392</td><td>596</td><td>0.013</td><td><a href="images/rackham_et_al/15_9324042_9324638.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>74423528</td><td>74423536</td><td>5</td><td>0.352</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/11_74423528_74423536.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>196783603</td><td>196784043</td><td>11</td><td>0.379</td><td>440</td><td>0.025</td><td><a href="images/rackham_et_al/1_196783603_196784043.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>196783603</td><td>196784043</td><td>11</td><td>0.379</td><td>440</td><td>0.025</td><td><a href="images/rackham_et_al/1_196783603_196784043.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>7121594</td><td>7121762</td><td>6</td><td>-0.490</td><td>168</td><td>0.036</td><td><a href="images/rackham_et_al/16_7121594_7121762.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13130833</td><td>13131181</td><td>5</td><td>-0.337</td><td>348</td><td>0.014</td><td><a href="images/rackham_et_al/20_13130833_13131181.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>7471342</td><td>7471507</td><td>6</td><td>-0.411</td><td>165</td><td>0.036</td><td><a href="images/rackham_et_al/20_7471342_7471507.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>7471342</td><td>7471507</td><td>6</td><td>-0.411</td><td>165</td><td>0.036</td><td><a href="images/rackham_et_al/20_7471342_7471507.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>48283546</td><td>48283871</td><td>5</td><td>0.436</td><td>325</td><td>0.015</td><td><a href="images/rackham_et_al/13_48283546_48283871.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>48283546</td><td>48283871</td><td>5</td><td>0.436</td><td>325</td><td>0.015</td><td><a href="images/rackham_et_al/13_48283546_48283871.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201199522</td><td>201200184</td><td>19</td><td>-0.393</td><td>662</td><td>0.029</td><td><a href="images/rackham_et_al/1_201199522_201200184.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>160519056</td><td>160519506</td><td>8</td><td>-0.397</td><td>450</td><td>0.018</td><td><a href="images/rackham_et_al/5_160519056_160519506.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>186478917</td><td>186479089</td><td>6</td><td>-0.335</td><td>172</td><td>0.035</td><td><a href="images/rackham_et_al/1_186478917_186479089.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>244285393</td><td>244285537</td><td>6</td><td>-0.351</td><td>144</td><td>0.042</td><td><a href="images/rackham_et_al/2_244285393_244285537.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>91103844</td><td>91104178</td><td>9</td><td>-0.429</td><td>334</td><td>0.027</td><td><a href="images/rackham_et_al/10_91103844_91104178.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>76203959</td><td>76203980</td><td>5</td><td>0.335</td><td>21</td><td>0.238</td><td><a href="images/rackham_et_al/5_76203959_76203980.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>159315263</td><td>159315432</td><td>7</td><td>-0.397</td><td>169</td><td>0.041</td><td><a href="images/rackham_et_al/1_159315263_159315432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>213078596</td><td>213079072</td><td>5</td><td>-0.372</td><td>476</td><td>0.011</td><td><a href="images/rackham_et_al/1_213078596_213079072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>85847836</td><td>85848164</td><td>8</td><td>0.411</td><td>328</td><td>0.024</td><td><a href="images/rackham_et_al/11_85847836_85848164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201199522</td><td>201200184</td><td>19</td><td>-0.393</td><td>662</td><td>0.029</td><td><a href="images/rackham_et_al/1_201199522_201200184.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>91103844</td><td>91104178</td><td>9</td><td>-0.429</td><td>334</td><td>0.027</td><td><a href="images/rackham_et_al/10_91103844_91104178.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45286705</td><td>45286953</td><td>6</td><td>-0.338</td><td>248</td><td>0.024</td><td><a href="images/rackham_et_al/10_45286705_45286953.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>85309118</td><td>85309328</td><td>5</td><td>0.417</td><td>210</td><td>0.024</td><td><a href="images/rackham_et_al/8_85309118_85309328.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>85309118</td><td>85309328</td><td>5</td><td>0.417</td><td>210</td><td>0.024</td><td><a href="images/rackham_et_al/8_85309118_85309328.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>126281337</td><td>126281606</td><td>6</td><td>0.360</td><td>269</td><td>0.022</td><td><a href="images/rackham_et_al/8_126281337_126281606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>126281337</td><td>126281606</td><td>6</td><td>0.360</td><td>269</td><td>0.022</td><td><a href="images/rackham_et_al/8_126281337_126281606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>126281337</td><td>126281606</td><td>6</td><td>0.360</td><td>269</td><td>0.022</td><td><a href="images/rackham_et_al/8_126281337_126281606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>126281337</td><td>126281606</td><td>6</td><td>0.360</td><td>269</td><td>0.022</td><td><a href="images/rackham_et_al/8_126281337_126281606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>86786809</td><td>86786843</td><td>5</td><td>-0.439</td><td>34</td><td>0.147</td><td><a href="images/rackham_et_al/9_86786809_86786843.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>22695411</td><td>22696273</td><td>19</td><td>0.372</td><td>862</td><td>0.022</td><td><a href="images/rackham_et_al/2_22695411_22696273.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>80606707</td><td>80606758</td><td>7</td><td>-0.406</td><td>51</td><td>0.137</td><td><a href="images/rackham_et_al/7_80606707_80606758.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>50424154</td><td>50424775</td><td>12</td><td>-0.347</td><td>621</td><td>0.019</td><td><a href="images/rackham_et_al/19_50424154_50424775.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>33805390</td><td>33805520</td><td>6</td><td>0.354</td><td>130</td><td>0.046</td><td><a href="images/rackham_et_al/3_33805390_33805520.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>59704529</td><td>59704768</td><td>5</td><td>-0.553</td><td>239</td><td>0.021</td><td><a href="images/rackham_et_al/8_59704529_59704768.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>12543997</td><td>12544127</td><td>9</td><td>-0.359</td><td>130</td><td>0.069</td><td><a href="images/rackham_et_al/X_12543997_12544127.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>12543997</td><td>12544127</td><td>9</td><td>-0.359</td><td>130</td><td>0.069</td><td><a href="images/rackham_et_al/X_12543997_12544127.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>31729909</td><td>31729925</td><td>5</td><td>0.631</td><td>16</td><td>0.313</td><td><a href="images/rackham_et_al/7_31729909_31729925.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>66828295</td><td>66828461</td><td>8</td><td>0.354</td><td>166</td><td>0.048</td><td><a href="images/rackham_et_al/13_66828295_66828461.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>66828295</td><td>66828461</td><td>8</td><td>0.354</td><td>166</td><td>0.048</td><td><a href="images/rackham_et_al/13_66828295_66828461.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>134626281</td><td>134626603</td><td>6</td><td>-0.472</td><td>322</td><td>0.019</td><td><a href="images/rackham_et_al/3_134626281_134626603.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>134626281</td><td>134626603</td><td>6</td><td>-0.472</td><td>322</td><td>0.019</td><td><a href="images/rackham_et_al/3_134626281_134626603.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>134626281</td><td>134626603</td><td>6</td><td>-0.472</td><td>322</td><td>0.019</td><td><a href="images/rackham_et_al/3_134626281_134626603.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>253035706</td><td>253035897</td><td>8</td><td>-0.356</td><td>191</td><td>0.042</td><td><a href="images/rackham_et_al/1_253035706_253035897.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>253035706</td><td>253035897</td><td>8</td><td>-0.356</td><td>191</td><td>0.042</td><td><a href="images/rackham_et_al/1_253035706_253035897.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>113765414</td><td>113765749</td><td>5</td><td>0.449</td><td>335</td><td>0.015</td><td><a href="images/rackham_et_al/8_113765414_113765749.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>82838635</td><td>82838679</td><td>5</td><td>0.460</td><td>44</td><td>0.114</td><td><a href="images/rackham_et_al/16_82838635_82838679.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>82838635</td><td>82838679</td><td>5</td><td>0.460</td><td>44</td><td>0.114</td><td><a href="images/rackham_et_al/16_82838635_82838679.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>41153148</td><td>41153356</td><td>5</td><td>0.389</td><td>208</td><td>0.024</td><td><a href="images/rackham_et_al/1_41153148_41153356.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140097766</td><td>140098056</td><td>16</td><td>-0.381</td><td>290</td><td>0.055</td><td><a href="images/rackham_et_al/7_140097766_140098056.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140097766</td><td>140098056</td><td>16</td><td>-0.381</td><td>290</td><td>0.055</td><td><a href="images/rackham_et_al/7_140097766_140098056.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140097766</td><td>140098056</td><td>16</td><td>-0.381</td><td>290</td><td>0.055</td><td><a href="images/rackham_et_al/7_140097766_140098056.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140097766</td><td>140098056</td><td>16</td><td>-0.381</td><td>290</td><td>0.055</td><td><a href="images/rackham_et_al/7_140097766_140098056.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68731193</td><td>68731412</td><td>5</td><td>0.412</td><td>219</td><td>0.023</td><td><a href="images/rackham_et_al/11_68731193_68731412.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68731193</td><td>68731412</td><td>5</td><td>0.412</td><td>219</td><td>0.023</td><td><a href="images/rackham_et_al/11_68731193_68731412.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68731193</td><td>68731412</td><td>5</td><td>0.412</td><td>219</td><td>0.023</td><td><a href="images/rackham_et_al/11_68731193_68731412.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>87163138</td><td>87163811</td><td>7</td><td>-0.387</td><td>673</td><td>0.01</td><td><a href="images/rackham_et_al/4_87163138_87163811.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>87163138</td><td>87163811</td><td>7</td><td>-0.387</td><td>673</td><td>0.01</td><td><a href="images/rackham_et_al/4_87163138_87163811.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>145004434</td><td>145005279</td><td>9</td><td>-0.501</td><td>845</td><td>0.011</td><td><a href="images/rackham_et_al/2_145004434_145005279.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>145004434</td><td>145005279</td><td>9</td><td>-0.501</td><td>845</td><td>0.011</td><td><a href="images/rackham_et_al/2_145004434_145005279.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>184204699</td><td>184204723</td><td>5</td><td>0.362</td><td>24</td><td>0.208</td><td><a href="images/rackham_et_al/4_184204699_184204723.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>171743067</td><td>171743305</td><td>5</td><td>-0.556</td><td>238</td><td>0.021</td><td><a href="images/rackham_et_al/1_171743067_171743305.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>171993800</td><td>171994086</td><td>13</td><td>0.679</td><td>286</td><td>0.045</td><td><a href="images/rackham_et_al/1_171993800_171994086.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>81650728</td><td>81650744</td><td>6</td><td>0.415</td><td>16</td><td>0.375</td><td><a href="images/rackham_et_al/14_81650728_81650744.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>81650728</td><td>81650744</td><td>6</td><td>0.415</td><td>16</td><td>0.375</td><td><a href="images/rackham_et_al/14_81650728_81650744.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>78990391</td><td>78991032</td><td>8</td><td>0.404</td><td>641</td><td>0.012</td><td><a href="images/rackham_et_al/18_78990391_78991032.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>78990391</td><td>78991032</td><td>8</td><td>0.404</td><td>641</td><td>0.012</td><td><a href="images/rackham_et_al/18_78990391_78991032.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>8656997</td><td>8657837</td><td>9</td><td>0.348</td><td>840</td><td>0.011</td><td><a href="images/rackham_et_al/1_8656997_8657837.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>8658157</td><td>8658360</td><td>7</td><td>0.385</td><td>203</td><td>0.034</td><td><a href="images/rackham_et_al/1_8658157_8658360.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>8687740</td><td>8687867</td><td>5</td><td>-0.360</td><td>127</td><td>0.039</td><td><a href="images/rackham_et_al/1_8687740_8687867.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135484912</td><td>135485255</td><td>43</td><td>-0.354</td><td>343</td><td>0.125</td><td><a href="images/rackham_et_al/1_135484912_135485255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135484912</td><td>135485255</td><td>43</td><td>-0.354</td><td>343</td><td>0.125</td><td><a href="images/rackham_et_al/1_135484912_135485255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135484912</td><td>135485255</td><td>43</td><td>-0.354</td><td>343</td><td>0.125</td><td><a href="images/rackham_et_al/1_135484912_135485255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>21065942</td><td>21065954</td><td>7</td><td>0.366</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/X_21065942_21065954.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>51013364</td><td>51014520</td><td>26</td><td>-0.363</td><td>1156</td><td>0.022</td><td><a href="images/rackham_et_al/8_51013364_51014520.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>78570503</td><td>78570515</td><td>6</td><td>-0.361</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/4_78570503_78570515.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>78570503</td><td>78570515</td><td>6</td><td>-0.361</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/4_78570503_78570515.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>78570503</td><td>78570515</td><td>6</td><td>-0.361</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/4_78570503_78570515.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201692359</td><td>201692898</td><td>6</td><td>-0.431</td><td>539</td><td>0.011</td><td><a href="images/rackham_et_al/1_201692359_201692898.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201692359</td><td>201692898</td><td>6</td><td>-0.431</td><td>539</td><td>0.011</td><td><a href="images/rackham_et_al/1_201692359_201692898.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>201692359</td><td>201692898</td><td>6</td><td>-0.431</td><td>539</td><td>0.011</td><td><a href="images/rackham_et_al/1_201692359_201692898.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>127373180</td><td>127373588</td><td>10</td><td>0.343</td><td>408</td><td>0.025</td><td><a href="images/rackham_et_al/7_127373180_127373588.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>260004778</td><td>260005055</td><td>5</td><td>0.433</td><td>277</td><td>0.018</td><td><a href="images/rackham_et_al/1_260004778_260005055.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>260004778</td><td>260005055</td><td>5</td><td>0.433</td><td>277</td><td>0.018</td><td><a href="images/rackham_et_al/1_260004778_260005055.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>260004778</td><td>260005055</td><td>5</td><td>0.433</td><td>277</td><td>0.018</td><td><a href="images/rackham_et_al/1_260004778_260005055.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>13385349</td><td>13385499</td><td>8</td><td>-0.393</td><td>150</td><td>0.053</td><td><a href="images/rackham_et_al/1_13385349_13385499.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>13482975</td><td>13483125</td><td>7</td><td>-0.389</td><td>150</td><td>0.047</td><td><a href="images/rackham_et_al/1_13482975_13483125.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>99479034</td><td>99479581</td><td>17</td><td>0.353</td><td>547</td><td>0.031</td><td><a href="images/rackham_et_al/6_99479034_99479581.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>35455412</td><td>35455802</td><td>6</td><td>-0.440</td><td>390</td><td>0.015</td><td><a href="images/rackham_et_al/12_35455412_35455802.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>57252546</td><td>57252576</td><td>5</td><td>-0.351</td><td>30</td><td>0.167</td><td><a href="images/rackham_et_al/19_57252546_57252576.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>57252546</td><td>57252576</td><td>5</td><td>-0.351</td><td>30</td><td>0.167</td><td><a href="images/rackham_et_al/19_57252546_57252576.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>57252546</td><td>57252576</td><td>5</td><td>-0.351</td><td>30</td><td>0.167</td><td><a href="images/rackham_et_al/19_57252546_57252576.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>57252546</td><td>57252576</td><td>5</td><td>-0.351</td><td>30</td><td>0.167</td><td><a href="images/rackham_et_al/19_57252546_57252576.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>62025389</td><td>62025405</td><td>6</td><td>-0.421</td><td>16</td><td>0.375</td><td><a href="images/rackham_et_al/5_62025389_62025405.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>220502532</td><td>220502663</td><td>5</td><td>0.350</td><td>131</td><td>0.038</td><td><a href="images/rackham_et_al/1_220502532_220502663.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>220502532</td><td>220502663</td><td>5</td><td>0.350</td><td>131</td><td>0.038</td><td><a href="images/rackham_et_al/1_220502532_220502663.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>44839477</td><td>44839645</td><td>6</td><td>-0.433</td><td>168</td><td>0.036</td><td><a href="images/rackham_et_al/14_44839477_44839645.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>32705794</td><td>32706239</td><td>6</td><td>-0.364</td><td>445</td><td>0.013</td><td><a href="images/rackham_et_al/7_32705794_32706239.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>82879993</td><td>82880104</td><td>5</td><td>0.422</td><td>111</td><td>0.045</td><td><a href="images/rackham_et_al/16_82879993_82880104.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68600018</td><td>68600266</td><td>8</td><td>0.430</td><td>248</td><td>0.032</td><td><a href="images/rackham_et_al/11_68600018_68600266.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68600018</td><td>68600266</td><td>8</td><td>0.430</td><td>248</td><td>0.032</td><td><a href="images/rackham_et_al/11_68600018_68600266.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68600018</td><td>68600266</td><td>8</td><td>0.430</td><td>248</td><td>0.032</td><td><a href="images/rackham_et_al/11_68600018_68600266.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>68600018</td><td>68600266</td><td>8</td><td>0.430</td><td>248</td><td>0.032</td><td><a href="images/rackham_et_al/11_68600018_68600266.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>10211987</td><td>10212102</td><td>6</td><td>0.379</td><td>115</td><td>0.052</td><td><a href="images/rackham_et_al/3_10211987_10212102.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>77853419</td><td>77853528</td><td>5</td><td>0.609</td><td>109</td><td>0.046</td><td><a href="images/rackham_et_al/8_77853419_77853528.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>86654956</td><td>86654984</td><td>7</td><td>-0.648</td><td>28</td><td>0.25</td><td><a href="images/rackham_et_al/9_86654956_86654984.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>86654956</td><td>86654984</td><td>7</td><td>-0.648</td><td>28</td><td>0.25</td><td><a href="images/rackham_et_al/9_86654956_86654984.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>23978590</td><td>23978604</td><td>8</td><td>0.346</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/6_23978590_23978604.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>47600289</td><td>47600899</td><td>9</td><td>0.362</td><td>610</td><td>0.015</td><td><a href="images/rackham_et_al/16_47600289_47600899.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>47600289</td><td>47600899</td><td>9</td><td>0.362</td><td>610</td><td>0.015</td><td><a href="images/rackham_et_al/16_47600289_47600899.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>47600289</td><td>47600899</td><td>9</td><td>0.362</td><td>610</td><td>0.015</td><td><a href="images/rackham_et_al/16_47600289_47600899.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>49647060</td><td>49647070</td><td>6</td><td>0.579</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/19_49647060_49647070.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>145004434</td><td>145005279</td><td>9</td><td>-0.501</td><td>845</td><td>0.011</td><td><a href="images/rackham_et_al/2_145004434_145005279.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>3439316</td><td>3439583</td><td>9</td><td>-0.349</td><td>267</td><td>0.034</td><td><a href="images/rackham_et_al/15_3439316_3439583.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>3418049</td><td>3418278</td><td>6</td><td>0.511</td><td>229</td><td>0.026</td><td><a href="images/rackham_et_al/15_3418049_3418278.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>77663111</td><td>77663297</td><td>6</td><td>-0.350</td><td>186</td><td>0.032</td><td><a href="images/rackham_et_al/3_77663111_77663297.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>235373912</td><td>235374163</td><td>7</td><td>0.345</td><td>251</td><td>0.028</td><td><a href="images/rackham_et_al/2_235373912_235374163.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>9687919</td><td>9688761</td><td>13</td><td>-0.346</td><td>842</td><td>0.015</td><td><a href="images/rackham_et_al/20_9687919_9688761.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>168052289</td><td>168052458</td><td>6</td><td>-0.447</td><td>169</td><td>0.036</td><td><a href="images/rackham_et_al/1_168052289_168052458.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>12549437</td><td>12549914</td><td>14</td><td>-0.446</td><td>477</td><td>0.029</td><td><a href="images/rackham_et_al/12_12549437_12549914.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>109943346</td><td>109943368</td><td>10</td><td>0.493</td><td>22</td><td>0.455</td><td><a href="images/rackham_et_al/10_109943346_109943368.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>226659436</td><td>226659448</td><td>7</td><td>0.391</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/1_226659436_226659448.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135046891</td><td>135047432</td><td>13</td><td>-0.363</td><td>541</td><td>0.024</td><td><a href="images/rackham_et_al/1_135046891_135047432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>1577669</td><td>1578072</td><td>17</td><td>0.522</td><td>403</td><td>0.042</td><td><a href="images/rackham_et_al/2_1577669_1578072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>1577669</td><td>1578072</td><td>17</td><td>0.522</td><td>403</td><td>0.042</td><td><a href="images/rackham_et_al/2_1577669_1578072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>1577669</td><td>1578072</td><td>17</td><td>0.522</td><td>403</td><td>0.042</td><td><a href="images/rackham_et_al/2_1577669_1578072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>1577669</td><td>1578072</td><td>17</td><td>0.522</td><td>403</td><td>0.042</td><td><a href="images/rackham_et_al/2_1577669_1578072.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>6607459</td><td>6607658</td><td>6</td><td>-0.334</td><td>199</td><td>0.03</td><td><a href="images/rackham_et_al/12_6607459_6607658.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>24798384</td><td>24798968</td><td>6</td><td>0.354</td><td>584</td><td>0.01</td><td><a href="images/rackham_et_al/3_24798384_24798968.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>53811079</td><td>53811208</td><td>7</td><td>0.385</td><td>129</td><td>0.054</td><td><a href="images/rackham_et_al/15_53811079_53811208.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>114018335</td><td>114018391</td><td>5</td><td>0.375</td><td>56</td><td>0.089</td><td><a href="images/rackham_et_al/8_114018335_114018391.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>114018335</td><td>114018391</td><td>5</td><td>0.375</td><td>56</td><td>0.089</td><td><a href="images/rackham_et_al/8_114018335_114018391.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>114018335</td><td>114018391</td><td>5</td><td>0.375</td><td>56</td><td>0.089</td><td><a href="images/rackham_et_al/8_114018335_114018391.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>109561731</td><td>109561820</td><td>5</td><td>-0.339</td><td>89</td><td>0.056</td><td><a href="images/rackham_et_al/6_109561731_109561820.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>109561731</td><td>109561820</td><td>5</td><td>-0.339</td><td>89</td><td>0.056</td><td><a href="images/rackham_et_al/6_109561731_109561820.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>248664997</td><td>248665070</td><td>7</td><td>-0.439</td><td>73</td><td>0.096</td><td><a href="images/rackham_et_al/1_248664997_248665070.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>248664997</td><td>248665070</td><td>7</td><td>-0.439</td><td>73</td><td>0.096</td><td><a href="images/rackham_et_al/1_248664997_248665070.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>22695411</td><td>22696273</td><td>19</td><td>0.372</td><td>862</td><td>0.022</td><td><a href="images/rackham_et_al/2_22695411_22696273.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>2646042</td><td>2646338</td><td>8</td><td>0.354</td><td>296</td><td>0.027</td><td><a href="images/rackham_et_al/3_2646042_2646338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>57621245</td><td>57621429</td><td>5</td><td>0.372</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/5_57621245_57621429.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>57621245</td><td>57621429</td><td>5</td><td>0.372</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/5_57621245_57621429.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>57621245</td><td>57621429</td><td>5</td><td>0.372</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/5_57621245_57621429.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>57621245</td><td>57621429</td><td>5</td><td>0.372</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/5_57621245_57621429.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>64161533</td><td>64161805</td><td>7</td><td>0.347</td><td>272</td><td>0.026</td><td><a href="images/rackham_et_al/17_64161533_64161805.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>64161533</td><td>64161805</td><td>7</td><td>0.347</td><td>272</td><td>0.026</td><td><a href="images/rackham_et_al/17_64161533_64161805.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>128444856</td><td>128444864</td><td>5</td><td>-0.453</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/5_128444856_128444864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>128444856</td><td>128444864</td><td>5</td><td>-0.453</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/5_128444856_128444864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>128444856</td><td>128444864</td><td>5</td><td>-0.453</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/5_128444856_128444864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>174510556</td><td>174510687</td><td>6</td><td>0.422</td><td>131</td><td>0.046</td><td><a href="images/rackham_et_al/4_174510556_174510687.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>174377854</td><td>174377909</td><td>8</td><td>0.553</td><td>55</td><td>0.145</td><td><a href="images/rackham_et_al/4_174377854_174377909.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>138463613</td><td>138463755</td><td>7</td><td>-0.415</td><td>142</td><td>0.049</td><td><a href="images/rackham_et_al/7_138463613_138463755.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>138463613</td><td>138463755</td><td>7</td><td>-0.415</td><td>142</td><td>0.049</td><td><a href="images/rackham_et_al/7_138463613_138463755.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>1553097</td><td>1553639</td><td>7</td><td>0.336</td><td>542</td><td>0.013</td><td><a href="images/rackham_et_al/12_1553097_1553639.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>40645872</td><td>40646855</td><td>13</td><td>0.451</td><td>983</td><td>0.013</td><td><a href="images/rackham_et_al/12_40645872_40646855.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>104717293</td><td>104717671</td><td>8</td><td>-0.410</td><td>378</td><td>0.021</td><td><a href="images/rackham_et_al/9_104717293_104717671.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>117132673</td><td>117132776</td><td>7</td><td>-0.559</td><td>103</td><td>0.068</td><td><a href="images/rackham_et_al/3_117132673_117132776.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>35616505</td><td>35616811</td><td>5</td><td>-0.445</td><td>306</td><td>0.016</td><td><a href="images/rackham_et_al/2_35616505_35616811.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>19179611</td><td>19179700</td><td>5</td><td>0.396</td><td>89</td><td>0.056</td><td><a href="images/rackham_et_al/16_19179611_19179700.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>19179611</td><td>19179700</td><td>5</td><td>0.396</td><td>89</td><td>0.056</td><td><a href="images/rackham_et_al/16_19179611_19179700.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>19179611</td><td>19179700</td><td>5</td><td>0.396</td><td>89</td><td>0.056</td><td><a href="images/rackham_et_al/16_19179611_19179700.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>9798096</td><td>9798528</td><td>5</td><td>0.382</td><td>432</td><td>0.012</td><td><a href="images/rackham_et_al/12_9798096_9798528.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>11657538</td><td>11657779</td><td>5</td><td>0.341</td><td>241</td><td>0.021</td><td><a href="images/rackham_et_al/20_11657538_11657779.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>159782313</td><td>159782474</td><td>5</td><td>0.421</td><td>161</td><td>0.031</td><td><a href="images/rackham_et_al/5_159782313_159782474.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>123615494</td><td>123615931</td><td>5</td><td>0.344</td><td>437</td><td>0.011</td><td><a href="images/rackham_et_al/6_123615494_123615931.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>140674350</td><td>140674943</td><td>6</td><td>0.451</td><td>593</td><td>0.01</td><td><a href="images/rackham_et_al/2_140674350_140674943.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>140674350</td><td>140674943</td><td>6</td><td>0.451</td><td>593</td><td>0.01</td><td><a href="images/rackham_et_al/2_140674350_140674943.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>80860449</td><td>80860804</td><td>5</td><td>0.549</td><td>355</td><td>0.014</td><td><a href="images/rackham_et_al/X_80860449_80860804.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>80780951</td><td>80781311</td><td>7</td><td>-0.376</td><td>360</td><td>0.019</td><td><a href="images/rackham_et_al/14_80780951_80781311.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>80780951</td><td>80781311</td><td>7</td><td>-0.376</td><td>360</td><td>0.019</td><td><a href="images/rackham_et_al/14_80780951_80781311.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>80780951</td><td>80781311</td><td>7</td><td>-0.376</td><td>360</td><td>0.019</td><td><a href="images/rackham_et_al/14_80780951_80781311.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>34936105</td><td>34936445</td><td>12</td><td>-0.392</td><td>340</td><td>0.035</td><td><a href="images/rackham_et_al/12_34936105_34936445.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>34936105</td><td>34936445</td><td>12</td><td>-0.392</td><td>340</td><td>0.035</td><td><a href="images/rackham_et_al/12_34936105_34936445.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>34936105</td><td>34936445</td><td>12</td><td>-0.392</td><td>340</td><td>0.035</td><td><a href="images/rackham_et_al/12_34936105_34936445.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>34936105</td><td>34936445</td><td>12</td><td>-0.392</td><td>340</td><td>0.035</td><td><a href="images/rackham_et_al/12_34936105_34936445.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>34936105</td><td>34936445</td><td>12</td><td>-0.392</td><td>340</td><td>0.035</td><td><a href="images/rackham_et_al/12_34936105_34936445.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>81097893</td><td>81097901</td><td>5</td><td>0.428</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/16_81097893_81097901.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>78484675</td><td>78484717</td><td>11</td><td>0.516</td><td>42</td><td>0.262</td><td><a href="images/rackham_et_al/1_78484675_78484717.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>124660465</td><td>124660479</td><td>7</td><td>0.479</td><td>14</td><td>0.5</td><td><a href="images/rackham_et_al/4_124660465_124660479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>146662303</td><td>146662850</td><td>6</td><td>0.348</td><td>547</td><td>0.011</td><td><a href="images/rackham_et_al/3_146662303_146662850.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>146662303</td><td>146662850</td><td>6</td><td>0.348</td><td>547</td><td>0.011</td><td><a href="images/rackham_et_al/3_146662303_146662850.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>78981800</td><td>78981895</td><td>5</td><td>-0.492</td><td>95</td><td>0.053</td><td><a href="images/rackham_et_al/10_78981800_78981895.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>80183729</td><td>80184045</td><td>7</td><td>0.398</td><td>316</td><td>0.022</td><td><a href="images/rackham_et_al/13_80183729_80184045.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>123565017</td><td>123565083</td><td>5</td><td>0.411</td><td>66</td><td>0.076</td><td><a href="images/rackham_et_al/8_123565017_123565083.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>51883825</td><td>51883881</td><td>5</td><td>0.386</td><td>56</td><td>0.089</td><td><a href="images/rackham_et_al/8_51883825_51883881.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65245219</td><td>65245537</td><td>8</td><td>0.368</td><td>318</td><td>0.025</td><td><a href="images/rackham_et_al/10_65245219_65245537.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65245219</td><td>65245537</td><td>8</td><td>0.368</td><td>318</td><td>0.025</td><td><a href="images/rackham_et_al/10_65245219_65245537.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65245219</td><td>65245537</td><td>8</td><td>0.368</td><td>318</td><td>0.025</td><td><a href="images/rackham_et_al/10_65245219_65245537.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>77941785</td><td>77941939</td><td>6</td><td>0.354</td><td>154</td><td>0.039</td><td><a href="images/rackham_et_al/5_77941785_77941939.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>77935978</td><td>77936652</td><td>9</td><td>0.484</td><td>674</td><td>0.013</td><td><a href="images/rackham_et_al/5_77935978_77936652.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>77941785</td><td>77941939</td><td>6</td><td>0.354</td><td>154</td><td>0.039</td><td><a href="images/rackham_et_al/5_77941785_77941939.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>77935978</td><td>77936652</td><td>9</td><td>0.484</td><td>674</td><td>0.013</td><td><a href="images/rackham_et_al/5_77935978_77936652.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>72578834</td><td>72578888</td><td>9</td><td>-0.350</td><td>54</td><td>0.167</td><td><a href="images/rackham_et_al/18_72578834_72578888.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>12543997</td><td>12544127</td><td>9</td><td>-0.359</td><td>130</td><td>0.069</td><td><a href="images/rackham_et_al/X_12543997_12544127.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>12543997</td><td>12544127</td><td>9</td><td>-0.359</td><td>130</td><td>0.069</td><td><a href="images/rackham_et_al/X_12543997_12544127.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65609330</td><td>65609916</td><td>6</td><td>-0.381</td><td>586</td><td>0.01</td><td><a href="images/rackham_et_al/10_65609330_65609916.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65609330</td><td>65609916</td><td>6</td><td>-0.381</td><td>586</td><td>0.01</td><td><a href="images/rackham_et_al/10_65609330_65609916.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65609330</td><td>65609916</td><td>6</td><td>-0.381</td><td>586</td><td>0.01</td><td><a href="images/rackham_et_al/10_65609330_65609916.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>65609330</td><td>65609916</td><td>6</td><td>-0.381</td><td>586</td><td>0.01</td><td><a href="images/rackham_et_al/10_65609330_65609916.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189786754</td><td>189786764</td><td>6</td><td>0.477</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/1_189786754_189786764.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189786754</td><td>189786764</td><td>6</td><td>0.477</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/1_189786754_189786764.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189786754</td><td>189786764</td><td>6</td><td>0.477</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/1_189786754_189786764.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189786754</td><td>189786764</td><td>6</td><td>0.477</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/1_189786754_189786764.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>90071670</td><td>90071742</td><td>5</td><td>0.375</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/10_90071670_90071742.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>90071670</td><td>90071742</td><td>5</td><td>0.375</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/10_90071670_90071742.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>90071670</td><td>90071742</td><td>5</td><td>0.375</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/10_90071670_90071742.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>90071670</td><td>90071742</td><td>5</td><td>0.375</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/10_90071670_90071742.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>152236112</td><td>152236164</td><td>7</td><td>0.349</td><td>52</td><td>0.135</td><td><a href="images/rackham_et_al/5_152236112_152236164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>152236112</td><td>152236164</td><td>7</td><td>0.349</td><td>52</td><td>0.135</td><td><a href="images/rackham_et_al/5_152236112_152236164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>152236112</td><td>152236164</td><td>7</td><td>0.349</td><td>52</td><td>0.135</td><td><a href="images/rackham_et_al/5_152236112_152236164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>59855879</td><td>59856223</td><td>15</td><td>0.440</td><td>344</td><td>0.044</td><td><a href="images/rackham_et_al/8_59855879_59856223.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>98799254</td><td>98799270</td><td>8</td><td>0.380</td><td>16</td><td>0.5</td><td><a href="images/rackham_et_al/10_98799254_98799270.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>59738222</td><td>59738294</td><td>7</td><td>-0.404</td><td>72</td><td>0.097</td><td><a href="images/rackham_et_al/15_59738222_59738294.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>59738222</td><td>59738294</td><td>7</td><td>-0.404</td><td>72</td><td>0.097</td><td><a href="images/rackham_et_al/15_59738222_59738294.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>38088240</td><td>38088351</td><td>5</td><td>-0.385</td><td>111</td><td>0.045</td><td><a href="images/rackham_et_al/2_38088240_38088351.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>38088240</td><td>38088351</td><td>5</td><td>-0.385</td><td>111</td><td>0.045</td><td><a href="images/rackham_et_al/2_38088240_38088351.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>181737034</td><td>181737215</td><td>8</td><td>0.661</td><td>181</td><td>0.044</td><td><a href="images/rackham_et_al/2_181737034_181737215.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>86648810</td><td>86649168</td><td>10</td><td>0.527</td><td>358</td><td>0.028</td><td><a href="images/rackham_et_al/13_86648810_86649168.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>11843013</td><td>11843287</td><td>5</td><td>0.357</td><td>274</td><td>0.018</td><td><a href="images/rackham_et_al/9_11843013_11843287.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>11843013</td><td>11843287</td><td>5</td><td>0.357</td><td>274</td><td>0.018</td><td><a href="images/rackham_et_al/9_11843013_11843287.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>18998300</td><td>18998479</td><td>6</td><td>-0.407</td><td>179</td><td>0.034</td><td><a href="images/rackham_et_al/3_18998300_18998479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>72117718</td><td>72117864</td><td>7</td><td>-0.374</td><td>146</td><td>0.048</td><td><a href="images/rackham_et_al/18_72117718_72117864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>72117718</td><td>72117864</td><td>7</td><td>-0.374</td><td>146</td><td>0.048</td><td><a href="images/rackham_et_al/18_72117718_72117864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>10919087</td><td>10919658</td><td>8</td><td>-0.479</td><td>571</td><td>0.014</td><td><a href="images/rackham_et_al/17_10919087_10919658.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>73664086</td><td>73664354</td><td>6</td><td>0.430</td><td>268</td><td>0.022</td><td><a href="images/rackham_et_al/9_73664086_73664354.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>73664086</td><td>73664354</td><td>6</td><td>0.430</td><td>268</td><td>0.022</td><td><a href="images/rackham_et_al/9_73664086_73664354.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>73664086</td><td>73664354</td><td>6</td><td>0.430</td><td>268</td><td>0.022</td><td><a href="images/rackham_et_al/9_73664086_73664354.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85260131</td><td>85260301</td><td>10</td><td>-0.356</td><td>170</td><td>0.059</td><td><a href="images/rackham_et_al/1_85260131_85260301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85260131</td><td>85260301</td><td>10</td><td>-0.356</td><td>170</td><td>0.059</td><td><a href="images/rackham_et_al/1_85260131_85260301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>130486383</td><td>130486577</td><td>5</td><td>-0.344</td><td>194</td><td>0.026</td><td><a href="images/rackham_et_al/5_130486383_130486577.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>130486383</td><td>130486577</td><td>5</td><td>-0.344</td><td>194</td><td>0.026</td><td><a href="images/rackham_et_al/5_130486383_130486577.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>130486383</td><td>130486577</td><td>5</td><td>-0.344</td><td>194</td><td>0.026</td><td><a href="images/rackham_et_al/5_130486383_130486577.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>131861600</td><td>131861612</td><td>7</td><td>0.542</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/4_131861600_131861612.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>157136872</td><td>157137311</td><td>5</td><td>0.366</td><td>439</td><td>0.011</td><td><a href="images/rackham_et_al/5_157136872_157137311.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>5382213</td><td>5382382</td><td>7</td><td>-0.472</td><td>169</td><td>0.041</td><td><a href="images/rackham_et_al/14_5382213_5382382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106195835</td><td>106195926</td><td>11</td><td>-0.347</td><td>91</td><td>0.121</td><td><a href="images/rackham_et_al/3_106195835_106195926.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106195835</td><td>106195926</td><td>11</td><td>-0.347</td><td>91</td><td>0.121</td><td><a href="images/rackham_et_al/3_106195835_106195926.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106195835</td><td>106195926</td><td>11</td><td>-0.347</td><td>91</td><td>0.121</td><td><a href="images/rackham_et_al/3_106195835_106195926.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>38628169</td><td>38628423</td><td>5</td><td>0.467</td><td>254</td><td>0.02</td><td><a href="images/rackham_et_al/9_38628169_38628423.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>91565229</td><td>91565370</td><td>18</td><td>0.378</td><td>141</td><td>0.128</td><td><a href="images/rackham_et_al/13_91565229_91565370.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>91565229</td><td>91565370</td><td>18</td><td>0.378</td><td>141</td><td>0.128</td><td><a href="images/rackham_et_al/13_91565229_91565370.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>78860567</td><td>78860597</td><td>7</td><td>-0.359</td><td>30</td><td>0.233</td><td><a href="images/rackham_et_al/1_78860567_78860597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>63532978</td><td>63533535</td><td>6</td><td>0.352</td><td>557</td><td>0.011</td><td><a href="images/rackham_et_al/9_63532978_63533535.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>63532978</td><td>63533535</td><td>6</td><td>0.352</td><td>557</td><td>0.011</td><td><a href="images/rackham_et_al/9_63532978_63533535.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>178059485</td><td>178060000</td><td>14</td><td>-0.539</td><td>515</td><td>0.027</td><td><a href="images/rackham_et_al/2_178059485_178060000.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>43695393</td><td>43695467</td><td>8</td><td>-0.448</td><td>74</td><td>0.108</td><td><a href="images/rackham_et_al/12_43695393_43695467.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>43695393</td><td>43695467</td><td>8</td><td>-0.448</td><td>74</td><td>0.108</td><td><a href="images/rackham_et_al/12_43695393_43695467.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>137954632</td><td>137954786</td><td>6</td><td>-0.493</td><td>154</td><td>0.039</td><td><a href="images/rackham_et_al/7_137954632_137954786.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>137954632</td><td>137954786</td><td>6</td><td>-0.493</td><td>154</td><td>0.039</td><td><a href="images/rackham_et_al/7_137954632_137954786.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>34066465</td><td>34066636</td><td>5</td><td>0.601</td><td>171</td><td>0.029</td><td><a href="images/rackham_et_al/2_34066465_34066636.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>135132836</td><td>135133153</td><td>7</td><td>0.350</td><td>317</td><td>0.022</td><td><a href="images/rackham_et_al/1_135132836_135133153.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>233041339</td><td>233041381</td><td>6</td><td>0.339</td><td>42</td><td>0.143</td><td><a href="images/rackham_et_al/1_233041339_233041381.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106583026</td><td>106583192</td><td>5</td><td>0.397</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/3_106583026_106583192.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106583026</td><td>106583192</td><td>5</td><td>0.397</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/3_106583026_106583192.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106583026</td><td>106583192</td><td>5</td><td>0.397</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/3_106583026_106583192.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106583026</td><td>106583192</td><td>5</td><td>0.397</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/3_106583026_106583192.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>12704935</td><td>12705277</td><td>17</td><td>-0.369</td><td>342</td><td>0.05</td><td><a href="images/rackham_et_al/15_12704935_12705277.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6269076</td><td>6269525</td><td>5</td><td>0.344</td><td>449</td><td>0.011</td><td><a href="images/rackham_et_al/14_6269076_6269525.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6269076</td><td>6269525</td><td>5</td><td>0.344</td><td>449</td><td>0.011</td><td><a href="images/rackham_et_al/14_6269076_6269525.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>6207562</td><td>6208474</td><td>12</td><td>0.440</td><td>912</td><td>0.013</td><td><a href="images/rackham_et_al/9_6207562_6208474.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>180479749</td><td>180479914</td><td>11</td><td>0.346</td><td>165</td><td>0.067</td><td><a href="images/rackham_et_al/2_180479749_180479914.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>180479749</td><td>180479914</td><td>11</td><td>0.346</td><td>165</td><td>0.067</td><td><a href="images/rackham_et_al/2_180479749_180479914.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>180479749</td><td>180479914</td><td>11</td><td>0.346</td><td>165</td><td>0.067</td><td><a href="images/rackham_et_al/2_180479749_180479914.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>109175668</td><td>109175915</td><td>5</td><td>0.365</td><td>247</td><td>0.02</td><td><a href="images/rackham_et_al/10_109175668_109175915.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>66163003</td><td>66163230</td><td>6</td><td>-0.549</td><td>227</td><td>0.026</td><td><a href="images/rackham_et_al/18_66163003_66163230.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>66163003</td><td>66163230</td><td>6</td><td>-0.549</td><td>227</td><td>0.026</td><td><a href="images/rackham_et_al/18_66163003_66163230.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>20918246</td><td>20918432</td><td>5</td><td>-0.340</td><td>186</td><td>0.027</td><td><a href="images/rackham_et_al/17_20918246_20918432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>20918246</td><td>20918432</td><td>5</td><td>-0.340</td><td>186</td><td>0.027</td><td><a href="images/rackham_et_al/17_20918246_20918432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>171094497</td><td>171094719</td><td>8</td><td>-0.408</td><td>222</td><td>0.036</td><td><a href="images/rackham_et_al/4_171094497_171094719.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>171094497</td><td>171094719</td><td>8</td><td>-0.408</td><td>222</td><td>0.036</td><td><a href="images/rackham_et_al/4_171094497_171094719.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>146234643</td><td>146234787</td><td>5</td><td>0.371</td><td>144</td><td>0.035</td><td><a href="images/rackham_et_al/3_146234643_146234787.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>156326796</td><td>156327497</td><td>13</td><td>0.406</td><td>701</td><td>0.019</td><td><a href="images/rackham_et_al/3_156326796_156327497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>61695657</td><td>61696249</td><td>6</td><td>0.446</td><td>592</td><td>0.01</td><td><a href="images/rackham_et_al/2_61695657_61696249.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>61695657</td><td>61696249</td><td>6</td><td>0.446</td><td>592</td><td>0.01</td><td><a href="images/rackham_et_al/2_61695657_61696249.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>131754601</td><td>131754725</td><td>6</td><td>0.351</td><td>124</td><td>0.048</td><td><a href="images/rackham_et_al/7_131754601_131754725.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>131754601</td><td>131754725</td><td>6</td><td>0.351</td><td>124</td><td>0.048</td><td><a href="images/rackham_et_al/7_131754601_131754725.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>131754601</td><td>131754725</td><td>6</td><td>0.351</td><td>124</td><td>0.048</td><td><a href="images/rackham_et_al/7_131754601_131754725.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>13939390</td><td>13939747</td><td>11</td><td>-0.480</td><td>357</td><td>0.031</td><td><a href="images/rackham_et_al/14_13939390_13939747.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>13939390</td><td>13939747</td><td>11</td><td>-0.480</td><td>357</td><td>0.031</td><td><a href="images/rackham_et_al/14_13939390_13939747.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>106195835</td><td>106195926</td><td>11</td><td>-0.347</td><td>91</td><td>0.121</td><td><a href="images/rackham_et_al/3_106195835_106195926.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>119646817</td><td>119647031</td><td>6</td><td>0.349</td><td>214</td><td>0.028</td><td><a href="images/rackham_et_al/8_119646817_119647031.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>119646817</td><td>119647031</td><td>6</td><td>0.349</td><td>214</td><td>0.028</td><td><a href="images/rackham_et_al/8_119646817_119647031.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>27416189</td><td>27416464</td><td>5</td><td>-0.381</td><td>275</td><td>0.018</td><td><a href="images/rackham_et_al/12_27416189_27416464.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>115452205</td><td>115452697</td><td>11</td><td>-0.374</td><td>492</td><td>0.022</td><td><a href="images/rackham_et_al/8_115452205_115452697.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>28107316</td><td>28107691</td><td>5</td><td>0.435</td><td>375</td><td>0.013</td><td><a href="images/rackham_et_al/20_28107316_28107691.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>28107316</td><td>28107691</td><td>5</td><td>0.435</td><td>375</td><td>0.013</td><td><a href="images/rackham_et_al/20_28107316_28107691.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>28107316</td><td>28107691</td><td>5</td><td>0.435</td><td>375</td><td>0.013</td><td><a href="images/rackham_et_al/20_28107316_28107691.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>28107316</td><td>28107691</td><td>5</td><td>0.435</td><td>375</td><td>0.013</td><td><a href="images/rackham_et_al/20_28107316_28107691.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>44238738</td><td>44239261</td><td>14</td><td>-0.579</td><td>523</td><td>0.027</td><td><a href="images/rackham_et_al/2_44238738_44239261.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>44238738</td><td>44239261</td><td>14</td><td>-0.579</td><td>523</td><td>0.027</td><td><a href="images/rackham_et_al/2_44238738_44239261.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>44238738</td><td>44239261</td><td>14</td><td>-0.579</td><td>523</td><td>0.027</td><td><a href="images/rackham_et_al/2_44238738_44239261.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>15707093</td><td>15707797</td><td>14</td><td>-0.454</td><td>704</td><td>0.02</td><td><a href="images/rackham_et_al/12_15707093_15707797.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>15764023</td><td>15764382</td><td>11</td><td>0.525</td><td>359</td><td>0.031</td><td><a href="images/rackham_et_al/12_15764023_15764382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>15790165</td><td>15790299</td><td>5</td><td>-0.387</td><td>134</td><td>0.037</td><td><a href="images/rackham_et_al/12_15790165_15790299.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>15790165</td><td>15790299</td><td>5</td><td>-0.387</td><td>134</td><td>0.037</td><td><a href="images/rackham_et_al/12_15790165_15790299.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13999066</td><td>13999393</td><td>9</td><td>0.447</td><td>327</td><td>0.028</td><td><a href="images/rackham_et_al/20_13999066_13999393.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13999066</td><td>13999393</td><td>9</td><td>0.447</td><td>327</td><td>0.028</td><td><a href="images/rackham_et_al/20_13999066_13999393.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13615192</td><td>13615788</td><td>12</td><td>-0.394</td><td>596</td><td>0.02</td><td><a href="images/rackham_et_al/20_13615192_13615788.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13615192</td><td>13615788</td><td>12</td><td>-0.394</td><td>596</td><td>0.02</td><td><a href="images/rackham_et_al/20_13615192_13615788.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>79495038</td><td>79495122</td><td>6</td><td>-0.442</td><td>84</td><td>0.071</td><td><a href="images/rackham_et_al/16_79495038_79495122.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>24229425</td><td>24229701</td><td>11</td><td>0.378</td><td>276</td><td>0.04</td><td><a href="images/rackham_et_al/15_24229425_24229701.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>24355228</td><td>24355439</td><td>9</td><td>0.362</td><td>211</td><td>0.043</td><td><a href="images/rackham_et_al/15_24355228_24355439.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102117225</td><td>102117401</td><td>5</td><td>0.349</td><td>176</td><td>0.028</td><td><a href="images/rackham_et_al/9_102117225_102117401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>75913439</td><td>75913779</td><td>7</td><td>-0.485</td><td>340</td><td>0.021</td><td><a href="images/rackham_et_al/16_75913439_75913779.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>75912740</td><td>75912945</td><td>5</td><td>-0.406</td><td>205</td><td>0.024</td><td><a href="images/rackham_et_al/16_75912740_75912945.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74828873</td><td>74829413</td><td>7</td><td>-0.359</td><td>540</td><td>0.013</td><td><a href="images/rackham_et_al/3_74828873_74829413.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74828873</td><td>74829413</td><td>7</td><td>-0.359</td><td>540</td><td>0.013</td><td><a href="images/rackham_et_al/3_74828873_74829413.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>74824354</td><td>74825183</td><td>20</td><td>-0.369</td><td>829</td><td>0.024</td><td><a href="images/rackham_et_al/3_74824354_74825183.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>84804987</td><td>84805205</td><td>20</td><td>-0.336</td><td>218</td><td>0.092</td><td><a href="images/rackham_et_al/1_84804987_84805205.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>26632252</td><td>26632340</td><td>7</td><td>0.374</td><td>88</td><td>0.08</td><td><a href="images/rackham_et_al/1_26632252_26632340.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>110369199</td><td>110369777</td><td>6</td><td>-0.423</td><td>578</td><td>0.01</td><td><a href="images/rackham_et_al/6_110369199_110369777.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>110369199</td><td>110369777</td><td>6</td><td>-0.423</td><td>578</td><td>0.01</td><td><a href="images/rackham_et_al/6_110369199_110369777.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>81401972</td><td>81402211</td><td>6</td><td>0.339</td><td>239</td><td>0.025</td><td><a href="images/rackham_et_al/16_81401972_81402211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>81401972</td><td>81402211</td><td>6</td><td>0.339</td><td>239</td><td>0.025</td><td><a href="images/rackham_et_al/16_81401972_81402211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>81401972</td><td>81402211</td><td>6</td><td>0.339</td><td>239</td><td>0.025</td><td><a href="images/rackham_et_al/16_81401972_81402211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>81401972</td><td>81402211</td><td>6</td><td>0.339</td><td>239</td><td>0.025</td><td><a href="images/rackham_et_al/16_81401972_81402211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>9571948</td><td>9572255</td><td>8</td><td>0.525</td><td>307</td><td>0.026</td><td><a href="images/rackham_et_al/4_9571948_9572255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>9571948</td><td>9572255</td><td>8</td><td>0.525</td><td>307</td><td>0.026</td><td><a href="images/rackham_et_al/4_9571948_9572255.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>9683275</td><td>9683540</td><td>5</td><td>-0.388</td><td>265</td><td>0.019</td><td><a href="images/rackham_et_al/2_9683275_9683540.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>9683275</td><td>9683540</td><td>5</td><td>-0.388</td><td>265</td><td>0.019</td><td><a href="images/rackham_et_al/2_9683275_9683540.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>169268017</td><td>169268674</td><td>15</td><td>-0.405</td><td>657</td><td>0.023</td><td><a href="images/rackham_et_al/5_169268017_169268674.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>32210435</td><td>32210821</td><td>6</td><td>-0.446</td><td>386</td><td>0.016</td><td><a href="images/rackham_et_al/8_32210435_32210821.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>32210435</td><td>32210821</td><td>6</td><td>-0.446</td><td>386</td><td>0.016</td><td><a href="images/rackham_et_al/8_32210435_32210821.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>15755426</td><td>15755560</td><td>5</td><td>-0.524</td><td>134</td><td>0.037</td><td><a href="images/rackham_et_al/1_15755426_15755560.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>15755426</td><td>15755560</td><td>5</td><td>-0.524</td><td>134</td><td>0.037</td><td><a href="images/rackham_et_al/1_15755426_15755560.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>10024644</td><td>10024770</td><td>5</td><td>-0.468</td><td>126</td><td>0.04</td><td><a href="images/rackham_et_al/4_10024644_10024770.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>10024644</td><td>10024770</td><td>5</td><td>-0.468</td><td>126</td><td>0.04</td><td><a href="images/rackham_et_al/4_10024644_10024770.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>10024644</td><td>10024770</td><td>5</td><td>-0.468</td><td>126</td><td>0.04</td><td><a href="images/rackham_et_al/4_10024644_10024770.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>10024644</td><td>10024770</td><td>5</td><td>-0.468</td><td>126</td><td>0.04</td><td><a href="images/rackham_et_al/4_10024644_10024770.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>165692804</td><td>165694575</td><td>31</td><td>-0.490</td><td>1771</td><td>0.018</td><td><a href="images/rackham_et_al/4_165692804_165694575.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>54381850</td><td>54381868</td><td>10</td><td>0.436</td><td>18</td><td>0.556</td><td><a href="images/rackham_et_al/16_54381850_54381868.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>54381850</td><td>54381868</td><td>10</td><td>0.436</td><td>18</td><td>0.556</td><td><a href="images/rackham_et_al/16_54381850_54381868.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>82763325</td><td>82763338</td><td>6</td><td>-0.344</td><td>13</td><td>0.462</td><td><a href="images/rackham_et_al/10_82763325_82763338.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>52196706</td><td>52197193</td><td>6</td><td>0.351</td><td>487</td><td>0.012</td><td><a href="images/rackham_et_al/19_52196706_52197193.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>52196706</td><td>52197193</td><td>6</td><td>0.351</td><td>487</td><td>0.012</td><td><a href="images/rackham_et_al/19_52196706_52197193.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>52196706</td><td>52197193</td><td>6</td><td>0.351</td><td>487</td><td>0.012</td><td><a href="images/rackham_et_al/19_52196706_52197193.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>15764023</td><td>15764382</td><td>11</td><td>0.525</td><td>359</td><td>0.031</td><td><a href="images/rackham_et_al/12_15764023_15764382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>3768667</td><td>3769240</td><td>9</td><td>0.482</td><td>573</td><td>0.016</td><td><a href="images/rackham_et_al/18_3768667_3769240.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>125998194</td><td>125998479</td><td>5</td><td>0.344</td><td>285</td><td>0.018</td><td><a href="images/rackham_et_al/4_125998194_125998479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>125998194</td><td>125998479</td><td>5</td><td>0.344</td><td>285</td><td>0.018</td><td><a href="images/rackham_et_al/4_125998194_125998479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>125998194</td><td>125998479</td><td>5</td><td>0.344</td><td>285</td><td>0.018</td><td><a href="images/rackham_et_al/4_125998194_125998479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>28673047</td><td>28673172</td><td>5</td><td>0.339</td><td>125</td><td>0.04</td><td><a href="images/rackham_et_al/2_28673047_28673172.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>28673047</td><td>28673172</td><td>5</td><td>0.339</td><td>125</td><td>0.04</td><td><a href="images/rackham_et_al/2_28673047_28673172.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>14329022</td><td>14329481</td><td>6</td><td>-0.545</td><td>459</td><td>0.013</td><td><a href="images/rackham_et_al/19_14329022_14329481.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>17385924</td><td>17386108</td><td>5</td><td>0.445</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/16_17385924_17386108.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>85308726</td><td>85308883</td><td>6</td><td>-0.364</td><td>157</td><td>0.038</td><td><a href="images/rackham_et_al/15_85308726_85308883.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>105374123</td><td>105374195</td><td>8</td><td>-0.346</td><td>72</td><td>0.111</td><td><a href="images/rackham_et_al/10_105374123_105374195.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>105374123</td><td>105374195</td><td>8</td><td>-0.346</td><td>72</td><td>0.111</td><td><a href="images/rackham_et_al/10_105374123_105374195.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>119369777</td><td>119369982</td><td>14</td><td>-0.396</td><td>205</td><td>0.068</td><td><a href="images/rackham_et_al/4_119369777_119369982.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>39448249</td><td>39448449</td><td>6</td><td>-0.452</td><td>200</td><td>0.03</td><td><a href="images/rackham_et_al/12_39448249_39448449.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>149750872</td><td>149750993</td><td>9</td><td>-0.458</td><td>121</td><td>0.074</td><td><a href="images/rackham_et_al/1_149750872_149750993.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6356207</td><td>6356495</td><td>11</td><td>-0.362</td><td>288</td><td>0.038</td><td><a href="images/rackham_et_al/14_6356207_6356495.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6356207</td><td>6356495</td><td>11</td><td>-0.362</td><td>288</td><td>0.038</td><td><a href="images/rackham_et_al/14_6356207_6356495.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6356207</td><td>6356495</td><td>11</td><td>-0.362</td><td>288</td><td>0.038</td><td><a href="images/rackham_et_al/14_6356207_6356495.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>6356615</td><td>6356750</td><td>8</td><td>-0.426</td><td>135</td><td>0.059</td><td><a href="images/rackham_et_al/14_6356615_6356750.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>196341870</td><td>196341884</td><td>8</td><td>-0.400</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/2_196341870_196341884.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>196341870</td><td>196341884</td><td>8</td><td>-0.400</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/2_196341870_196341884.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>17244290</td><td>17244481</td><td>6</td><td>0.497</td><td>191</td><td>0.031</td><td><a href="images/rackham_et_al/14_17244290_17244481.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85488421</td><td>85488435</td><td>8</td><td>0.492</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/1_85488421_85488435.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>11927412</td><td>11927814</td><td>13</td><td>0.411</td><td>402</td><td>0.032</td><td><a href="images/rackham_et_al/3_11927412_11927814.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>11926832</td><td>11927335</td><td>9</td><td>0.402</td><td>503</td><td>0.018</td><td><a href="images/rackham_et_al/3_11926832_11927335.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>11926832</td><td>11927335</td><td>9</td><td>0.402</td><td>503</td><td>0.018</td><td><a href="images/rackham_et_al/3_11926832_11927335.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>11927412</td><td>11927814</td><td>13</td><td>0.411</td><td>402</td><td>0.032</td><td><a href="images/rackham_et_al/3_11927412_11927814.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>86843953</td><td>86844345</td><td>14</td><td>0.385</td><td>392</td><td>0.036</td><td><a href="images/rackham_et_al/13_86843953_86844345.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>167653998</td><td>167654703</td><td>10</td><td>0.338</td><td>705</td><td>0.014</td><td><a href="images/rackham_et_al/5_167653998_167654703.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>167653998</td><td>167654703</td><td>10</td><td>0.338</td><td>705</td><td>0.014</td><td><a href="images/rackham_et_al/5_167653998_167654703.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>167653998</td><td>167654703</td><td>10</td><td>0.338</td><td>705</td><td>0.014</td><td><a href="images/rackham_et_al/5_167653998_167654703.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>152223076</td><td>152223326</td><td>13</td><td>0.371</td><td>250</td><td>0.052</td><td><a href="images/rackham_et_al/4_152223076_152223326.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>158544156</td><td>158544470</td><td>6</td><td>-0.337</td><td>314</td><td>0.019</td><td><a href="images/rackham_et_al/2_158544156_158544470.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>158544156</td><td>158544470</td><td>6</td><td>-0.337</td><td>314</td><td>0.019</td><td><a href="images/rackham_et_al/2_158544156_158544470.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>132723375</td><td>132723783</td><td>5</td><td>0.396</td><td>408</td><td>0.012</td><td><a href="images/rackham_et_al/4_132723375_132723783.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>132723375</td><td>132723783</td><td>5</td><td>0.396</td><td>408</td><td>0.012</td><td><a href="images/rackham_et_al/4_132723375_132723783.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>132723375</td><td>132723783</td><td>5</td><td>0.396</td><td>408</td><td>0.012</td><td><a href="images/rackham_et_al/4_132723375_132723783.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>132723375</td><td>132723783</td><td>5</td><td>0.396</td><td>408</td><td>0.012</td><td><a href="images/rackham_et_al/4_132723375_132723783.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>132723375</td><td>132723783</td><td>5</td><td>0.396</td><td>408</td><td>0.012</td><td><a href="images/rackham_et_al/4_132723375_132723783.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>43225888</td><td>43226000</td><td>8</td><td>-0.379</td><td>112</td><td>0.071</td><td><a href="images/rackham_et_al/20_43225888_43226000.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>76043237</td><td>76043253</td><td>5</td><td>-0.366</td><td>16</td><td>0.313</td><td><a href="images/rackham_et_al/3_76043237_76043253.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>76043237</td><td>76043253</td><td>5</td><td>-0.366</td><td>16</td><td>0.313</td><td><a href="images/rackham_et_al/3_76043237_76043253.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>43446992</td><td>43447407</td><td>7</td><td>0.361</td><td>415</td><td>0.017</td><td><a href="images/rackham_et_al/4_43446992_43447407.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>43446992</td><td>43447407</td><td>7</td><td>0.361</td><td>415</td><td>0.017</td><td><a href="images/rackham_et_al/4_43446992_43447407.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>43446992</td><td>43447407</td><td>7</td><td>0.361</td><td>415</td><td>0.017</td><td><a href="images/rackham_et_al/4_43446992_43447407.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>126188955</td><td>126189469</td><td>6</td><td>0.380</td><td>514</td><td>0.012</td><td><a href="images/rackham_et_al/5_126188955_126189469.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>86841616</td><td>86841624</td><td>5</td><td>-0.457</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/9_86841616_86841624.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>50103138</td><td>50103411</td><td>6</td><td>0.407</td><td>273</td><td>0.022</td><td><a href="images/rackham_et_al/19_50103138_50103411.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>60773174</td><td>60773184</td><td>6</td><td>-0.426</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/9_60773174_60773184.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>60773174</td><td>60773184</td><td>6</td><td>-0.426</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/9_60773174_60773184.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>82838635</td><td>82838679</td><td>5</td><td>0.460</td><td>44</td><td>0.114</td><td><a href="images/rackham_et_al/16_82838635_82838679.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>82838635</td><td>82838679</td><td>5</td><td>0.460</td><td>44</td><td>0.114</td><td><a href="images/rackham_et_al/16_82838635_82838679.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>81795263</td><td>81795401</td><td>6</td><td>0.395</td><td>138</td><td>0.043</td><td><a href="images/rackham_et_al/13_81795263_81795401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>104872553</td><td>104873194</td><td>10</td><td>0.444</td><td>641</td><td>0.016</td><td><a href="images/rackham_et_al/3_104872553_104873194.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>104872553</td><td>104873194</td><td>10</td><td>0.444</td><td>641</td><td>0.016</td><td><a href="images/rackham_et_al/3_104872553_104873194.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>79438014</td><td>79438250</td><td>5</td><td>0.360</td><td>236</td><td>0.021</td><td><a href="images/rackham_et_al/11_79438014_79438250.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>158392782</td><td>158393032</td><td>7</td><td>-0.446</td><td>250</td><td>0.028</td><td><a href="images/rackham_et_al/5_158392782_158393032.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>158392782</td><td>158393032</td><td>7</td><td>-0.446</td><td>250</td><td>0.028</td><td><a href="images/rackham_et_al/5_158392782_158393032.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>169268017</td><td>169268674</td><td>15</td><td>-0.405</td><td>657</td><td>0.023</td><td><a href="images/rackham_et_al/5_169268017_169268674.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>83979159</td><td>83979720</td><td>7</td><td>-0.416</td><td>561</td><td>0.012</td><td><a href="images/rackham_et_al/10_83979159_83979720.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>83979159</td><td>83979720</td><td>7</td><td>-0.416</td><td>561</td><td>0.012</td><td><a href="images/rackham_et_al/10_83979159_83979720.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>83979159</td><td>83979720</td><td>7</td><td>-0.416</td><td>561</td><td>0.012</td><td><a href="images/rackham_et_al/10_83979159_83979720.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>83979159</td><td>83979720</td><td>7</td><td>-0.416</td><td>561</td><td>0.012</td><td><a href="images/rackham_et_al/10_83979159_83979720.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>83979159</td><td>83979720</td><td>7</td><td>-0.416</td><td>561</td><td>0.012</td><td><a href="images/rackham_et_al/10_83979159_83979720.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>52846261</td><td>52846595</td><td>16</td><td>0.337</td><td>334</td><td>0.048</td><td><a href="images/rackham_et_al/13_52846261_52846595.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>52846261</td><td>52846595</td><td>16</td><td>0.337</td><td>334</td><td>0.048</td><td><a href="images/rackham_et_al/13_52846261_52846595.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>52846261</td><td>52846595</td><td>16</td><td>0.337</td><td>334</td><td>0.048</td><td><a href="images/rackham_et_al/13_52846261_52846595.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85260131</td><td>85260301</td><td>10</td><td>-0.356</td><td>170</td><td>0.059</td><td><a href="images/rackham_et_al/1_85260131_85260301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85260131</td><td>85260301</td><td>10</td><td>-0.356</td><td>170</td><td>0.059</td><td><a href="images/rackham_et_al/1_85260131_85260301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>108930188</td><td>108930974</td><td>17</td><td>0.447</td><td>786</td><td>0.022</td><td><a href="images/rackham_et_al/3_108930188_108930974.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>108930188</td><td>108930974</td><td>17</td><td>0.447</td><td>786</td><td>0.022</td><td><a href="images/rackham_et_al/3_108930188_108930974.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106634572</td><td>106635098</td><td>15</td><td>0.408</td><td>526</td><td>0.029</td><td><a href="images/rackham_et_al/15_106634572_106635098.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>43094592</td><td>43094640</td><td>5</td><td>-0.363</td><td>48</td><td>0.104</td><td><a href="images/rackham_et_al/2_43094592_43094640.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>43094592</td><td>43094640</td><td>5</td><td>-0.363</td><td>48</td><td>0.104</td><td><a href="images/rackham_et_al/2_43094592_43094640.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>160519056</td><td>160519506</td><td>8</td><td>-0.397</td><td>450</td><td>0.018</td><td><a href="images/rackham_et_al/5_160519056_160519506.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>145416806</td><td>145417028</td><td>5</td><td>0.347</td><td>222</td><td>0.023</td><td><a href="images/rackham_et_al/5_145416806_145417028.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>145416806</td><td>145417028</td><td>5</td><td>0.347</td><td>222</td><td>0.023</td><td><a href="images/rackham_et_al/5_145416806_145417028.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>7518937</td><td>7519003</td><td>7</td><td>-0.417</td><td>66</td><td>0.106</td><td><a href="images/rackham_et_al/3_7518937_7519003.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>7518937</td><td>7519003</td><td>7</td><td>-0.417</td><td>66</td><td>0.106</td><td><a href="images/rackham_et_al/3_7518937_7519003.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>13482975</td><td>13483125</td><td>7</td><td>-0.389</td><td>150</td><td>0.047</td><td><a href="images/rackham_et_al/1_13482975_13483125.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>13385349</td><td>13385499</td><td>8</td><td>-0.393</td><td>150</td><td>0.053</td><td><a href="images/rackham_et_al/1_13385349_13385499.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>105784405</td><td>105784477</td><td>6</td><td>-0.334</td><td>72</td><td>0.083</td><td><a href="images/rackham_et_al/9_105784405_105784477.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>105784405</td><td>105784477</td><td>6</td><td>-0.334</td><td>72</td><td>0.083</td><td><a href="images/rackham_et_al/9_105784405_105784477.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>73148688</td><td>73149325</td><td>8</td><td>-0.451</td><td>637</td><td>0.013</td><td><a href="images/rackham_et_al/11_73148688_73149325.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>73148688</td><td>73149325</td><td>8</td><td>-0.451</td><td>637</td><td>0.013</td><td><a href="images/rackham_et_al/11_73148688_73149325.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>73148688</td><td>73149325</td><td>8</td><td>-0.451</td><td>637</td><td>0.013</td><td><a href="images/rackham_et_al/11_73148688_73149325.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>109943346</td><td>109943368</td><td>10</td><td>0.493</td><td>22</td><td>0.455</td><td><a href="images/rackham_et_al/10_109943346_109943368.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>25294221</td><td>25294233</td><td>7</td><td>-0.381</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/19_25294221_25294233.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>25294221</td><td>25294233</td><td>7</td><td>-0.381</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/19_25294221_25294233.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>25294221</td><td>25294233</td><td>7</td><td>-0.381</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/19_25294221_25294233.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>25294221</td><td>25294233</td><td>7</td><td>-0.381</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/19_25294221_25294233.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>32716102</td><td>32716112</td><td>5</td><td>0.341</td><td>10</td><td>0.5</td><td><a href="images/rackham_et_al/13_32716102_32716112.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>49647060</td><td>49647070</td><td>6</td><td>0.579</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/19_49647060_49647070.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>106180308</td><td>106180496</td><td>6</td><td>-0.398</td><td>188</td><td>0.032</td><td><a href="images/rackham_et_al/5_106180308_106180496.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>106180308</td><td>106180496</td><td>6</td><td>-0.398</td><td>188</td><td>0.032</td><td><a href="images/rackham_et_al/5_106180308_106180496.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>48907712</td><td>48908091</td><td>14</td><td>0.358</td><td>379</td><td>0.037</td><td><a href="images/rackham_et_al/8_48907712_48908091.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>9281121</td><td>9281523</td><td>6</td><td>-0.416</td><td>402</td><td>0.015</td><td><a href="images/rackham_et_al/4_9281121_9281523.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>7891573</td><td>7891813</td><td>5</td><td>0.335</td><td>240</td><td>0.021</td><td><a href="images/rackham_et_al/12_7891573_7891813.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>1553097</td><td>1553639</td><td>7</td><td>0.336</td><td>542</td><td>0.013</td><td><a href="images/rackham_et_al/12_1553097_1553639.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>1553097</td><td>1553639</td><td>7</td><td>0.336</td><td>542</td><td>0.013</td><td><a href="images/rackham_et_al/12_1553097_1553639.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>127592365</td><td>127592890</td><td>10</td><td>-0.345</td><td>525</td><td>0.019</td><td><a href="images/rackham_et_al/8_127592365_127592890.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>190109264</td><td>190109698</td><td>5</td><td>0.396</td><td>434</td><td>0.012</td><td><a href="images/rackham_et_al/1_190109264_190109698.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>190109264</td><td>190109698</td><td>5</td><td>0.396</td><td>434</td><td>0.012</td><td><a href="images/rackham_et_al/1_190109264_190109698.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>190109264</td><td>190109698</td><td>5</td><td>0.396</td><td>434</td><td>0.012</td><td><a href="images/rackham_et_al/1_190109264_190109698.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>190109264</td><td>190109698</td><td>5</td><td>0.396</td><td>434</td><td>0.012</td><td><a href="images/rackham_et_al/1_190109264_190109698.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>27914152</td><td>27914162</td><td>6</td><td>0.417</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/19_27914152_27914162.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>27914152</td><td>27914162</td><td>6</td><td>0.417</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/19_27914152_27914162.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>128382442</td><td>128382706</td><td>9</td><td>-0.342</td><td>264</td><td>0.034</td><td><a href="images/rackham_et_al/4_128382442_128382706.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>93099777</td><td>93100101</td><td>8</td><td>-0.445</td><td>324</td><td>0.025</td><td><a href="images/rackham_et_al/9_93099777_93100101.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>51222488</td><td>51222685</td><td>11</td><td>-0.477</td><td>197</td><td>0.056</td><td><a href="images/rackham_et_al/5_51222488_51222685.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>43615512</td><td>43615894</td><td>6</td><td>-0.450</td><td>382</td><td>0.016</td><td><a href="images/rackham_et_al/20_43615512_43615894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>43615512</td><td>43615894</td><td>6</td><td>-0.450</td><td>382</td><td>0.016</td><td><a href="images/rackham_et_al/20_43615512_43615894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>13116540</td><td>13116574</td><td>5</td><td>-0.367</td><td>34</td><td>0.147</td><td><a href="images/rackham_et_al/20_13116540_13116574.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>67547358</td><td>67547424</td><td>5</td><td>0.355</td><td>66</td><td>0.076</td><td><a href="images/rackham_et_al/13_67547358_67547424.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>67547358</td><td>67547424</td><td>5</td><td>0.355</td><td>66</td><td>0.076</td><td><a href="images/rackham_et_al/13_67547358_67547424.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>3690233</td><td>3690589</td><td>5</td><td>-0.589</td><td>356</td><td>0.014</td><td><a href="images/rackham_et_al/18_3690233_3690589.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chrX</td><td>55968370</td><td>55968378</td><td>5</td><td>0.384</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/X_55968370_55968378.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>236071082</td><td>236071368</td><td>5</td><td>0.336</td><td>286</td><td>0.017</td><td><a href="images/rackham_et_al/2_236071082_236071368.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>80742163</td><td>80742175</td><td>6</td><td>0.529</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/16_80742163_80742175.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>80742163</td><td>80742175</td><td>6</td><td>0.529</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/16_80742163_80742175.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>5555894</td><td>5556025</td><td>5</td><td>0.372</td><td>131</td><td>0.038</td><td><a href="images/rackham_et_al/4_5555894_5556025.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>5532365</td><td>5532379</td><td>8</td><td>0.461</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/4_5532365_5532379.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>78223568</td><td>78223715</td><td>7</td><td>0.404</td><td>147</td><td>0.048</td><td><a href="images/rackham_et_al/13_78223568_78223715.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>78223568</td><td>78223715</td><td>7</td><td>0.404</td><td>147</td><td>0.048</td><td><a href="images/rackham_et_al/13_78223568_78223715.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>78223568</td><td>78223715</td><td>7</td><td>0.404</td><td>147</td><td>0.048</td><td><a href="images/rackham_et_al/13_78223568_78223715.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>27484076</td><td>27484225</td><td>5</td><td>-0.341</td><td>149</td><td>0.034</td><td><a href="images/rackham_et_al/17_27484076_27484225.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>27484076</td><td>27484225</td><td>5</td><td>-0.341</td><td>149</td><td>0.034</td><td><a href="images/rackham_et_al/17_27484076_27484225.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>27484076</td><td>27484225</td><td>5</td><td>-0.341</td><td>149</td><td>0.034</td><td><a href="images/rackham_et_al/17_27484076_27484225.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>27484076</td><td>27484225</td><td>5</td><td>-0.341</td><td>149</td><td>0.034</td><td><a href="images/rackham_et_al/17_27484076_27484225.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11515323</td><td>11515494</td><td>8</td><td>-0.359</td><td>171</td><td>0.047</td><td><a href="images/rackham_et_al/17_11515323_11515494.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11700172</td><td>11700198</td><td>5</td><td>-0.399</td><td>26</td><td>0.192</td><td><a href="images/rackham_et_al/17_11700172_11700198.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11515323</td><td>11515494</td><td>8</td><td>-0.359</td><td>171</td><td>0.047</td><td><a href="images/rackham_et_al/17_11515323_11515494.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11515323</td><td>11515494</td><td>8</td><td>-0.359</td><td>171</td><td>0.047</td><td><a href="images/rackham_et_al/17_11515323_11515494.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11700172</td><td>11700198</td><td>5</td><td>-0.399</td><td>26</td><td>0.192</td><td><a href="images/rackham_et_al/17_11700172_11700198.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11700172</td><td>11700198</td><td>5</td><td>-0.399</td><td>26</td><td>0.192</td><td><a href="images/rackham_et_al/17_11700172_11700198.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>11700172</td><td>11700198</td><td>5</td><td>-0.399</td><td>26</td><td>0.192</td><td><a href="images/rackham_et_al/17_11700172_11700198.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>67874705</td><td>67874719</td><td>7</td><td>0.440</td><td>14</td><td>0.5</td><td><a href="images/rackham_et_al/1_67874705_67874719.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>156324291</td><td>156324374</td><td>7</td><td>-0.452</td><td>83</td><td>0.084</td><td><a href="images/rackham_et_al/4_156324291_156324374.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>156324291</td><td>156324374</td><td>7</td><td>-0.452</td><td>83</td><td>0.084</td><td><a href="images/rackham_et_al/4_156324291_156324374.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>156324291</td><td>156324374</td><td>7</td><td>-0.452</td><td>83</td><td>0.084</td><td><a href="images/rackham_et_al/4_156324291_156324374.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58811112</td><td>58811251</td><td>6</td><td>-0.480</td><td>139</td><td>0.043</td><td><a href="images/rackham_et_al/3_58811112_58811251.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58811112</td><td>58811251</td><td>6</td><td>-0.480</td><td>139</td><td>0.043</td><td><a href="images/rackham_et_al/3_58811112_58811251.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58811112</td><td>58811251</td><td>6</td><td>-0.480</td><td>139</td><td>0.043</td><td><a href="images/rackham_et_al/3_58811112_58811251.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58811112</td><td>58811251</td><td>6</td><td>-0.480</td><td>139</td><td>0.043</td><td><a href="images/rackham_et_al/3_58811112_58811251.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58811112</td><td>58811251</td><td>6</td><td>-0.480</td><td>139</td><td>0.043</td><td><a href="images/rackham_et_al/3_58811112_58811251.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>58744434</td><td>58744587</td><td>6</td><td>-0.380</td><td>153</td><td>0.039</td><td><a href="images/rackham_et_al/3_58744434_58744587.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>91035530</td><td>91036093</td><td>7</td><td>0.346</td><td>563</td><td>0.012</td><td><a href="images/rackham_et_al/10_91035530_91036093.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>74844539</td><td>74844597</td><td>5</td><td>0.485</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/17_74844539_74844597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>74844539</td><td>74844597</td><td>5</td><td>0.485</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/17_74844539_74844597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>74844539</td><td>74844597</td><td>5</td><td>0.485</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/17_74844539_74844597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140328857</td><td>140329301</td><td>13</td><td>0.363</td><td>444</td><td>0.029</td><td><a href="images/rackham_et_al/7_140328857_140329301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>140328857</td><td>140329301</td><td>13</td><td>0.363</td><td>444</td><td>0.029</td><td><a href="images/rackham_et_al/7_140328857_140329301.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>4482029</td><td>4482589</td><td>13</td><td>-0.422</td><td>560</td><td>0.023</td><td><a href="images/rackham_et_al/1_4482029_4482589.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>4482029</td><td>4482589</td><td>13</td><td>-0.422</td><td>560</td><td>0.023</td><td><a href="images/rackham_et_al/1_4482029_4482589.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>4482029</td><td>4482589</td><td>13</td><td>-0.422</td><td>560</td><td>0.023</td><td><a href="images/rackham_et_al/1_4482029_4482589.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>53273093</td><td>53273281</td><td>5</td><td>0.358</td><td>188</td><td>0.027</td><td><a href="images/rackham_et_al/9_53273093_53273281.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102657097</td><td>102657641</td><td>7</td><td>0.477</td><td>544</td><td>0.013</td><td><a href="images/rackham_et_al/9_102657097_102657641.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102657097</td><td>102657641</td><td>7</td><td>0.477</td><td>544</td><td>0.013</td><td><a href="images/rackham_et_al/9_102657097_102657641.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102645538</td><td>102645707</td><td>9</td><td>0.390</td><td>169</td><td>0.053</td><td><a href="images/rackham_et_al/9_102645538_102645707.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102657097</td><td>102657641</td><td>7</td><td>0.477</td><td>544</td><td>0.013</td><td><a href="images/rackham_et_al/9_102657097_102657641.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102645538</td><td>102645707</td><td>9</td><td>0.390</td><td>169</td><td>0.053</td><td><a href="images/rackham_et_al/9_102645538_102645707.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>102645538</td><td>102645707</td><td>9</td><td>0.390</td><td>169</td><td>0.053</td><td><a href="images/rackham_et_al/9_102645538_102645707.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>85664714</td><td>85664724</td><td>5</td><td>0.398</td><td>10</td><td>0.5</td><td><a href="images/rackham_et_al/14_85664714_85664724.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>85664714</td><td>85664724</td><td>5</td><td>0.398</td><td>10</td><td>0.5</td><td><a href="images/rackham_et_al/14_85664714_85664724.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>85664714</td><td>85664724</td><td>5</td><td>0.398</td><td>10</td><td>0.5</td><td><a href="images/rackham_et_al/14_85664714_85664724.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>8384925</td><td>8384981</td><td>8</td><td>0.400</td><td>56</td><td>0.143</td><td><a href="images/rackham_et_al/3_8384925_8384981.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168166762</td><td>168166981</td><td>10</td><td>0.379</td><td>219</td><td>0.046</td><td><a href="images/rackham_et_al/5_168166762_168166981.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168166762</td><td>168166981</td><td>10</td><td>0.379</td><td>219</td><td>0.046</td><td><a href="images/rackham_et_al/5_168166762_168166981.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168166586</td><td>168166718</td><td>8</td><td>0.354</td><td>132</td><td>0.061</td><td><a href="images/rackham_et_al/5_168166586_168166718.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168166586</td><td>168166718</td><td>8</td><td>0.354</td><td>132</td><td>0.061</td><td><a href="images/rackham_et_al/5_168166586_168166718.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>253197702</td><td>253198238</td><td>7</td><td>-0.437</td><td>536</td><td>0.013</td><td><a href="images/rackham_et_al/1_253197702_253198238.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>46496245</td><td>46496409</td><td>5</td><td>0.341</td><td>164</td><td>0.03</td><td><a href="images/rackham_et_al/9_46496245_46496409.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>46496245</td><td>46496409</td><td>5</td><td>0.341</td><td>164</td><td>0.03</td><td><a href="images/rackham_et_al/9_46496245_46496409.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>156688729</td><td>156688955</td><td>7</td><td>0.342</td><td>226</td><td>0.031</td><td><a href="images/rackham_et_al/5_156688729_156688955.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>156688729</td><td>156688955</td><td>7</td><td>0.342</td><td>226</td><td>0.031</td><td><a href="images/rackham_et_al/5_156688729_156688955.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>182691906</td><td>182691978</td><td>5</td><td>-0.345</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/4_182691906_182691978.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>182692109</td><td>182692327</td><td>7</td><td>-0.364</td><td>218</td><td>0.032</td><td><a href="images/rackham_et_al/4_182692109_182692327.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>182692109</td><td>182692327</td><td>7</td><td>-0.364</td><td>218</td><td>0.032</td><td><a href="images/rackham_et_al/4_182692109_182692327.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>182691906</td><td>182691978</td><td>5</td><td>-0.345</td><td>72</td><td>0.069</td><td><a href="images/rackham_et_al/4_182691906_182691978.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>157990487</td><td>157990785</td><td>5</td><td>0.378</td><td>298</td><td>0.017</td><td><a href="images/rackham_et_al/5_157990487_157990785.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>157990487</td><td>157990785</td><td>5</td><td>0.378</td><td>298</td><td>0.017</td><td><a href="images/rackham_et_al/5_157990487_157990785.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>157990487</td><td>157990785</td><td>5</td><td>0.378</td><td>298</td><td>0.017</td><td><a href="images/rackham_et_al/5_157990487_157990785.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>145408755</td><td>145409024</td><td>6</td><td>0.402</td><td>269</td><td>0.022</td><td><a href="images/rackham_et_al/5_145408755_145409024.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>39461960</td><td>39462119</td><td>5</td><td>-0.381</td><td>159</td><td>0.031</td><td><a href="images/rackham_et_al/9_39461960_39462119.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>39461960</td><td>39462119</td><td>5</td><td>-0.381</td><td>159</td><td>0.031</td><td><a href="images/rackham_et_al/9_39461960_39462119.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>39461960</td><td>39462119</td><td>5</td><td>-0.381</td><td>159</td><td>0.031</td><td><a href="images/rackham_et_al/9_39461960_39462119.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>183804968</td><td>183805116</td><td>6</td><td>0.406</td><td>148</td><td>0.041</td><td><a href="images/rackham_et_al/4_183804968_183805116.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>183804968</td><td>183805116</td><td>6</td><td>0.406</td><td>148</td><td>0.041</td><td><a href="images/rackham_et_al/4_183804968_183805116.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>183804968</td><td>183805116</td><td>6</td><td>0.406</td><td>148</td><td>0.041</td><td><a href="images/rackham_et_al/4_183804968_183805116.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>183804968</td><td>183805116</td><td>6</td><td>0.406</td><td>148</td><td>0.041</td><td><a href="images/rackham_et_al/4_183804968_183805116.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr14</td><td>110244728</td><td>110244894</td><td>6</td><td>-0.353</td><td>166</td><td>0.036</td><td><a href="images/rackham_et_al/14_110244728_110244894.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>24660550</td><td>24660578</td><td>5</td><td>0.404</td><td>28</td><td>0.179</td><td><a href="images/rackham_et_al/20_24660550_24660578.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>41335397</td><td>41335479</td><td>5</td><td>-0.338</td><td>82</td><td>0.061</td><td><a href="images/rackham_et_al/12_41335397_41335479.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>9888644</td><td>9888745</td><td>9</td><td>0.402</td><td>101</td><td>0.089</td><td><a href="images/rackham_et_al/20_9888644_9888745.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>9853542</td><td>9853868</td><td>5</td><td>0.339</td><td>326</td><td>0.015</td><td><a href="images/rackham_et_al/20_9853542_9853868.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>12975878</td><td>12975968</td><td>5</td><td>-0.397</td><td>90</td><td>0.056</td><td><a href="images/rackham_et_al/20_12975878_12975968.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37767063</td><td>37767335</td><td>6</td><td>-0.538</td><td>272</td><td>0.022</td><td><a href="images/rackham_et_al/11_37767063_37767335.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>35083469</td><td>35083497</td><td>6</td><td>-0.365</td><td>28</td><td>0.214</td><td><a href="images/rackham_et_al/11_35083469_35083497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>35083469</td><td>35083497</td><td>6</td><td>-0.365</td><td>28</td><td>0.214</td><td><a href="images/rackham_et_al/11_35083469_35083497.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>108922985</td><td>108922997</td><td>7</td><td>0.398</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/10_108922985_108922997.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>108845676</td><td>108845884</td><td>6</td><td>-0.384</td><td>208</td><td>0.029</td><td><a href="images/rackham_et_al/15_108845676_108845884.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>108845676</td><td>108845884</td><td>6</td><td>-0.384</td><td>208</td><td>0.029</td><td><a href="images/rackham_et_al/15_108845676_108845884.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>48076732</td><td>48076956</td><td>5</td><td>-0.428</td><td>224</td><td>0.022</td><td><a href="images/rackham_et_al/6_48076732_48076956.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>48076732</td><td>48076956</td><td>5</td><td>-0.428</td><td>224</td><td>0.022</td><td><a href="images/rackham_et_al/6_48076732_48076956.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47278577</td><td>47279351</td><td>11</td><td>0.563</td><td>774</td><td>0.014</td><td><a href="images/rackham_et_al/3_47278577_47279351.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47282832</td><td>47283168</td><td>8</td><td>0.384</td><td>336</td><td>0.024</td><td><a href="images/rackham_et_al/3_47282832_47283168.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47278577</td><td>47279351</td><td>11</td><td>0.563</td><td>774</td><td>0.014</td><td><a href="images/rackham_et_al/3_47278577_47279351.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47278577</td><td>47279351</td><td>11</td><td>0.563</td><td>774</td><td>0.014</td><td><a href="images/rackham_et_al/3_47278577_47279351.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47282832</td><td>47283168</td><td>8</td><td>0.384</td><td>336</td><td>0.024</td><td><a href="images/rackham_et_al/3_47282832_47283168.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>47282832</td><td>47283168</td><td>8</td><td>0.384</td><td>336</td><td>0.024</td><td><a href="images/rackham_et_al/3_47282832_47283168.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>54652027</td><td>54652303</td><td>5</td><td>0.371</td><td>276</td><td>0.018</td><td><a href="images/rackham_et_al/6_54652027_54652303.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>54652027</td><td>54652303</td><td>5</td><td>0.371</td><td>276</td><td>0.018</td><td><a href="images/rackham_et_al/6_54652027_54652303.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>54652027</td><td>54652303</td><td>5</td><td>0.371</td><td>276</td><td>0.018</td><td><a href="images/rackham_et_al/6_54652027_54652303.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>145253364</td><td>145253470</td><td>7</td><td>0.369</td><td>106</td><td>0.066</td><td><a href="images/rackham_et_al/6_145253364_145253470.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>115977146</td><td>115977332</td><td>5</td><td>-0.382</td><td>186</td><td>0.027</td><td><a href="images/rackham_et_al/7_115977146_115977332.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>164031894</td><td>164032077</td><td>5</td><td>-0.419</td><td>183</td><td>0.027</td><td><a href="images/rackham_et_al/5_164031894_164032077.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>164031894</td><td>164032077</td><td>5</td><td>-0.419</td><td>183</td><td>0.027</td><td><a href="images/rackham_et_al/5_164031894_164032077.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44537854</td><td>44538200</td><td>13</td><td>0.458</td><td>346</td><td>0.038</td><td><a href="images/rackham_et_al/13_44537854_44538200.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44537854</td><td>44538200</td><td>13</td><td>0.458</td><td>346</td><td>0.038</td><td><a href="images/rackham_et_al/13_44537854_44538200.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>1376839</td><td>1376974</td><td>5</td><td>-0.392</td><td>135</td><td>0.037</td><td><a href="images/rackham_et_al/8_1376839_1376974.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>1376839</td><td>1376974</td><td>5</td><td>-0.392</td><td>135</td><td>0.037</td><td><a href="images/rackham_et_al/8_1376839_1376974.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>1376839</td><td>1376974</td><td>5</td><td>-0.392</td><td>135</td><td>0.037</td><td><a href="images/rackham_et_al/8_1376839_1376974.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>163757495</td><td>163757505</td><td>6</td><td>-0.389</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/3_163757495_163757505.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>48365523</td><td>48365597</td><td>5</td><td>-0.348</td><td>74</td><td>0.068</td><td><a href="images/rackham_et_al/13_48365523_48365597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>66070350</td><td>66070577</td><td>7</td><td>0.419</td><td>227</td><td>0.031</td><td><a href="images/rackham_et_al/5_66070350_66070577.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>43688598</td><td>43688632</td><td>7</td><td>-0.597</td><td>34</td><td>0.206</td><td><a href="images/rackham_et_al/4_43688598_43688632.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>20790486</td><td>20790689</td><td>8</td><td>-0.334</td><td>203</td><td>0.039</td><td><a href="images/rackham_et_al/10_20790486_20790689.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>14208354</td><td>14208382</td><td>5</td><td>0.338</td><td>28</td><td>0.179</td><td><a href="images/rackham_et_al/15_14208354_14208382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>14208354</td><td>14208382</td><td>5</td><td>0.338</td><td>28</td><td>0.179</td><td><a href="images/rackham_et_al/15_14208354_14208382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>14208354</td><td>14208382</td><td>5</td><td>0.338</td><td>28</td><td>0.179</td><td><a href="images/rackham_et_al/15_14208354_14208382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>14208354</td><td>14208382</td><td>5</td><td>0.338</td><td>28</td><td>0.179</td><td><a href="images/rackham_et_al/15_14208354_14208382.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>10211987</td><td>10212102</td><td>6</td><td>0.379</td><td>115</td><td>0.052</td><td><a href="images/rackham_et_al/3_10211987_10212102.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>172880665</td><td>172880673</td><td>5</td><td>-0.367</td><td>8</td><td>0.625</td><td><a href="images/rackham_et_al/4_172880665_172880673.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>69660889</td><td>69661045</td><td>5</td><td>-0.478</td><td>156</td><td>0.032</td><td><a href="images/rackham_et_al/2_69660889_69661045.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>62700306</td><td>62700528</td><td>8</td><td>-0.471</td><td>222</td><td>0.036</td><td><a href="images/rackham_et_al/4_62700306_62700528.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>62700306</td><td>62700528</td><td>8</td><td>-0.471</td><td>222</td><td>0.036</td><td><a href="images/rackham_et_al/4_62700306_62700528.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106222037</td><td>106222308</td><td>5</td><td>-0.356</td><td>271</td><td>0.018</td><td><a href="images/rackham_et_al/15_106222037_106222308.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>106213826</td><td>106214427</td><td>24</td><td>-0.354</td><td>601</td><td>0.04</td><td><a href="images/rackham_et_al/15_106213826_106214427.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>86278604</td><td>86279191</td><td>10</td><td>0.363</td><td>587</td><td>0.017</td><td><a href="images/rackham_et_al/10_86278604_86279191.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>86278604</td><td>86279191</td><td>10</td><td>0.363</td><td>587</td><td>0.017</td><td><a href="images/rackham_et_al/10_86278604_86279191.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>86278604</td><td>86279191</td><td>10</td><td>0.363</td><td>587</td><td>0.017</td><td><a href="images/rackham_et_al/10_86278604_86279191.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>86278604</td><td>86279191</td><td>10</td><td>0.363</td><td>587</td><td>0.017</td><td><a href="images/rackham_et_al/10_86278604_86279191.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>13997672</td><td>13997927</td><td>6</td><td>-0.337</td><td>255</td><td>0.024</td><td><a href="images/rackham_et_al/17_13997672_13997927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>13997672</td><td>13997927</td><td>6</td><td>-0.337</td><td>255</td><td>0.024</td><td><a href="images/rackham_et_al/17_13997672_13997927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>31610546</td><td>31610560</td><td>8</td><td>0.647</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/19_31610546_31610560.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>8965633</td><td>8965732</td><td>6</td><td>-0.361</td><td>99</td><td>0.061</td><td><a href="images/rackham_et_al/4_8965633_8965732.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>8969628</td><td>8969854</td><td>8</td><td>-0.407</td><td>226</td><td>0.035</td><td><a href="images/rackham_et_al/4_8969628_8969854.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>161410907</td><td>161411026</td><td>6</td><td>-0.454</td><td>119</td><td>0.05</td><td><a href="images/rackham_et_al/3_161410907_161411026.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>161410907</td><td>161411026</td><td>6</td><td>-0.454</td><td>119</td><td>0.05</td><td><a href="images/rackham_et_al/3_161410907_161411026.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>161410907</td><td>161411026</td><td>6</td><td>-0.454</td><td>119</td><td>0.05</td><td><a href="images/rackham_et_al/3_161410907_161411026.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>161410907</td><td>161411026</td><td>6</td><td>-0.454</td><td>119</td><td>0.05</td><td><a href="images/rackham_et_al/3_161410907_161411026.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>161410907</td><td>161411026</td><td>6</td><td>-0.454</td><td>119</td><td>0.05</td><td><a href="images/rackham_et_al/3_161410907_161411026.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>49784260</td><td>49784878</td><td>7</td><td>0.334</td><td>618</td><td>0.011</td><td><a href="images/rackham_et_al/16_49784260_49784878.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>14611512</td><td>14611815</td><td>7</td><td>0.483</td><td>303</td><td>0.023</td><td><a href="images/rackham_et_al/18_14611512_14611815.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>155724084</td><td>155724416</td><td>5</td><td>-0.546</td><td>332</td><td>0.015</td><td><a href="images/rackham_et_al/1_155724084_155724416.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>155724084</td><td>155724416</td><td>5</td><td>-0.546</td><td>332</td><td>0.015</td><td><a href="images/rackham_et_al/1_155724084_155724416.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>58788018</td><td>58788066</td><td>6</td><td>0.386</td><td>48</td><td>0.125</td><td><a href="images/rackham_et_al/8_58788018_58788066.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>6553048</td><td>6553221</td><td>11</td><td>-0.362</td><td>173</td><td>0.064</td><td><a href="images/rackham_et_al/18_6553048_6553221.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>189582761</td><td>189582927</td><td>5</td><td>0.386</td><td>166</td><td>0.03</td><td><a href="images/rackham_et_al/1_189582761_189582927.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>71690249</td><td>71690476</td><td>5</td><td>0.390</td><td>227</td><td>0.022</td><td><a href="images/rackham_et_al/9_71690249_71690476.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>83873172</td><td>83873278</td><td>5</td><td>0.361</td><td>106</td><td>0.047</td><td><a href="images/rackham_et_al/16_83873172_83873278.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>83873172</td><td>83873278</td><td>5</td><td>0.361</td><td>106</td><td>0.047</td><td><a href="images/rackham_et_al/16_83873172_83873278.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>83873172</td><td>83873278</td><td>5</td><td>0.361</td><td>106</td><td>0.047</td><td><a href="images/rackham_et_al/16_83873172_83873278.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12636808</td><td>12637211</td><td>19</td><td>-0.355</td><td>403</td><td>0.047</td><td><a href="images/rackham_et_al/6_12636808_12637211.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12920885</td><td>12921125</td><td>6</td><td>0.355</td><td>240</td><td>0.025</td><td><a href="images/rackham_et_al/6_12920885_12921125.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr6</td><td>12920885</td><td>12921125</td><td>6</td><td>0.355</td><td>240</td><td>0.025</td><td><a href="images/rackham_et_al/6_12920885_12921125.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr18</td><td>4289227</td><td>4289908</td><td>7</td><td>-0.388</td><td>681</td><td>0.01</td><td><a href="images/rackham_et_al/18_4289227_4289908.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>30890327</td><td>30890473</td><td>8</td><td>-0.357</td><td>146</td><td>0.055</td><td><a href="images/rackham_et_al/2_30890327_30890473.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>30890327</td><td>30890473</td><td>8</td><td>-0.357</td><td>146</td><td>0.055</td><td><a href="images/rackham_et_al/2_30890327_30890473.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168288505</td><td>168288765</td><td>11</td><td>0.351</td><td>260</td><td>0.042</td><td><a href="images/rackham_et_al/5_168288505_168288765.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168288505</td><td>168288765</td><td>11</td><td>0.351</td><td>260</td><td>0.042</td><td><a href="images/rackham_et_al/5_168288505_168288765.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>168288505</td><td>168288765</td><td>11</td><td>0.351</td><td>260</td><td>0.042</td><td><a href="images/rackham_et_al/5_168288505_168288765.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>11073388</td><td>11073740</td><td>7</td><td>0.492</td><td>352</td><td>0.02</td><td><a href="images/rackham_et_al/19_11073388_11073740.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>158630482</td><td>158630694</td><td>6</td><td>-0.492</td><td>212</td><td>0.028</td><td><a href="images/rackham_et_al/5_158630482_158630694.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>164724337</td><td>164724671</td><td>5</td><td>0.349</td><td>334</td><td>0.015</td><td><a href="images/rackham_et_al/1_164724337_164724671.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>74829711</td><td>74829771</td><td>5</td><td>0.357</td><td>60</td><td>0.083</td><td><a href="images/rackham_et_al/9_74829711_74829771.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>74829711</td><td>74829771</td><td>5</td><td>0.357</td><td>60</td><td>0.083</td><td><a href="images/rackham_et_al/9_74829711_74829771.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>74829711</td><td>74829771</td><td>5</td><td>0.357</td><td>60</td><td>0.083</td><td><a href="images/rackham_et_al/9_74829711_74829771.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>203418403</td><td>203418864</td><td>10</td><td>0.411</td><td>461</td><td>0.022</td><td><a href="images/rackham_et_al/1_203418403_203418864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>203418403</td><td>203418864</td><td>10</td><td>0.411</td><td>461</td><td>0.022</td><td><a href="images/rackham_et_al/1_203418403_203418864.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>190763131</td><td>190763597</td><td>9</td><td>-0.438</td><td>466</td><td>0.019</td><td><a href="images/rackham_et_al/2_190763131_190763597.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>121645654</td><td>121646017</td><td>5</td><td>-0.338</td><td>363</td><td>0.014</td><td><a href="images/rackham_et_al/2_121645654_121646017.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>91165343</td><td>91165355</td><td>7</td><td>0.391</td><td>12</td><td>0.583</td><td><a href="images/rackham_et_al/13_91165343_91165355.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>91030869</td><td>91030908</td><td>5</td><td>0.450</td><td>39</td><td>0.128</td><td><a href="images/rackham_et_al/13_91030869_91030908.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>55798422</td><td>55798432</td><td>5</td><td>-0.479</td><td>10</td><td>0.5</td><td><a href="images/rackham_et_al/7_55798422_55798432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>89272578</td><td>89272760</td><td>5</td><td>0.342</td><td>182</td><td>0.027</td><td><a href="images/rackham_et_al/3_89272578_89272760.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>73359106</td><td>73359432</td><td>8</td><td>0.388</td><td>326</td><td>0.025</td><td><a href="images/rackham_et_al/11_73359106_73359432.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>44920844</td><td>44921134</td><td>9</td><td>0.543</td><td>290</td><td>0.031</td><td><a href="images/rackham_et_al/13_44920844_44921134.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85488421</td><td>85488435</td><td>8</td><td>0.492</td><td>14</td><td>0.571</td><td><a href="images/rackham_et_al/1_85488421_85488435.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>71907181</td><td>71907337</td><td>5</td><td>-0.418</td><td>156</td><td>0.032</td><td><a href="images/rackham_et_al/16_71907181_71907337.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>71907181</td><td>71907337</td><td>5</td><td>-0.418</td><td>156</td><td>0.032</td><td><a href="images/rackham_et_al/16_71907181_71907337.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>15895940</td><td>15896314</td><td>5</td><td>-0.361</td><td>374</td><td>0.013</td><td><a href="images/rackham_et_al/17_15895940_15896314.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>40802558</td><td>40802758</td><td>9</td><td>-0.374</td><td>200</td><td>0.045</td><td><a href="images/rackham_et_al/3_40802558_40802758.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>165213290</td><td>165213657</td><td>15</td><td>0.340</td><td>367</td><td>0.041</td><td><a href="images/rackham_et_al/3_165213290_165213657.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>165213290</td><td>165213657</td><td>15</td><td>0.340</td><td>367</td><td>0.041</td><td><a href="images/rackham_et_al/3_165213290_165213657.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>165213290</td><td>165213657</td><td>15</td><td>0.340</td><td>367</td><td>0.041</td><td><a href="images/rackham_et_al/3_165213290_165213657.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>165213290</td><td>165213657</td><td>15</td><td>0.340</td><td>367</td><td>0.041</td><td><a href="images/rackham_et_al/3_165213290_165213657.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>53190150</td><td>53190344</td><td>5</td><td>0.357</td><td>194</td><td>0.026</td><td><a href="images/rackham_et_al/19_53190150_53190344.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>252646238</td><td>252646311</td><td>5</td><td>0.425</td><td>73</td><td>0.068</td><td><a href="images/rackham_et_al/2_252646238_252646311.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>7891573</td><td>7891813</td><td>5</td><td>0.335</td><td>240</td><td>0.021</td><td><a href="images/rackham_et_al/12_7891573_7891813.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr12</td><td>40189802</td><td>40189846</td><td>7</td><td>-0.370</td><td>44</td><td>0.159</td><td><a href="images/rackham_et_al/12_40189802_40189846.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>179195596</td><td>179195606</td><td>6</td><td>-0.479</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/2_179195596_179195606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>138832461</td><td>138832819</td><td>14</td><td>-0.399</td><td>358</td><td>0.039</td><td><a href="images/rackham_et_al/7_138832461_138832819.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>138793194</td><td>138793492</td><td>6</td><td>-0.437</td><td>298</td><td>0.02</td><td><a href="images/rackham_et_al/7_138793194_138793492.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>118910246</td><td>118910475</td><td>8</td><td>0.396</td><td>229</td><td>0.035</td><td><a href="images/rackham_et_al/8_118910246_118910475.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>3289594</td><td>3289606</td><td>6</td><td>0.357</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/4_3289594_3289606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>3289594</td><td>3289606</td><td>6</td><td>0.357</td><td>12</td><td>0.5</td><td><a href="images/rackham_et_al/4_3289594_3289606.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>79745694</td><td>79745755</td><td>6</td><td>-0.346</td><td>61</td><td>0.098</td><td><a href="images/rackham_et_al/15_79745694_79745755.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr15</td><td>79745694</td><td>79745755</td><td>6</td><td>-0.346</td><td>61</td><td>0.098</td><td><a href="images/rackham_et_al/15_79745694_79745755.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>71868284</td><td>71868632</td><td>6</td><td>0.438</td><td>348</td><td>0.017</td><td><a href="images/rackham_et_al/16_71868284_71868632.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>111018313</td><td>111018592</td><td>6</td><td>0.384</td><td>279</td><td>0.022</td><td><a href="images/rackham_et_al/8_111018313_111018592.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>111018313</td><td>111018592</td><td>6</td><td>0.384</td><td>279</td><td>0.022</td><td><a href="images/rackham_et_al/8_111018313_111018592.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>76818554</td><td>76818564</td><td>6</td><td>0.571</td><td>10</td><td>0.6</td><td><a href="images/rackham_et_al/4_76818554_76818564.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>1054517</td><td>1055401</td><td>23</td><td>-0.380</td><td>884</td><td>0.026</td><td><a href="images/rackham_et_al/7_1054517_1055401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>1054517</td><td>1055401</td><td>23</td><td>-0.380</td><td>884</td><td>0.026</td><td><a href="images/rackham_et_al/7_1054517_1055401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>1054517</td><td>1055401</td><td>23</td><td>-0.380</td><td>884</td><td>0.026</td><td><a href="images/rackham_et_al/7_1054517_1055401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>1054517</td><td>1055401</td><td>23</td><td>-0.380</td><td>884</td><td>0.026</td><td><a href="images/rackham_et_al/7_1054517_1055401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>1054517</td><td>1055401</td><td>23</td><td>-0.380</td><td>884</td><td>0.026</td><td><a href="images/rackham_et_al/7_1054517_1055401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr8</td><td>115874367</td><td>115874492</td><td>5</td><td>-0.417</td><td>125</td><td>0.04</td><td><a href="images/rackham_et_al/8_115874367_115874492.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>201429684</td><td>201430555</td><td>9</td><td>-0.532</td><td>871</td><td>0.01</td><td><a href="images/rackham_et_al/2_201429684_201430555.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>201429684</td><td>201430555</td><td>9</td><td>-0.532</td><td>871</td><td>0.01</td><td><a href="images/rackham_et_al/2_201429684_201430555.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>201429684</td><td>201430555</td><td>9</td><td>-0.532</td><td>871</td><td>0.01</td><td><a href="images/rackham_et_al/2_201429684_201430555.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>201429684</td><td>201430555</td><td>9</td><td>-0.532</td><td>871</td><td>0.01</td><td><a href="images/rackham_et_al/2_201429684_201430555.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>201400467</td><td>201400650</td><td>9</td><td>-0.455</td><td>183</td><td>0.049</td><td><a href="images/rackham_et_al/2_201400467_201400650.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>78807715</td><td>78807834</td><td>5</td><td>-0.416</td><td>119</td><td>0.042</td><td><a href="images/rackham_et_al/4_78807715_78807834.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr11</td><td>37730127</td><td>37730419</td><td>12</td><td>0.365</td><td>292</td><td>0.041</td><td><a href="images/rackham_et_al/11_37730127_37730419.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>101473088</td><td>101473224</td><td>10</td><td>-0.375</td><td>136</td><td>0.074</td><td><a href="images/rackham_et_al/9_101473088_101473224.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>80598188</td><td>80598517</td><td>9</td><td>-0.441</td><td>329</td><td>0.027</td><td><a href="images/rackham_et_al/5_80598188_80598517.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85505331</td><td>85505468</td><td>7</td><td>-0.404</td><td>137</td><td>0.051</td><td><a href="images/rackham_et_al/1_85505331_85505468.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85505331</td><td>85505468</td><td>7</td><td>-0.404</td><td>137</td><td>0.051</td><td><a href="images/rackham_et_al/1_85505331_85505468.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>85505331</td><td>85505468</td><td>7</td><td>-0.404</td><td>137</td><td>0.051</td><td><a href="images/rackham_et_al/1_85505331_85505468.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr7</td><td>115977146</td><td>115977332</td><td>5</td><td>-0.382</td><td>186</td><td>0.027</td><td><a href="images/rackham_et_al/7_115977146_115977332.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>230696687</td><td>230696960</td><td>6</td><td>-0.505</td><td>273</td><td>0.022</td><td><a href="images/rackham_et_al/2_230696687_230696960.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>67050485</td><td>67050593</td><td>5</td><td>-0.367</td><td>108</td><td>0.046</td><td><a href="images/rackham_et_al/10_67050485_67050593.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>152236112</td><td>152236164</td><td>7</td><td>0.349</td><td>52</td><td>0.135</td><td><a href="images/rackham_et_al/5_152236112_152236164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>189040161</td><td>189040749</td><td>6</td><td>-0.465</td><td>588</td><td>0.01</td><td><a href="images/rackham_et_al/2_189040161_189040749.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>188866852</td><td>188869380</td><td>36</td><td>-0.491</td><td>2528</td><td>0.014</td><td><a href="images/rackham_et_al/2_188866852_188869380.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>188866852</td><td>188869380</td><td>36</td><td>-0.491</td><td>2528</td><td>0.014</td><td><a href="images/rackham_et_al/2_188866852_188869380.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>189040161</td><td>189040749</td><td>6</td><td>-0.465</td><td>588</td><td>0.01</td><td><a href="images/rackham_et_al/2_189040161_189040749.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>90861887</td><td>90861945</td><td>5</td><td>0.366</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/1_90861887_90861945.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>90861887</td><td>90861945</td><td>5</td><td>0.366</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/1_90861887_90861945.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>90861887</td><td>90861945</td><td>5</td><td>0.366</td><td>58</td><td>0.086</td><td><a href="images/rackham_et_al/1_90861887_90861945.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45481755</td><td>45481820</td><td>7</td><td>-0.344</td><td>65</td><td>0.108</td><td><a href="images/rackham_et_al/10_45481755_45481820.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr10</td><td>45481755</td><td>45481820</td><td>7</td><td>-0.344</td><td>65</td><td>0.108</td><td><a href="images/rackham_et_al/10_45481755_45481820.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr9</td><td>46496245</td><td>46496409</td><td>5</td><td>0.341</td><td>164</td><td>0.03</td><td><a href="images/rackham_et_al/9_46496245_46496409.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr19</td><td>29179428</td><td>29179455</td><td>5</td><td>0.457</td><td>27</td><td>0.185</td><td><a href="images/rackham_et_al/19_29179428_29179455.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>48283546</td><td>48283871</td><td>5</td><td>0.436</td><td>325</td><td>0.015</td><td><a href="images/rackham_et_al/13_48283546_48283871.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr16</td><td>10595689</td><td>10595942</td><td>5</td><td>-0.351</td><td>253</td><td>0.02</td><td><a href="images/rackham_et_al/16_10595689_10595942.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>12814806</td><td>12814977</td><td>6</td><td>-0.464</td><td>171</td><td>0.035</td><td><a href="images/rackham_et_al/17_12814806_12814977.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>3893373</td><td>3893718</td><td>6</td><td>0.342</td><td>345</td><td>0.017</td><td><a href="images/rackham_et_al/3_3893373_3893718.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr3</td><td>553952</td><td>556044</td><td>63</td><td>-0.344</td><td>2092</td><td>0.03</td><td><a href="images/rackham_et_al/3_553952_556044.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr13</td><td>81795263</td><td>81795401</td><td>6</td><td>0.395</td><td>138</td><td>0.043</td><td><a href="images/rackham_et_al/13_81795263_81795401.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>165837009</td><td>165837361</td><td>6</td><td>0.381</td><td>352</td><td>0.017</td><td><a href="images/rackham_et_al/1_165837009_165837361.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>614483</td><td>614731</td><td>9</td><td>-0.441</td><td>248</td><td>0.036</td><td><a href="images/rackham_et_al/2_614483_614731.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>10204465</td><td>10204620</td><td>5</td><td>-0.339</td><td>155</td><td>0.032</td><td><a href="images/rackham_et_al/20_10204465_10204620.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>188866852</td><td>188869380</td><td>36</td><td>-0.491</td><td>2528</td><td>0.014</td><td><a href="images/rackham_et_al/2_188866852_188869380.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>189040161</td><td>189040749</td><td>6</td><td>-0.465</td><td>588</td><td>0.01</td><td><a href="images/rackham_et_al/2_189040161_189040749.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr1</td><td>72948735</td><td>72949173</td><td>7</td><td>0.343</td><td>438</td><td>0.016</td><td><a href="images/rackham_et_al/1_72948735_72949173.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr2</td><td>193309066</td><td>193309250</td><td>5</td><td>-0.347</td><td>184</td><td>0.027</td><td><a href="images/rackham_et_al/2_193309066_193309250.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>8965633</td><td>8965732</td><td>6</td><td>-0.361</td><td>99</td><td>0.061</td><td><a href="images/rackham_et_al/4_8965633_8965732.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr4</td><td>8969628</td><td>8969854</td><td>8</td><td>-0.407</td><td>226</td><td>0.035</td><td><a href="images/rackham_et_al/4_8969628_8969854.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr17</td><td>93272134</td><td>93272345</td><td>6</td><td>-0.374</td><td>211</td><td>0.028</td><td><a href="images/rackham_et_al/17_93272134_93272345.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr20</td><td>12372050</td><td>12372148</td><td>6</td><td>0.406</td><td>98</td><td>0.061</td><td><a href="images/rackham_et_al/20_12372050_12372148.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+<tr><td>chr5</td><td>152236112</td><td>152236164</td><td>7</td><td>0.349</td><td>52</td><td>0.135</td><td><a href="images/rackham_et_al/5_152236112_152236164.pdf.RDatafancy.png" data-lightbox=>View Image</a></td></tr>
+
+    </tbody>
+        </table>
+
+        
+                </div>
+            </div>
+        </section>
+        
+
+        <footer id="footer">
+            
+        </footer>
+        <!--/#footer-->
+
+
+</section>
+</body>
+</html>
+
