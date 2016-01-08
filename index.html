@@ -154,7 +154,7 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <p>Once this has run and all of the individual chromosome jobs has completed then you can run the second stage as follows:</p>
 
-<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_run -o cluster/ABBAtest_recover.output -e cluster/ABBAtest_recover.error perl ABBA.pl -f input/ -s 3000 -m 50 -n 2 -r 4 -t 1 -c 1 -p ABBAtest -a rn4 -o tmp/ -w 0 -d 0 -z 0 -y 0 -e length -i qsub_recover -b ./ -j /home/gmsojlr/R/3.2.2/bin/</pre></div>
+<div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_setup -o cluster/ABBAtest_setup.output -e cluster/ABBAtest_setup.error perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4 -i qsub_recover</pre></div>
 
 <h3>
 <a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h3>
