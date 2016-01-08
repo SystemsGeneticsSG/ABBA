@@ -136,6 +136,17 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 <p>At any stage you can open output/progress.html to view how the algorithm is proceeding.</p>
 
 <h3>
+<a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the results</h3>
+
+<p>Once ABBA is complete the results are automatically written to a html page that you can view as follows:</p>
+
+<div class="highlight highlight-source-shell"><pre>xdg-open output/PROJECTNAME/PROJECTNAME_results.html</pre></div>
+
+<p>If you have run the analysis on a cluster you can either scp the output folder to a convienient location or if you ssh -X username@yourserver.com you should also be able to view the webpage in a X-forwarded web browser using the same xdg-open command.</p>
+
+<p>If you wish to use the dmrs elsewhere then a bed file is also created and located in output/PROJECTNAME/dmrs.bed.</p>
+
+<h3>
 <a id="running-abba-on-a-cluster" class="anchor" href="#running-abba-on-a-cluster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running ABBA on a cluster</h3>
 
 <p>Running ABBA serially may take some time if you have a large dataset or you don't apply strict filtering criteria. In order to help with this ABBA has been implemented with the Sun Grid Engine queing system in mind. In order for this to work the executing is split into two stages; firstly the setup and parallel processing and secondly the post processing and plotting. We refer to these two sections as he qsub_setup and qsub_recover. The first can be executed as follows (with assumption that the version of R that will be used is stored in $HOME/R/3.2.2/bin/):</p>
@@ -156,15 +167,7 @@ install.packages(<span class="pl-s"><span class="pl-pds">"</span>INLA<span class
 
 <div class="highlight highlight-source-shell"><pre>qsub -pe smp 2 -N test_setup -o cluster/ABBAtest_setup.output -e cluster/ABBAtest_setup.error perl ABBA.pl -f input/test_set/ -n 2 -r 4 -p ABBAtest -a rn4 -i qsub_recover</pre></div>
 
-<a id="running-abba-serially" class="anchor" href="#running-abba-serially" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing the results</h3>
 
-<p>Once ABBA is complete the results are automatically written to a html page that you can view as follows:</p>
-
-<div class="highlight highlight-source-shell"><pre>xdg-open output/PROJECTNAME/PROJECTNAME_results.html</pre></div>
-
-<p>If you have run the analysis on a cluster you can either scp the output folder to a convienient location or if you ssh -X username@yourserver.com you should also be able to view the webpage in a X-forwarded web browser using the same xdg-open command.</p>
-
-<p>If you wish to use the dmrs elsewhere then a bed file is also created and located in output/PROJECTNAME/dmrs.bed.</p>
 
 <h3>
 <a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h3>
