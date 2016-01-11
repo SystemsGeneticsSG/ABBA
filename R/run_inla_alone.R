@@ -28,8 +28,8 @@ run_INLA_bedfile <-function(INLAresults,chrs,locs){
       bedfile[i,8]<-INLAresults[[6]][i]
       bedfile[i,9]<-INLAresults[[3]][i]
       bedfile[i,10]<-INLAresults[[4]][i]
-        bedfile[i,11]<-INLAresults[[11]][i]
-        bedfile[i,12]<-INLAresults[[12]][i]
+      bedfile[i,11]<-INLAresults[[11]][i]
+      bedfile[i,12]<-INLAresults[[12]][i]
     }
     return(bedfile)
   }
