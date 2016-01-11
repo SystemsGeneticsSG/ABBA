@@ -50,8 +50,8 @@ my $thresh = $options{t} || 1;
 my $min_count = $options{c} || 4;
 my $dir = $options{f};
 my $project = $options{p} ||  int(rand(1000));
-mkdir "output/$project" unless -d $dir."output/$project";
-mkdir "data/$project" unless -d $dir."data/$project";
+mkdir "output/$project" unless -d "output/$project";
+mkdir "data/$project" unless -d "data/$project";
 my $species = $options{a} || 'rn4';
 my $outdir = $options{o} || "output/$project/";
 my $window = $options{w} || 1000;
@@ -131,6 +131,8 @@ plot_DMRs($project,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type
 update_db($project,$stage,"DMRs have been plotted",'progress');
 $stage = $stage + 1;
 my @command = ('perl','results.pl',"$project","$path","$species","$average_diff","$sd","$cpg_density","$type");
+system(@command);
+my @command = ('sed','s/|/\t/g',"output/".$project."/top_hits.txt",">dmrs.bed");
 system(@command);
 
 }

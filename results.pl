@@ -46,20 +46,7 @@ print FILE <<EOF;
 	<link href="../css/responsive.css" rel="stylesheet">
     
 
-    <script src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/lightbox.js"></script>    
-    <!--[if lt IE 9]>
-	    <script src="js/html5shiv.js"></script>
-	    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    </head><!--/head-->
-    <script>
-    \$(document).ready(function() {
-    \$('#example').DataTable();
-    });
-    </script>
+
 <body>
 	<header id="header">      
         <div class="container">
@@ -98,7 +85,6 @@ print FILE <<EOF;
                 <th>End</th>
                 <th>#CpGs</th>
                 <th>Average Diff.</th>
-                <th>Type</th>
                 <th>Length</th>
                 <th>CpG Density</th>
                 <th>sd</th>
@@ -112,7 +98,6 @@ print FILE <<EOF;
                 <th>End</th>
                 <th>#CpGs</th>
                 <th>Average Diff.</th>
-                <th>Type</th>
                 <th>Length</th>
                 <th>CpG Density</th>
                 <th>sd</th>
@@ -132,7 +117,6 @@ print FILE <<EOF;
                 <td>$dmrs{$dmr}->[2]</td>
                 <td>$dmrs{$dmr}->[3]</td>
                 <td>$dmrs{$dmr}->[5]</td>
-                <td>$dmrs{$dmr}->[6]</td>
                 <td>$dmrs{$dmr}->[7]</td>
                 <td>$dmrs{$dmr}->[8]</td>
                 <td>$dmrs{$dmr}->[9]</td>
@@ -152,7 +136,20 @@ print FILE <<EOF;
     
 
     <footer id="footer">
-        
+           <script src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lightbox.js"></script>    
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    </head><!--/head-->
+    <script>
+    \$(document).ready(function() {
+    \$('#example').DataTable();
+    });
+    </script> 
     </footer>
     <!--/#footer-->
 
