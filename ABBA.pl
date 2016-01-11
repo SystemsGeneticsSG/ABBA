@@ -282,7 +282,7 @@ sub run_fdr_on_combined_files {
 	system("cat data/$project/*.sorted > data/$project/all.bed");
 	system("cat data/$project/*.for_inla > data/$project/all.for_sql");
 	system("cut -d, -f1,2,5,8,9 data/$project/all.bed > data/$project/all.bed.for_sql");
-	system("echo 'chr,start_loc,diff,a,b2' | cat - data/$project/all.bed.for_sql > data/$project/all.bed.for_sql2 && mv data/$project/all.bed.for_sql2 data/$project/all.bed.for_sql");
+	system("echo 'chr,start_loc,diff,a,b' | cat - data/$project/all.bed.for_sql > data/$project/all.bed.for_sql2 && mv data/$project/all.bed.for_sql2 data/$project/all.bed.for_sql");
 	#system("sed -i .bk '1s/^/chr,start_loc,diff,a,b\\n/' data/$project/all.bed.for_sql");
 	load_csv_to_database("data/$project/all.bed.for_sql",$db_handle,'inla_smooth');
 	my @command = ($rpath."Rscript","R/run_FDR_indep.R","data/$project/all.bed");
