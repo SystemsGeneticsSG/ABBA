@@ -46,7 +46,7 @@ our $rpath = $options{j} || "";
 our $nodes = $options{k} || 8;
 my $min = $options{m} || 50;
 my $size = $options{s} || 3000;
-my $thresh = $options{t} || 1;
+my $thresh = $options{t} || 2;
 my $min_count = $options{c} || 4;
 my $dir = $options{f};
 my $project = $options{p} ||  int(rand(1000));
@@ -328,6 +328,7 @@ sub run_all_files_chr {
 		if ( $? == -1 ){
   			print "command failed: $!\n";
 		}else{
+
   			system("sed -i .bk 1d $file"."binomial.bed");
   			system("sed -i .bk 's/^/$chr,/g' $file"."binomial.bed");
   		}
