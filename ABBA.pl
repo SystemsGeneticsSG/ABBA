@@ -303,7 +303,7 @@ sub run_inla_on_all_files {
 	}
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	system("cat data/$project/*.for_inla > data/$project/all.forinla");
-	system("sed -i .bk '1 i|chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\' data/$project/all.forinla");
+	system("sed -i .bk '1 i\chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\' data/$project/all.forinla");
 	#system("sed -i .bk '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$project/all.forinla");
 	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
