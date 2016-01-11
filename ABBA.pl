@@ -80,7 +80,8 @@ unless($init eq 'qsub_recover'){
 if($init eq 'qsub_recover'){
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	system("cat data/$project/*.for_inla > data/$project/all.forinla");
-	system("sed -i .bk '1ichr,meth,total,a_start,b_start,id,group_id,start_loc,total2' data/$project/all.forinla");
+	#system("sed -i .bk '1ichr,meth,total,a_start,b_start,id,group_id,start_loc,total2' data/$project/all.forinla");
+	system("echo 'chr,meth,total,a_start,b_start,id,group_id,start_loc,total2' | cat - data/$project/all.forinla > data/$project/all.forinla2 && mv data/$project/all.forinla2 data/$project/all.forinla");
 	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 }
