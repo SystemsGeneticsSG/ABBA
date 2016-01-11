@@ -304,7 +304,7 @@ sub run_inla_on_all_files {
 	}
 	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
 	system("cat data/$project/*.for_inla > data/$project/all.forinla");
-	system("sed -i .bk '1s/^/chr,meth,total,a_start,b_start,id,group_id,start_loc,total2\\n/' data/$project/all.forinla");
+	system("echo 'chr,meth,total,a_start,b_start,id,group_id,start_loc,total2' | cat - data/$project/all.forinla > data/$project/all.forinla2 && mv data/$project/all.forinla2 data/$project/all.forinla");
 	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
 	$db_handle->disconnect();
 	update_db($project,$stage,"ABBA has been run",'progress');
