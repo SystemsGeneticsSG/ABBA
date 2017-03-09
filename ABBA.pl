@@ -60,81 +60,88 @@ my $sd = $options{z} || 2;
 my $cpg_density = $options{y} || 0.01;
 my $n = $options{n} || 2;
 my $r = $options{r};
+our $verbose = 0;
 unless(defined($r)){
 	die "Error: You must provide -r the number of repliacates in each sample\n";
 }
 
 my $type = $options{e} || 'length';
+###This is always run#####
+unless(defined($project)){
+	$project = 'ABBAtest';
+}
 
-	unless(defined($project)){
-		$project = 'ABBAtest';
-	}
 if($init eq 'qsub_executing'){
 	run_all_files_chr($options{g},$project,$options{n},$options{r});
 }else{
-unless($init eq 'replot_dmrs'){
-my %files_to_run;
-unless($init eq 'qsub_recover'){
-	create_database($project);
-}
-if($init eq 'qsub_recover'){
-	my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
-	system("cat data/$project/*.for_inla > data/$project/all.forinla");
-	#system("sed -i .bk '1ichr,meth,total,a_start,b_start,id,group_id,start_loc,total2' data/$project/all.forinla");
-	system("echo 'chr,meth,total,a_start,b_start,id,group_id,start_loc,total2' | cat - data/$project/all.forinla > data/$project/all.forinla2 && mv data/$project/all.forinla2 data/$project/all.forinla");
-	load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
-	$db_handle->disconnect();
-}
-
-my $checked = check_directory($dir);
-update_db($project,$stage,'files have been checked','progress');
-$stage = $stage+1;
-if($checked){
-	%files_to_run = %{prepare_in_files($dir,$min,$size,\%files_to_run,$thresh,$min_count)};
-	my $sum = 0;
-	foreach my $chr (keys %files_to_run){
-		$sum = $sum + scalar(@{$files_to_run{$chr}})
-	}
-	update_db($project,$stage,"There are $sum files to process",'progress');
-	$stage = $stage + 1;
-}
-
-unless($init eq 'qsub_recover'){
-	if($init eq 'qsub_setup'){
-		#setup the qsub file
-		foreach my $chr (keys %files_to_run){
-				if(defined($path)){
-				#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
-				#system(@command)
-				my @command = ("qsub","-pe","smp","$nodes","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $n","-r $r","-g $chr","-j $rpath");
-				system(@command);
-				}else{
-					die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
-				}
-			
+	unless($init eq 'replot_dmrs'){
+		my %files_to_run;
+		unless($init eq 'qsub_recover'){
+			create_database($project);
 		}
-		#print/run the qsub command to run and then exit
-		exit;
-	}else{
-		run_inla_on_all_files(\%files_to_run,$n,$r,$project);
+	if($init eq 'qsub_recover'){
+		my $db_handle = DBI -> connect("DBI:SQLite:$path"."dbs/$project.sqlite");
+		qx{"cat data/$project/*.for_inla > data/$project/all.forinla"};
+		#system("sed -i .bk '1ichr,meth,total,a_start,b_start,id,group_id,start_loc,total2' data/$project/all.forinla");
+		qx{"echo 'chr,meth,total,a_start,b_start,id,group_id,start_loc,total2' | cat - data/$project/all.forinla > data/$project/all.forinla2 && mv data/$project/all.forinla2 data/$project/all.forinla"};
+		load_csv_to_database("data/$project/all.forinla",$db_handle,'raw_data');
+		$db_handle->disconnect();
 	}
-}
+
+	my $checked = check_directory($dir);
+	update_db($project,$stage,'files have been checked','progress');
+	$stage = $stage+1;
+	if($checked){
+		%files_to_run = %{prepare_in_files($dir,$min,$size,\%files_to_run,$thresh,$min_count)};
+		my $sum = 0;
+		foreach my $chr (keys %files_to_run){
+			$sum = $sum + scalar(@{$files_to_run{$chr}})
+		}
+		update_db($project,$stage,"There are $sum files to process",'progress');
+		$stage = $stage + 1;
+	}
+
+	unless($init eq 'qsub_recover'){
+		if($init eq 'qsub_setup'){
+			#setup the qsub file
+			foreach my $chr (keys %files_to_run){
+					if(defined($path)){
+					#my @command = ("qsub -pe smp 8","/gpfs/eplab/INLA/R/run_inla_alone.sh","/gpfs/eplab/INLA/ALL/".$chr."/".$size."/both/",$options{n},$options{r},"binomial",$options{x});
+					#system(@command)
+					my @command = ("qsub","-pe","smp","$nodes","-N",$chr, "-o","cluster/".$chr.".output", "-e","cluster/".$chr.".error","perl",$path."ABBA.pl","-i qsub_executing","-p $project","-n $n","-r $r","-g $chr","-j $rpath");
+					system(@command);
+					}else{
+						die "Error: You must provide the full path to ABBA.pl if you want to use qsub\n";
+					}
+				
+			}
+			#print/run the qsub command to run and then exit
+			exit;
+		}else{
+			run_inla_on_all_files(\%files_to_run,$n,$r,$project);
+		}
+	}
 
 
-run_fdr_on_combined_files($project);
+	run_fdr_on_combined_files($project);
 }
+print STDERR "UPDATE: DMRs extracting\n" if $verbose;
 #my @chrs = keys %files_to_run;
 my @chrs = @{get_chrs($project)};
 extract_DMRs(\@chrs,$project);
+print STDERR "UPDATE: DMRs extracted\n" if $verbose;
 update_db($project,$stage,"DMRs has been extracted",'progress');
+print STDERR "UPDATE: database updated\n" if $verbose;
 $stage = $stage + 1;
 plot_DMRs($project,$species,$outdir,$window,$average_diff,$sd,$cpg_density,$type);
+print STDERR "UPDATE: DMRs plotted\n" if $verbose;
 update_db($project,$stage,"DMRs have been plotted",'progress');
 $stage = $stage + 1;
 my @command = ('perl','results.pl',"$project","$path","$species","$average_diff","$sd","$cpg_density","$type");
 system(@command);
-@command = ('sed','s/|/\t/g',"output/".$project."/top_hits.txt",">dmrs.bed");
-system(@command);
+print STDERR "UPDATE: making bed file\n" if $verbose;
+my $command = ("sed 's/|/\t/g' output/".$project."/top_hits.txt > output/".$project."/dmrs.bed");
+qx{$command};
 
 }
 
@@ -173,10 +180,13 @@ sub plot_DMRs {
 	my $cpg_density = shift;
 	my $type = shift;
 	#print STDERR ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type",$rpath);
+	print STDERR ("UPDATE: generating top hits\n") if $verbose;
 	my @command = ('sh','R/top_hits.sh',"$path"."dbs/"."$project".".sqlite","$species"."_annotation","$project","$outdir","$window","$path"."annotations/"."$species".".sqlite","$average_diff","$sd","$cpg_density","$type",$rpath);
 	system(@command);
+	print STDERR ("UPDATE: generating images\n") if $verbose;
 	@command = ($rpath."Rscript","R/plot_fancy_figures.R","$outdir");
 	system(@command);
+	print STDERR ("UPDATE: done\n") if $verbose;
 }
 
 sub get_files_to_process {
@@ -265,11 +275,13 @@ sub extract_DMRs {
 		my @command=($rpath.'Rscript','R/extract.R',"data/$project/$chr.bed.sorted","$chr","data/$project/all.bed_fdr.RData");
   		system(@command);
   		if (-e "data/$project/$chr".".bed.sorteddensity.DMRs.bed"){
-  		system("sed -i .bk '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sorteddensity.DMRs.bed");
+  		system("sed '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sorteddensity.DMRs.bed > data/$project/$chr".".bed.sorteddensity.DMRs.bed.t");
+  		system("mv data/$project/$chr".".bed.sorteddensity.DMRs.bed.t data/$project/$chr".".bed.sorteddensity.DMRs.bed");
   		load_csv_to_database("data/$project/$chr".".bed.sorteddensity.DMRs.bed",$db_handle,'DMR_data');
   		}
   		if (-e "data/$project/$chr".".bed.sortedlength.DMRs.bed"){
-  		system("sed -i .bk '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sortedlength.DMRs.bed");
+  		system("sed '1s/^/chr,start_loc,stop_loc,size,density,avg_diff,type,DMRlength,DMRCpGDensity,sd\\n/' data/$project/$chr".".bed.sortedlength.DMRs.bed > data/$project/$chr".".bed.sortedlength.DMRs.bed.t");
+  		system("mv data/$project/$chr".".bed.sortedlength.DMRs.bed.t data/$project/$chr".".bed.sortedlength.DMRs.bed");
   		load_csv_to_database("data/$project/$chr".".bed.sortedlength.DMRs.bed",$db_handle,'DMR_data');
   		}
 	}  
@@ -325,15 +337,15 @@ sub run_all_files_chr {
 	update_db($project,$chr,($count/scalar(@{$files_array})),'file_ticker');
 	foreach my $file (@{$files_array}){
 		
-		print("$chr\t$file\n");
+		print("$chr\t$file\n") if $verbose;
 		my @command = ($rpath."Rscript","R/run_inla_alone.R","$file","$n","$r","binomial","> /dev/null");
-		system(@command);
+		qx{@command};
 		if ( $? == -1 ){
   			print "command failed: $!\n";
 		}else{
-
-  			system("sed -i .bk 1d $file"."binomial.bed");
-  			system("sed -i .bk 's/^/$chr,/g' $file"."binomial.bed");
+			####THIS DOESNT WORK ON ALL OPERATING SYSTEMS#####
+  			system("sed 1d $file"."binomial.bed".">".$file."binomial.bed.t");
+  			system("sed 's/^/$chr,/g' $file"."binomial.bed.t".">".$file."binomial.bed");
   		}
   		$dir = dirname($file);
   		$count = $count + 1;
@@ -342,7 +354,8 @@ sub run_all_files_chr {
 	
 	system("cat $dir/*binomial.bed > data/$project/$chr.bed");
 	system("cat $dir/*for_inla.txt > data/$project/$chr.for_inla");
-	system("sed -i .bk 's/^/$chr,/g' data/$project/$chr.for_inla");
+	system("sed 's/^/$chr,/g' data/$project/$chr.for_inla > data/$project/$chr.for_inla.t");
+	system("mv data/$project/$chr.for_inla.t data/$project/$chr.for_inla");
 	system("sort -t, -g -k2 data/$project/$chr.bed > data/$project/$chr.bed.sorted");
 	$db_handle->disconnect();
 }
@@ -462,7 +475,7 @@ sub split_data_for_INLA {
 				if($line[1]==$prev){
 					for ($count = 5; $count >= scalar(@line); $count++) {
 						unless(($line[$count]eq'NA') || ($prev[$count] eq 'NA')){
-							print "prev\n";
+							print "prev\n" if $verbose;
 							$prev[$count] = $line[$count]+$prev[$count];
 						}
 					}

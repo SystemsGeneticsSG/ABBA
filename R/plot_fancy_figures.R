@@ -72,16 +72,19 @@ outfile<- args[1];
 path = outfile
 
 file.names <- dir(path, pattern =".RData$")
+if(length(file.names)==0){
 
-for(i in 1:length(file.names)){
-tryCatch({load(paste0(path,file.names[i]))
+}else{
+  for(i in 1:length(file.names)){
+  tryCatch({load(paste0(path,file.names[i]))
 
-#print(paste(i,"from",length(file.names)))
-outfile<-paste0(path,file.names[i],"fancy.pdf")
-png_outfile<-paste0(path,file.names[i],"fancy.png")
-#print(paste("processing",file.names[i],"output to",outfile))
-#print(outfile)
-fig<-plot_fancy_fig(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx,png_outfile)
+  #print(paste(i,"from",length(file.names)))
+  outfile<-paste0(path,file.names[i],"fancy.pdf")
+  png_outfile<-paste0(path,file.names[i],"fancy.png")
+  #print(paste("processing",file.names[i],"output to",outfile))
+  #print(outfile)
+  fig<-plot_fancy_fig(dmr,inla,raw,repeats,chr,cpg,genes,mirna,outfile,start,stop,tfbs,tfx,png_outfile)
 
-})
+  })
+}
 }

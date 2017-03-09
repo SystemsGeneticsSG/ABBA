@@ -74,6 +74,7 @@ run_INLA_on_datafile <-function(filename,number_of_samples,number_of_replicas,ty
 
 INLA_for_real <- function(data,number_samples,number_of_replicas,log_gamma_m,log_gamma_v,type,output_path){
   reformatted_for_INLA <- reformat_for_INLA_realdata(data,number_samples,number_of_replicas,output_path)
+
   if(type=='binomial'){
      INLA_results <- run_INLA_split(reformatted_for_INLA,log_gamma_m,log_gamma_v)
   }else if(type=='disperssion'){
@@ -127,6 +128,12 @@ reformat_for_INLA_realdata <- function(d,number_of_samples,number_of_replicas,ou
 
 run_INLA_split <- function(d,log_gamma_m,log_gamma_v){
   library(INLA)
+    t<-inla.models()
+        t$latent$rw1$min.diff = NULL
+        assign("inla.models", t, INLA:::inla.get.inlaEnv())
+
+
+
     formula_1=x~indicator+ f(groupb,model="iid") +f(pos1,model="rw1",hyper = list(prec = list(prior="loggamma",param=c(0.1,0.001))))
     formula_2=x~indicator+ f(groupb,model="iid") +f(pos2,model="rw1",hyper = list(prec = list(prior="loggamma",param=c(0.1,0.001))))
 
